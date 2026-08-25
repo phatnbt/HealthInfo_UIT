@@ -1,0 +1,26 @@
+# Raw NHIS public-use microdata
+adult24.csv
+adultinc24.csv
+adult24csv.zip
+adultinc24csv.zip
+adultinc24.zip
+
+# Generated person-level cohorts
+analysis_ready_*.csv
+nhis_day1_4_exact/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary/output files
+*.tmp
+*.log
