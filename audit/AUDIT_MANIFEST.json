@@ -1,0 +1,61 @@
+{
+  "status": "FINAL_DAY1_4_DATA_AUDIT_COMPLETE",
+  "language": "Python 3 (standard library) for filtering/audit; artifact_tool for Excel workbook",
+  "source_files": {
+    "adult24.csv": {
+      "csv_size_bytes": 32782569,
+      "csv_md5": "6b0d5e572841ffef7b0f7df4ddfed556",
+      "csv_rows": 32629,
+      "official_md5_match": true
+    },
+    "adultinc24.csv": {
+      "csv_size_bytes": 8394470,
+      "csv_md5": "14a1d5780100c1b0a13acce433e00360",
+      "csv_rows": 326290,
+      "official_md5_match": true
+    }
+  },
+  "targets": {
+    "MEDNG12M_A": {
+      "valid_n": 32354,
+      "yes": 2195,
+      "no": 30159,
+      "special": {"refused": 10, "not_ascertained": 259, "dont_know": 6},
+      "unweighted_prevalence": 0.06784323422142548,
+      "weighted_prevalence": 0.07386546105963274
+    },
+    "MEDDL12M_A": {
+      "valid_n": 32355,
+      "yes": 2564,
+      "no": 29791,
+      "special": {"refused": 10, "not_ascertained": 255, "dont_know": 9},
+      "unweighted_prevalence": 0.07924586617215268,
+      "weighted_prevalence": 0.08579139305967438
+    },
+    "common_valid_n": 32345,
+    "joint_counts": {
+      "MEDNG_No__MEDDL_No": 29331,
+      "MEDNG_No__MEDDL_Yes": 823,
+      "MEDNG_Yes__MEDDL_No": 452,
+      "MEDNG_Yes__MEDDL_Yes": 1739
+    }
+  },
+  "income_mi_integrity": {
+    "unique_hhx": 32629,
+    "imputations_per_hhx": 10,
+    "bad_hhx_imputation_sets": 0,
+    "adult_RATCAT_equals_income_imputation1_mismatches": 0
+  },
+  "predictor_audit": {
+    "candidate_predictors": 22,
+    "unexpected_code_variables": 0,
+    "global_7_8_9_missing_rule_used": false
+  },
+  "notes": [
+    "MEDNG and MEDDL cohorts were created independently from the verified raw adult24.csv.",
+    "No synthetic or invented respondent rows were created.",
+    "Survey-weighted point estimates use WTFA_A.",
+    "Formal design-based SE/CI must incorporate PSTRAT and PPSU.",
+    "Poverty MI pooled point estimates average the 10 imputation-specific estimates; Day 1–4 does not claim Rubin/Taylor confidence intervals."
+  ]
+}
