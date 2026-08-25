@@ -1,0 +1,7 @@
+Step,N,Note
+Raw NHIS 2024 Sample Adult,32629,Verified extracted adult24.csv
+MEDNG valid (1/2),32354,Independent primary-outcome cohort
+MEDDL valid (1/2),32355,Independent secondary-outcome cohort
+Valid on both MEDNG + MEDDL,32345,Paired comparison cohort only
+MEDNG valid but MEDDL invalid,9,Do not remove from MEDNG model
+MEDDL valid but MEDNG invalid,10,Do not remove from MEDDL model
