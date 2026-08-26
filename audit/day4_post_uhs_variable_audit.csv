@@ -1,0 +1,13 @@
+Variable,Observed_codes,Observed_counts,Expected_codes,Unexpected_codes,Decision,Model_role,Missing_unknown_rule
+ANGEV_A,1|2|7|9,1:640|2:31911|7:22|9:56,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+ARTHEV_A,1|2|7|9,1:8724|2:23861|7:20|9:24,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+ASEV_A,1|2|7|9,1:4809|2:27789|7:16|9:15,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+CANEV_A,1|2|7|9,1:4434|2:28165|7:21|9:9,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+CHDEV_A,1|2|7|9,1:2110|2:30406|7:26|9:87,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+COPDEV_A,1|2|7|9,1:1856|2:30733|7:18|9:22,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+DIBEV_A,1|2|7|9,1:3709|2:28891|7:18|9:11,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+HYPEV_A,1|2|7|9,1:12263|2:20314|7:36|9:16,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+KIDWEAKEV_A,1|2|7|9,1:1306|2:31283|7:17|9:23,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+MIEV_A,1|2|7|9,1:1284|2:31308|7:21|9:16,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+STREV_A,1|2|7|9,1:1246|2:31349|7:21|9:13,1|2|7|8|9,,PASS,Component of selected chronic-condition burden,7/8/9 unresolved; do not recode as No
+SMKCIGST_A,1|2|3|4|5|9,1:2513|2:850|3:8162|4:20351|5:16|9:737,1|2|3|4|5|9,,PASS,Exploratory smoking-status predictor,Codes 1-4 substantive; codes 5 and 9 collapse to explicit Unknown
