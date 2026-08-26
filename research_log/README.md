@@ -17,6 +17,7 @@ Mỗi ngày giữ cùng một cấu trúc:
 - [Day 1 — Source integrity](Day01_Source_Integrity.md)
 - [Day 2 — Target & cohort audit](Day02_Target_Cohort.md)
 - [Day 3 — Predictor/data dictionary audit](Day03_Predictor_Dictionary.md)
-- [Day 4 — Missing/code audit & EDA](Day04_EDA_Audit.md)
+- [Day 4 — Missing/code audit, EDA & post-UHS feature lock](Day04_EDA_Audit.md)
+- [Day 5 — Preprocessing & baseline modeling](Day05_Baseline_Modeling.md)
 
 Google Docs được dùng như bản cộng tác sống; thư mục này lưu phiên bản đã chốt để theo dõi lịch sử thay đổi bằng Git.
