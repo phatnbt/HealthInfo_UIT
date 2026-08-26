@@ -4,7 +4,7 @@ Reproducible data-audit and modeling project for **cost-related unmet medical ca
 
 ## Day 1–4 status
 
-**Data-side Day 1–4 is complete. UHS/domain predictor review has now been incorporated into the modeling plan.**
+**DAY 1–4 COMPLETE.** Raw-source verification, outcome-specific cohorts, the original 22-variable technical audit, UHS/domain review, and the post-UHS technical feature lock are complete. The project is ready to begin Day 5 preprocessing/modeling.
 
 Verified raw CDC/NCHS files:
 
@@ -34,13 +34,30 @@ Delayed medical care because of cost in the past 12 months.
 
 The two outcomes are constructed **independently** from raw `adult24.csv`. The common-valid cohort (N=32,345) is reserved for overlap/paired analyses only.
 
-## Predictor status after UHS review
+## Final feature specification after UHS review
 
-The original technical audit covered **22 candidate predictors**. UHS/domain review supports a more parsimonious scientific specification.
+### Main model — 12 constructs
 
-### Provisional main predictors (11 existing variables)
+11 existing NHIS predictors:
 
 `AGEP_A`, `SEX_A`, `HISPALLP_A`, `EDUCP_A`, `RATCAT_A`, `EMPWRKLSW1_A`, `NOTCOV_A`, `FDSCAT3_A`, `PHSTAT_A`, `DISAB3_A`, `K6SPD_A`.
+
+Plus one engineered construct:
+
+`CHRONIC_BURDEN_CAT` = **0 / 1 / 2 / 3+ selected chronic-condition domains**.
+
+The eight prespecified domains are:
+
+1. Hypertension — `HYPEV_A`
+2. Cardiovascular disease — any of `CHDEV_A`, `ANGEV_A`, `MIEV_A`, `STREV_A` (counted once)
+3. Asthma — `ASEV_A`
+4. COPD — `COPDEV_A`
+5. Cancer — `CANEV_A`
+6. Diabetes — `DIBEV_A`
+7. Arthritis — `ARTHEV_A`
+8. Kidney disease — `KIDWEAKEV_A`
+
+This is a **selected-condition count/category for prediction**, not a validated clinical severity index. If any required domain is unresolved, the burden feature is left indeterminate rather than treating the condition as absent. Indeterminate burden is **222/32,354 (0.686%)** in the MEDNG cohort and **222/32,355 (0.686%)** in the MEDDL cohort.
 
 ### Supporting/contextual
 
@@ -48,19 +65,30 @@ The original technical audit covered **22 candidate predictors**. UHS/domain rev
 
 ### Exploratory/sensitivity
 
-`DIBEV_A`, `HYPEV_A`, `BMICAT_A`, `ANXFREQ_A`, `DEPFREQ_A`, `LONELY_A`, `SOCSCLPAR_A`.
+`BMICAT_A`, `ANXFREQ_A`, `DEPFREQ_A`, `LONELY_A`, `SOCSCLPAR_A`, `SMKCIGST_A`.
 
-`SMKEV_A` is no longer the preferred smoking-status variable. If smoking is retained, `SMKCIGST_A` will be technically audited and used instead.
+`DIBEV_A` and `HYPEV_A` are retained for **disease-specific sensitivity analyses**, but are not added alongside `CHRONIC_BURDEN_CAT` in the primary model.
 
-### Planned additions before final lock
+`SMKEV_A` is replaced by `SMKCIGST_A` when smoking status is analyzed. `SMKCIGST_A` has passed the post-UHS code audit; codes 1–4 are substantive smoking-status groups, while 5/9 are handled as an explicit unknown group.
 
-- Prespecified **chronic-condition burden** feature; if it passes audit it becomes an additional main construct, yielding 12 core constructs.
-- `POVRATTC_A` as an MI-aware SES sensitivity alternative to `RATCAT_A`, not simultaneously in the same primary model.
-- `SMKCIGST_A` for exploratory smoking status if retained.
+### Poverty sensitivity
 
-Full decision record: [`docs/UHS_Day3_4_predictor_review.md`](docs/UHS_Day3_4_predictor_review.md).
+`RATCAT_A` remains the primary SES predictor. `POVRATTC_A` is an alternative sensitivity operationalization only.
 
-**Important:** the verified Day 1–4 data outputs remain valid, but they are not yet the final modeling feature matrix. Newly introduced variables/features must undergo the same code/missing audit before Day 5 training.
+The MI strategy is locked: run the same model separately for each of the **10 `IMPNUM_A` datasets**, use the same `HHX` train/test split across imputations, replace `RATCAT_A` with `POVRATTC_A`, and summarize the 10 sensitivity runs descriptively. Do not call these summaries formal Rubin-pooled design-based inference unless that procedure is explicitly implemented.
+
+Full scientific review: [`docs/UHS_Day3_4_predictor_review.md`](docs/UHS_Day3_4_predictor_review.md).
+
+Final lock: [`audit/final_feature_lock.csv`](audit/final_feature_lock.csv).
+
+## Post-UHS Day 4 checks
+
+- All newly used chronic-condition component variables have **no unexpected observed codes** against the official NHIS code sets.
+- `SMKCIGST_A` code audit: **PASS**.
+- `POVRATTC_A`: **10 × 32,629** records verified; observed range is **0.00–11.00** in every imputation.
+- Age equity groups are finalized as **18–34, 35–49, 50–64, 65–74, 75+**.
+- Disability is retained as an **exploratory equity subgroup**.
+- `MARSTAT_A` codes 7/8/9 remain valid recode categories; the project never applies a global `7/8/9 = missing` rule.
 
 ## Survey design
 
@@ -77,49 +105,52 @@ Full decision record: [`docs/UHS_Day3_4_predictor_review.md`](docs/UHS_Day3_4_pr
 ├── README.md
 ├── .gitignore
 ├── scripts/
-│   └── reproduce_day1_4.py
+│   ├── reproduce_day1_4.py
+│   └── finalize_day4_post_uhs.py
 ├── docs/
-│   └── UHS_Day3_4_predictor_review.md
+│   ├── UHS_Day3_4_predictor_review.md
+│   └── poverty_MI_sensitivity_protocol.md
 ├── research_log/
 └── audit/
     ├── cohort_flow.csv
     ├── predictor_code_missing_audit.csv
     ├── subgroup_EDA_EXACT.csv
+    ├── subgroup_EDA_post_UHS_addendum.csv
+    ├── day4_post_uhs_variable_audit.csv
+    ├── chronic_burden_summary.csv
+    ├── poverty_MI_input_audit.csv
+    ├── final_feature_lock.csv
     ├── poverty_MI_pooled_point_estimates.csv
     └── AUDIT_MANIFEST.json
 ```
 
-## Reproduce Day 1–4
+## Reproduce / finalize Day 1–4
 
 Download the official CDC/NCHS files `adult24csv.zip` and `adultinc24csv.zip`, then run:
 
 ```bash
 python scripts/reproduce_day1_4.py adult24csv.zip adultinc24csv.zip
+python scripts/finalize_day4_post_uhs.py adult24csv.zip adultinc24csv.zip
 ```
 
-The script verifies the official MD5 checksums, target frequencies, independent outcome cohorts, and all 10 income imputations before writing analysis-ready CSV files locally.
+The second script verifies the post-UHS variables, constructs the final chronic-burden feature, verifies the 10 poverty imputations, and writes final feature-lock MEDNG/MEDDL cohort files locally.
 
 ## Data policy
 
-Raw NHIS files and generated person-level analysis-ready CSV files are intentionally **not committed to this public repository**. They can be reproduced from official CDC/NCHS downloads using the included script.
+Raw NHIS files and generated person-level analysis-ready CSV files are intentionally **not committed to this public repository**. They can be reproduced from official CDC/NCHS downloads using the included scripts.
 
 ## Interpretation cautions
 
 - This is cross-sectional prediction/classification of contemporaneous outcomes, not future-risk forecasting or causal inference.
 - SHAP values represent predictive contributions and must not be described as causal effects.
+- Correlated predictors may share predictive information; SHAP importance is not independent etiologic contribution.
 - Subgroup performance/fairness differences do not by themselves establish discrimination.
 - `WTFA_A`-weighted point estimates are not a substitute for full design-based variance estimation; formal SE/CI should incorporate `PSTRAT` and `PPSU`.
-- Poverty multiple-imputation point estimates here are descriptive; formal inferential pooling should combine MI and complex-survey variance appropriately.
+- Poverty MI sensitivity summaries are not formal MI + complex-survey inference unless such a method is explicitly implemented.
 
-## Gate to Day 5 modeling
+## Day 5 gate
 
-Before LR/RF/XGBoost training, the project must:
-
-1. Define and audit the chronic-condition burden variable.
-2. Audit `SMKCIGST_A` if smoking is retained.
-3. Lock the MI strategy for `POVRATTC_A` sensitivity analysis.
-4. Re-run code/missing audit for newly added variables/features.
-5. Freeze the final main/supporting/exploratory feature specification.
+**PASSED.** Final technical feature specification is frozen and Day 5 may begin with independent MEDNG/MEDDL preprocessing and LR/RF/XGBoost modeling.
 
 ## Official sources
 
