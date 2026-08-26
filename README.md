@@ -4,7 +4,7 @@ Reproducible data-audit and modeling project for **cost-related unmet medical ca
 
 ## Day 1–4 status
 
-**Data-side Day 1–4 is complete.**
+**Data-side Day 1–4 is complete. UHS/domain predictor review has now been incorporated into the modeling plan.**
 
 Verified raw CDC/NCHS files:
 
@@ -34,11 +34,33 @@ Delayed medical care because of cost in the past 12 months.
 
 The two outcomes are constructed **independently** from raw `adult24.csv`. The common-valid cohort (N=32,345) is reserved for overlap/paired analyses only.
 
-## Candidate predictors
+## Predictor status after UHS review
 
-The current technical audit covers **22 candidate predictors** across Andersen Behavioral Model domains (Predisposing, Enabling/contextual, Need) plus supplementary social/behavioral variables.
+The original technical audit covered **22 candidate predictors**. UHS/domain review supports a more parsimonious scientific specification.
 
-Final KEEP/DROP decisions should be made jointly with UHS/domain review before modeling.
+### Provisional main predictors (11 existing variables)
+
+`AGEP_A`, `SEX_A`, `HISPALLP_A`, `EDUCP_A`, `RATCAT_A`, `EMPWRKLSW1_A`, `NOTCOV_A`, `FDSCAT3_A`, `PHSTAT_A`, `DISAB3_A`, `K6SPD_A`.
+
+### Supporting/contextual
+
+`MARSTAT_A`, `URBRRL23`, `REGION`.
+
+### Exploratory/sensitivity
+
+`DIBEV_A`, `HYPEV_A`, `BMICAT_A`, `ANXFREQ_A`, `DEPFREQ_A`, `LONELY_A`, `SOCSCLPAR_A`.
+
+`SMKEV_A` is no longer the preferred smoking-status variable. If smoking is retained, `SMKCIGST_A` will be technically audited and used instead.
+
+### Planned additions before final lock
+
+- Prespecified **chronic-condition burden** feature; if it passes audit it becomes an additional main construct, yielding 12 core constructs.
+- `POVRATTC_A` as an MI-aware SES sensitivity alternative to `RATCAT_A`, not simultaneously in the same primary model.
+- `SMKCIGST_A` for exploratory smoking status if retained.
+
+Full decision record: [`docs/UHS_Day3_4_predictor_review.md`](docs/UHS_Day3_4_predictor_review.md).
+
+**Important:** the verified Day 1–4 data outputs remain valid, but they are not yet the final modeling feature matrix. Newly introduced variables/features must undergo the same code/missing audit before Day 5 training.
 
 ## Survey design
 
@@ -56,6 +78,9 @@ Final KEEP/DROP decisions should be made jointly with UHS/domain review before m
 ├── .gitignore
 ├── scripts/
 │   └── reproduce_day1_4.py
+├── docs/
+│   └── UHS_Day3_4_predictor_review.md
+├── research_log/
 └── audit/
     ├── cohort_flow.csv
     ├── predictor_code_missing_audit.csv
@@ -80,10 +105,21 @@ Raw NHIS files and generated person-level analysis-ready CSV files are intention
 
 ## Interpretation cautions
 
-- SHAP values, if used later, represent predictive contributions and must not be described as causal effects.
+- This is cross-sectional prediction/classification of contemporaneous outcomes, not future-risk forecasting or causal inference.
+- SHAP values represent predictive contributions and must not be described as causal effects.
 - Subgroup performance/fairness differences do not by themselves establish discrimination.
 - `WTFA_A`-weighted point estimates are not a substitute for full design-based variance estimation; formal SE/CI should incorporate `PSTRAT` and `PPSU`.
 - Poverty multiple-imputation point estimates here are descriptive; formal inferential pooling should combine MI and complex-survey variance appropriately.
+
+## Gate to Day 5 modeling
+
+Before LR/RF/XGBoost training, the project must:
+
+1. Define and audit the chronic-condition burden variable.
+2. Audit `SMKCIGST_A` if smoking is retained.
+3. Lock the MI strategy for `POVRATTC_A` sensitivity analysis.
+4. Re-run code/missing audit for newly added variables/features.
+5. Freeze the final main/supporting/exploratory feature specification.
 
 ## Official sources
 
