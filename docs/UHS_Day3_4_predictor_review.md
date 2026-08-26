@@ -1,19 +1,19 @@
 # UHS Day 3–4 Predictor Review — Project Update
 
-Status: **scientific/domain review accepted with technical corrections and pending implementation checks**.
+Status: **scientific/domain review accepted; post-UHS technical implementation complete; Day 5 gate passed**.
 
 ## 1. What is accepted
 
 The UHS review is broadly methodologically sound and is adopted as the scientific feature-selection plan before Day 5 modeling.
 
-### Provisional core predictors (existing variables)
+### Core predictors (existing variables)
 
 1. `AGEP_A` — age; keep numeric for modeling, derive age groups only for fairness reporting.
 2. `SEX_A` — sex; do not relabel as gender.
 3. `HISPALLP_A` — combined Hispanic origin/race recode; primary race/ethnicity equity stratifier.
 4. `EDUCP_A` — educational attainment; socioeconomic position.
 5. `RATCAT_A` — family income-to-poverty ratio category; primary poverty/SES operationalization.
-6. `EMPWRKLSW1_A` — NHIS employment/work-status recode (official description: Worked last week); do not simplify to paid employment only.
+6. `EMPWRKLSW1_A` — NHIS employment/work-status recode; do not simplify to paid employment only.
 7. `NOTCOV_A` — current health insurance coverage status; predictive/enabling variable, not a direct measure of access quality.
 8. `FDSCAT3_A` — 3-category adult food-security status; material hardship.
 9. `PHSTAT_A` — self-rated general health; health-need/status construct, not a causal factor.
@@ -28,35 +28,69 @@ The UHS review is broadly methodologically sound and is adopted as the scientifi
 
 ### Exploratory/sensitivity predictors
 
-- `DIBEV_A`
-- `HYPEV_A`
 - `BMICAT_A`
 - `ANXFREQ_A`
 - `DEPFREQ_A`
 - `LONELY_A`
 - `SOCSCLPAR_A`
+- `SMKCIGST_A`
 
-`SMKEV_A` is **not** retained as the preferred smoking-status operationalization. If smoking is retained, the planned replacement is `SMKCIGST_A` after a technical code/missing audit.
+`DIBEV_A` and `HYPEV_A` are retained for disease-specific sensitivity analyses because they are represented inside the final chronic-burden construct.
 
-## 2. Additions before final feature lock
+`SMKEV_A` is **not** retained as the preferred smoking-status operationalization and is replaced by `SMKCIGST_A` when smoking status is analyzed.
 
-These are accepted as **planned additions**, not yet implemented in the current Day 1–4 analysis-ready cohorts.
+## 2. Post-UHS additions implemented
 
-### A. Chronic-condition burden
+### A. Chronic-condition burden — IMPLEMENTED
 
-Create a prespecified chronic-condition count/category (for example 0, 1, 2, 3+) using a documented list of NHIS chronic-condition variables. `DIBEV_A` and `HYPEV_A` alone should not be described as overall chronic-condition burden.
+A prespecified selected chronic-condition count/category was created:
 
-**Important:** the condition list, coding, missing rules, and prevalence must be audited before this engineered feature enters the main model. Until then, `DIBEV_A` and `HYPEV_A` remain exploratory.
+`CHRONIC_BURDEN_CAT` = `0`, `1`, `2`, `3+` selected condition domains.
 
-### B. `POVRATTC_A` sensitivity analysis
+Eight domains:
 
-Keep `RATCAT_A` as the primary categorical poverty predictor. Add `POVRATTC_A` only as an alternative/sensitivity SES operationalization.
+1. Hypertension — `HYPEV_A`
+2. Cardiovascular disease — any of `CHDEV_A`, `ANGEV_A`, `MIEV_A`, `STREV_A`; counted once to avoid double-counting related CVD diagnoses
+3. Asthma — `ASEV_A`
+4. COPD — `COPDEV_A`
+5. Cancer — `CANEV_A`
+6. Diabetes — `DIBEV_A`
+7. Arthritis — `ARTHEV_A`
+8. Kidney disease — `KIDWEAKEV_A`
 
-Because NHIS income has 10 imputations, any poverty analysis using `POVRATTC_A` must explicitly account for the multiple-imputation structure. Do not include `RATCAT_A` and `POVRATTC_A` together in the same primary model.
+This is a **selected-condition count/category for prediction**, not a validated clinical severity index.
 
-### C. `SMKCIGST_A` if smoking is retained
+Technical audit result:
+- All component variables: PASS; no unexpected observed code.
+- MEDNG burden indeterminate: 222/32,354 = 0.686%.
+- MEDDL burden indeterminate: 222/32,355 = 0.686%.
+- Unresolved components are not recoded as disease absence.
 
-Use `SMKCIGST_A` (cigarette smoking status) rather than `SMKEV_A` (ever smoked at least 100 cigarettes) when the scientific construct is smoking status.
+`CHRONIC_BURDEN_CAT` is now the 12th main construct.
+
+### B. `POVRATTC_A` sensitivity — PROTOCOL LOCKED
+
+`RATCAT_A` remains the primary categorical poverty predictor.
+
+`POVRATTC_A` is an alternative/sensitivity SES operationalization. Adultinc integrity was re-verified:
+- 10 imputations × 32,629 Sample Adults.
+- Every `HHX` has `IMPNUM_A = 1..10`.
+- Observed `POVRATTC_A` range is 0.00–11.00 in every imputation.
+
+Sensitivity protocol:
+- same `HHX` train/test split across all imputations;
+- one LR/RF/XGBoost run per imputation;
+- replace `RATCAT_A` with `POVRATTC_A` rather than include both;
+- summarize the 10 runs descriptively (mean/range/SD);
+- do not call the result formal Rubin-pooled design-based inference unless a valid MI + complex-survey inferential method is implemented.
+
+### C. `SMKCIGST_A` — AUDITED
+
+`SMKCIGST_A` passed technical code audit.
+
+Observed codes: `1,2,3,4,5,9`, matching the NHIS recode.
+- 1–4 = substantive smoking-status groups.
+- 5/9 = explicit Unknown in exploratory modeling.
 
 ## 3. Technical correction to the UHS feedback
 
@@ -77,15 +111,21 @@ This remains consistent with the project rule: **missing/special handling is var
 - Race/ethnicity is treated as a social/structural equity stratifier, not a biological cause.
 - `WTFA_A`, `PSTRAT`, `PPSU`, and `HHX` remain non-predictor design/reproducibility fields.
 
-## 5. Modeling implications
+## 5. Final modeling specification
 
-### Main-model plan before engineered-feature implementation
+### Main — 12 constructs
 
-Use the 11 existing core predictors above as the **provisional main set**.
+Existing 11:
+`AGEP_A`, `SEX_A`, `HISPALLP_A`, `EDUCP_A`, `RATCAT_A`, `EMPWRKLSW1_A`, `NOTCOV_A`, `FDSCAT3_A`, `PHSTAT_A`, `DISAB3_A`, `K6SPD_A`.
 
-### Final main model after technical audit
+Engineered:
+`CHRONIC_BURDEN_CAT`.
 
-If the chronic-condition burden feature passes technical audit, it becomes an additional main construct. Therefore the final main model would contain **12 core constructs**, not merely the original 11.
+### Supporting
+`MARSTAT_A`, `URBRRL23`, `REGION`.
+
+### Exploratory/sensitivity
+`BMICAT_A`, `ANXFREQ_A`, `DEPFREQ_A`, `LONELY_A`, `SOCSCLPAR_A`, `SMKCIGST_A`.
 
 ### Planned sensitivity analyses
 
@@ -93,22 +133,36 @@ If the chronic-condition burden feature passes technical audit, it becomes an ad
 - `RATCAT_A` versus MI-aware `POVRATTC_A` alternative.
 - Supporting geography/social-context variables added to the core model.
 - Exploratory symptom/behavior variables added separately or as a secondary model.
-- Smoking status via `SMKCIGST_A` if retained.
+- Disease-specific `DIBEV_A` / `HYPEV_A` analyses instead of adding them to the same primary model as chronic burden.
 
-## 6. What is NOT changed yet
+## 6. Fairness addendum
 
-The verified Day 1–4 raw-source checks, outcome cohorts, prevalence estimates, and existing 22-variable code audit remain historically valid.
+Age groups are finalized as:
+- 18–34
+- 35–49
+- 50–64
+- 65–74
+- 75+
 
-However, any newly introduced variable/feature (`POVRATTC_A` as a model input, chronic-condition burden, `SMKCIGST_A`) must pass the same technical code/missing audit before Day 5 modeling. The current analysis-ready files are therefore **not yet the final modeling feature matrix**.
+Disability is retained as an exploratory equity subgroup.
 
-## 7. Gate to Day 5
+## 7. Provenance
 
-Before modeling:
+The verified original Day 1–4 raw-source checks, outcome cohorts, prevalence estimates, and 22-candidate-variable code audit remain historically valid.
 
-1. Define and audit the chronic-condition burden variable.
-2. Audit `SMKCIGST_A` if smoking is kept.
-3. Lock the multiple-imputation strategy for `POVRATTC_A` sensitivity analysis.
-4. Re-run predictor/code/missing audit for any newly added variable.
-5. Freeze the final main/supporting/exploratory feature specification.
+Post-UHS outputs are stored separately so the project preserves the distinction between:
+- original candidate-variable audit, and
+- final scientific/technical feature lock.
 
-Only after these checks should preprocessing and LR/RF/XGBoost training begin.
+## 8. Gate to Day 5
+
+**PASSED.**
+
+All requested post-UHS technical checks are complete:
+1. Chronic-condition burden defined and audited.
+2. `SMKCIGST_A` audited.
+3. `POVRATTC_A` 10-imputation sensitivity strategy locked.
+4. New variables/features passed code/missing checks.
+5. Final main/supporting/exploratory feature specification frozen.
+
+Preprocessing and independent MEDNG/MEDDL LR/RF/XGBoost modeling may now begin.
