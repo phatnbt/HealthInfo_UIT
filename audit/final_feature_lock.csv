@@ -1,0 +1,26 @@
+Variable_or_construct,Tier,Implementation
+AGEP_A,Main,Existing NHIS variable
+SEX_A,Main,Existing NHIS variable
+HISPALLP_A,Main,Existing NHIS variable
+EDUCP_A,Main,Existing NHIS variable
+RATCAT_A,Main,Existing NHIS variable
+EMPWRKLSW1_A,Main,Existing NHIS variable
+NOTCOV_A,Main,Existing NHIS variable
+FDSCAT3_A,Main,Existing NHIS variable
+PHSTAT_A,Main,Existing NHIS variable
+DISAB3_A,Main,Existing NHIS variable
+K6SPD_A,Main,Existing NHIS variable
+CHRONIC_BURDEN_CAT,Main,"Derived 0/1/2/3+ from 8 selected chronic-condition domains"
+MARSTAT_A,Supporting,Existing NHIS variable
+URBRRL23,Supporting,Existing NHIS variable
+REGION,Supporting,Existing NHIS variable
+BMICAT_A,Exploratory/Sensitivity,Existing NHIS variable
+ANXFREQ_A,Exploratory/Sensitivity,Existing NHIS variable
+DEPFREQ_A,Exploratory/Sensitivity,Existing NHIS variable
+LONELY_A,Exploratory/Sensitivity,Existing NHIS variable
+SOCSCLPAR_A,Exploratory/Sensitivity,Existing NHIS variable
+SMKCIGST_A,Exploratory/Sensitivity,Existing NHIS variable
+DIBEV_A,Disease-specific sensitivity,Do not add with burden in primary model
+HYPEV_A,Disease-specific sensitivity,Do not add with burden in primary model
+POVRATTC_A,SES sensitivity,"10 separate imputation-specific model runs; replace RATCAT_A, never include both in primary model"
+SMKEV_A,DROP/REPLACED,Replaced by SMKCIGST_A when smoking status is analyzed
