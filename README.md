@@ -2,15 +2,21 @@
 
 Reproducible data-audit and modeling project for **cost-related unmet medical care** among U.S. adults using the **2024 National Health Interview Survey (NHIS)**.
 
-## Day 1–4 status
+## Project status
 
-**DAY 1–4 COMPLETE.** Raw-source verification, outcome-specific cohorts, the original 22-variable technical audit, UHS/domain review, and the post-UHS technical feature lock are complete. The project is ready to begin Day 5 preprocessing/modeling.
+**DAY 1–5 COMPLETE.**
 
-Verified raw CDC/NCHS files:
+- Day 1: official raw-source integrity and survey-design verification.
+- Day 2: independent MEDNG/MEDDL outcome cohorts.
+- Day 3: 22-candidate predictor dictionary and conceptual mapping.
+- Day 4: missing/code audit, weighted/subgroup EDA, UHS review, final feature lock.
+- Day 5: train/test preprocessing and baseline LR/RF/XGBoost modeling, conventional vs `WTFA_A`-weighted.
+
+## Verified source files
 
 - `adult24.csv`: **32,629 rows**, MD5 `6b0d5e572841ffef7b0f7df4ddfed556`
 - `adultinc24.csv`: **326,290 rows**, MD5 `14a1d5780100c1b0a13acce433e00360`
-- Income file integrity: **10 imputations × 32,629 Sample Adults**
+- Income integrity: **10 imputations × 32,629 Sample Adults**
 
 ## Outcomes
 
@@ -32,9 +38,9 @@ Delayed medical care because of cost in the past 12 months.
 - Unweighted prevalence: **7.925%**
 - `WTFA_A`-weighted prevalence: **8.579%**
 
-The two outcomes are constructed **independently** from raw `adult24.csv`. The common-valid cohort (N=32,345) is reserved for overlap/paired analyses only.
+The outcomes are modeled **independently**. The common-valid cohort (N=32,345) is only for overlap/paired analyses and never replaces the two outcome-specific cohorts.
 
-## Final feature specification after UHS review
+## Final main feature specification
 
 ### Main model — 12 constructs
 
@@ -42,14 +48,13 @@ The two outcomes are constructed **independently** from raw `adult24.csv`. The c
 
 `AGEP_A`, `SEX_A`, `HISPALLP_A`, `EDUCP_A`, `RATCAT_A`, `EMPWRKLSW1_A`, `NOTCOV_A`, `FDSCAT3_A`, `PHSTAT_A`, `DISAB3_A`, `K6SPD_A`.
 
-Plus one engineered construct:
+Plus:
 
 `CHRONIC_BURDEN_CAT` = **0 / 1 / 2 / 3+ selected chronic-condition domains**.
 
 The eight prespecified domains are:
-
 1. Hypertension — `HYPEV_A`
-2. Cardiovascular disease — any of `CHDEV_A`, `ANGEV_A`, `MIEV_A`, `STREV_A` (counted once)
+2. Cardiovascular disease — any of `CHDEV_A`, `ANGEV_A`, `MIEV_A`, `STREV_A`, counted once
 3. Asthma — `ASEV_A`
 4. COPD — `COPDEV_A`
 5. Cancer — `CANEV_A`
@@ -57,38 +62,66 @@ The eight prespecified domains are:
 7. Arthritis — `ARTHEV_A`
 8. Kidney disease — `KIDWEAKEV_A`
 
-This is a **selected-condition count/category for prediction**, not a validated clinical severity index. If any required domain is unresolved, the burden feature is left indeterminate rather than treating the condition as absent. Indeterminate burden is **222/32,354 (0.686%)** in the MEDNG cohort and **222/32,355 (0.686%)** in the MEDDL cohort.
+This is a selected-condition count/category for prediction, **not a validated clinical severity index**.
 
 ### Supporting/contextual
-
 `MARSTAT_A`, `URBRRL23`, `REGION`.
 
 ### Exploratory/sensitivity
-
 `BMICAT_A`, `ANXFREQ_A`, `DEPFREQ_A`, `LONELY_A`, `SOCSCLPAR_A`, `SMKCIGST_A`.
 
-`DIBEV_A` and `HYPEV_A` are retained for **disease-specific sensitivity analyses**, but are not added alongside `CHRONIC_BURDEN_CAT` in the primary model.
+`DIBEV_A` and `HYPEV_A` remain disease-specific sensitivity variables and are not added alongside `CHRONIC_BURDEN_CAT` in the primary model.
 
-`SMKEV_A` is replaced by `SMKCIGST_A` when smoking status is analyzed. `SMKCIGST_A` has passed the post-UHS code audit; codes 1–4 are substantive smoking-status groups, while 5/9 are handled as an explicit unknown group.
+`SMKEV_A` is not used as current smoking status; `SMKCIGST_A` is the smoking-status operationalization if smoking is analyzed.
 
 ### Poverty sensitivity
+`RATCAT_A` remains the primary SES variable. `POVRATTC_A` is an MI-aware alternative only; it replaces `RATCAT_A` in sensitivity runs and is never included simultaneously with it in the primary model.
 
-`RATCAT_A` remains the primary SES predictor. `POVRATTC_A` is an alternative sensitivity operationalization only.
+## Day 5 modeling design
 
-The MI strategy is locked: run the same model separately for each of the **10 `IMPNUM_A` datasets**, use the same `HHX` train/test split across imputations, replace `RATCAT_A` with `POVRATTC_A`, and summarize the 10 sensitivity runs descriptively. Do not call these summaries formal Rubin-pooled design-based inference unless that procedure is explicitly implemented.
+- Deterministic `HHX` SHA-256 split with seed 2026: approximately **70% train / 10% validation / 20% test**.
+- Validation is reserved and was not used for Day 5 fitting/model selection.
+- Preprocessing fitted on train only.
+- `AGEP_A`: variable-specific special codes → missing → median imputation → scaling.
+- Categorical predictors: variable-specific special codes → missing → explicit `Missing` → one-hot encoding.
+- 63 encoded model columns per outcome.
+- Models: Logistic Regression, Random Forest, XGBoost.
+- Training regimes: conventional unweighted and `WTFA_A`-weighted; weighted train weights normalized to mean 1.
+- No SMOTE/resampling/class balancing in the Day 5 baseline.
+- Test metrics: AUROC, AUPRC, recall, precision, F1, specificity, Brier.
+- Threshold-dependent metrics at 0.50 are baseline/descriptive only.
 
-Full scientific review: [`docs/UHS_Day3_4_predictor_review.md`](docs/UHS_Day3_4_predictor_review.md).
+### Split audit
 
-Final lock: [`audit/final_feature_lock.csv`](audit/final_feature_lock.csv).
+MEDNG:
+- Train 22,711 / positive 1,524
+- Validation 3,226 / positive 233
+- Test 6,417 / positive 438
 
-## Post-UHS Day 4 checks
+MEDDL:
+- Train 22,711 / positive 1,761
+- Validation 3,225 / positive 280
+- Test 6,419 / positive 523
 
-- All newly used chronic-condition component variables have **no unexpected observed codes** against the official NHIS code sets.
-- `SMKCIGST_A` code audit: **PASS**.
-- `POVRATTC_A`: **10 × 32,629** records verified; observed range is **0.00–11.00** in every imputation.
-- Age equity groups are finalized as **18–34, 35–49, 50–64, 65–74, 75+**.
-- Disability is retained as an **exploratory equity subgroup**.
-- `MARSTAT_A` codes 7/8/9 remain valid recode categories; the project never applies a global `7/8/9 = missing` rule.
+## Day 5 headline results
+
+Because outcomes are imbalanced, **AUPRC is prioritized over accuracy**.
+
+### MEDNG
+- Unweighted XGBoost: AUROC **0.809**, AUPRC **0.308**.
+- `WTFA_A`-weighted XGBoost: AUROC **0.810**, AUPRC **0.322**.
+- `WTFA_A`-weighted LR: AUPRC **0.315**, recall **0.116** at threshold 0.50.
+
+### MEDDL
+- Unweighted XGBoost: AUROC **0.806**, AUPRC **0.319**.
+- `WTFA_A`-weighted LR: AUPRC **0.337**.
+- `WTFA_A`-weighted XGBoost: AUROC **0.801**, AUPRC **0.321**.
+
+These are **baseline held-out test results**, not final model-selection claims. Recall at threshold 0.50 remains low, especially for RF; validation-based threshold/calibration work is required before final reporting.
+
+Full Day 5 record: [`research_log/Day05_Baseline_Modeling.md`](research_log/Day05_Baseline_Modeling.md).
+
+Aggregate results: [`modeling/day5_primary_matched_summary.csv`](modeling/day5_primary_matched_summary.csv).
 
 ## Survey design
 
@@ -96,61 +129,46 @@ Final lock: [`audit/final_feature_lock.csv`](audit/final_feature_lock.csv).
 - `PSTRAT`: pseudo-stratum
 - `PPSU`: pseudo-PSU
 
-`HHX`, `WTFA_A`, `PSTRAT`, and `PPSU` are retained for audit/survey analysis and are **not ML predictors**.
+`HHX`, `WTFA_A`, `PSTRAT`, and `PPSU` are retained for reproducibility/survey-aware analysis and are **not ML predictors**.
+
+`WTFA_A`-weighted ML is a weighted predictive comparison. It is **not automatically full design-based inference**; formal SE/CI would require explicit handling of the complex design including `PSTRAT` and `PPSU`.
 
 ## Repository structure
 
 ```text
 .
 ├── README.md
-├── .gitignore
 ├── scripts/
 │   ├── reproduce_day1_4.py
 │   └── finalize_day4_post_uhs.py
 ├── docs/
-│   ├── UHS_Day3_4_predictor_review.md
-│   └── poverty_MI_sensitivity_protocol.md
-├── research_log/
-└── audit/
-    ├── cohort_flow.csv
-    ├── predictor_code_missing_audit.csv
-    ├── subgroup_EDA_EXACT.csv
-    ├── subgroup_EDA_post_UHS_addendum.csv
-    ├── day4_post_uhs_variable_audit.csv
-    ├── chronic_burden_summary.csv
-    ├── poverty_MI_input_audit.csv
-    ├── final_feature_lock.csv
-    ├── poverty_MI_pooled_point_estimates.csv
-    └── AUDIT_MANIFEST.json
+├── audit/
+├── modeling/
+│   ├── DAY5_MANIFEST.json
+│   ├── day5_model_metrics.csv
+│   ├── day5_primary_matched_summary.csv
+│   ├── day5_best_by_auprc.csv
+│   ├── day5_split_audit.csv
+│   ├── day5_preprocessing_missing_audit.csv
+│   └── day5_encoded_feature_audit.csv
+└── research_log/
+    └── Day05_Baseline_Modeling.md
 ```
 
-## Reproduce / finalize Day 1–4
+Person-level raw data, analysis-ready cohorts, and person-level predictions are intentionally **not committed to the public repository**.
 
-Download the official CDC/NCHS files `adult24csv.zip` and `adultinc24csv.zip`, then run:
+## Interpretation guardrails
 
-```bash
-python scripts/reproduce_day1_4.py adult24csv.zip adultinc24csv.zip
-python scripts/finalize_day4_post_uhs.py adult24csv.zip adultinc24csv.zip
-```
+- Cross-sectional prediction/classification, not future-risk forecasting.
+- SHAP values, when used later, represent predictive contribution and not causal effects.
+- Correlated variables may share predictive information.
+- Race/ethnicity is treated as a social/structural equity stratifier, not a biological cause.
+- Subgroup performance differences do not by themselves prove discrimination.
+- `MARSTAT_A` is handled using variable-specific coding; the project never applies a global `7/8/9 = missing` rule.
 
-The second script verifies the post-UHS variables, constructs the final chronic-burden feature, verifies the 10 poverty imputations, and writes final feature-lock MEDNG/MEDDL cohort files locally.
+## Next step
 
-## Data policy
-
-Raw NHIS files and generated person-level analysis-ready CSV files are intentionally **not committed to this public repository**. They can be reproduced from official CDC/NCHS downloads using the included scripts.
-
-## Interpretation cautions
-
-- This is cross-sectional prediction/classification of contemporaneous outcomes, not future-risk forecasting or causal inference.
-- SHAP values represent predictive contributions and must not be described as causal effects.
-- Correlated predictors may share predictive information; SHAP importance is not independent etiologic contribution.
-- Subgroup performance/fairness differences do not by themselves establish discrimination.
-- `WTFA_A`-weighted point estimates are not a substitute for full design-based variance estimation; formal SE/CI should incorporate `PSTRAT` and `PPSU`.
-- Poverty MI sensitivity summaries are not formal MI + complex-survey inference unless such a method is explicitly implemented.
-
-## Day 5 gate
-
-**PASSED.** Final technical feature specification is frozen and Day 5 may begin with independent MEDNG/MEDDL preprocessing and LR/RF/XGBoost modeling.
+Use the untouched validation split for threshold/calibration work, then proceed to explainability (SHAP), subgroup fairness/performance auditing, and planned sensitivity analyses without using the held-out test set for model-selection decisions.
 
 ## Official sources
 
@@ -158,4 +176,3 @@ Raw NHIS files and generated person-level analysis-ready CSV files are intention
 - Adult codebook: https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NHIS/2024/Adult-codebook.pdf
 - Survey description: https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NHIS/2024/srvydesc-508.pdf
 - Checksum file list: https://ftp.cdc.gov/pub/health_statistics/nchs/dataset_documentation/NHIS/2024/Checksum-Filelist.pdf
-- Dataset directory: https://ftp.cdc.gov/pub/health_Statistics/nchs/Datasets/NHIS/2024/
