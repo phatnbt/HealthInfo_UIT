@@ -1,7 +1,15 @@
 # Day 7 — Background and Related Work
 
+> **Role / ownership:** UHS / collaborative literature work under the original 4-week plan. This file is **not** an UIT technical Day 7 deliverable. It is kept in the shared repository as a working paper artifact.
+
 ## Mục tiêu
 Dùng literature matrix Day 6 để viết Background + Related Work và chốt cách diễn đạt gap/novelty.
+
+## Phân công theo kế hoạch gốc
+- **UIT — kỹ thuật, Day 5–7:** preprocessing pipeline chống leakage, train/validation/test split, Logistic Regression baseline, weighting/class-weight comparison khi cần.
+- **UHS — y tế/tổng quan, Day 5–7:** Background + Related Work và literature matrix 12–20 bài.
+
+Do đó file này thuộc nhánh **UHS / collaborative literature**, không được tính là công việc kỹ thuật chính của UIT.
 
 ## Đã viết
 1. Cost-related unmet care và affordability.
@@ -18,9 +26,16 @@ Dùng literature matrix Day 6 để viết Background + Related Work và chốt 
 - Race/ethnicity là social/structural equity stratifier.
 - NHIS 2024 cross-sectional: contemporaneous prediction, không future forecasting.
 
-## Day 5–7 gate
-- Dataset/preprocessing v1: Day 5 complete.
-- Baseline Logistic Regression: Day 5 complete.
-- Literature matrix 12–20: Day 6 complete (18 bài).
-- Background + Related Work: Day 7 complete.
-- RF/XGBoost đã được chạy sớm ở Day 5 như baseline benchmark, vượt trước lộ trình gốc.
+## Trạng thái Day 5–7 theo vai trò
+### UIT — kỹ thuật
+- Dataset/preprocessing v1: complete.
+- Deterministic train/validation/test split: complete.
+- Baseline Logistic Regression: complete.
+- Conventional vs `WTFA_A`-weighted comparison: complete.
+- RF/XGBoost đã được benchmark sớm ở Day 5, tức là đã làm trước một phần kế hoạch Day 8–10.
+
+### UHS / collaborative literature
+- Literature matrix 12–20 bài: complete với 18 bài.
+- Background + Related Work working draft: complete.
+
+Hai nhánh trên cùng hỗ trợ bài nghiên cứu nhưng không nên gộp thành một loại công việc khi báo cáo phân công.
