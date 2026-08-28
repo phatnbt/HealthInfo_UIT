@@ -2,7 +2,9 @@
 
 **Project:** Survey-Aware Explainable Machine Learning for Cost-Related Unmet Medical Care in U.S. Adults: A Health Equity Analysis of NHIS 2024
 
-> Status: targeted narrative-review draft. This is **not** a PRISMA systematic review and should be refined for journal-specific style before submission.
+> **Role / ownership note:** This is a **UHS / collaborative literature working draft** under the original Day 5–7 division of labor. It supports the shared paper but is **not counted as the UIT technical Day 7 deliverable**. UIT Day 5–7 technical work consists of leakage-safe preprocessing, train/validation/test splitting, Logistic Regression baseline modeling, and weighting comparison.
+>
+> Status: targeted narrative-review draft. This is **not** a PRISMA systematic review and should be refined by UHS/supervisors for journal-specific style before submission.
 
 ## 1. Background
 
