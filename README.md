@@ -79,3 +79,23 @@ Once extraction is complete, the literature review section should be organized a
 5. Identified gap(s) our study addresses
 
 Each subsection should end with a transition sentence connecting back to our own framework and Methods.
+
+---
+
+## 7. Current project progress
+
+**DAY 1–7 COMPLETE.**
+
+- Day 5: leakage-safe preprocessing, deterministic train/validation/test split, Logistic Regression baseline, and conventional vs `WTFA_A`-weighted predictive comparison. Random Forest and XGBoost were also benchmarked early.
+- Day 6: targeted narrative literature matrix completed with 18 peer-reviewed papers plus separate official framework/data sources.
+- Day 7: Background + Related Work draft completed with conservative novelty language and explicit causal/survey/XAI guardrails.
+
+New project artifacts:
+- `literature/literature_matrix_day6.csv`
+- `literature/NHIS2024_Day6_Literature_Matrix_18.xlsx`
+- `research_log/Day06_Literature_Matrix.md`
+- `research_log/Day07_Background_Related_Work.md`
+- `docs/Background_Related_Work_Day7.md`
+- `docs/README_DAY5_7.md`
+
+The literature review remains a **targeted narrative review**, not a PRISMA systematic review. The Day 7 prose is a working draft and still requires supervisor/venue-specific final editing before submission.
