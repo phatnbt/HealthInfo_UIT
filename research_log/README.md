@@ -19,5 +19,7 @@ Mỗi ngày giữ cùng một cấu trúc:
 - [Day 3 — Predictor/data dictionary audit](Day03_Predictor_Dictionary.md)
 - [Day 4 — Missing/code audit, EDA & post-UHS feature lock](Day04_EDA_Audit.md)
 - [Day 5 — Preprocessing & baseline modeling](Day05_Baseline_Modeling.md)
+- [Day 6 — Literature matrix & evidence map](Day06_Literature_Matrix.md)
+- [Day 7 — Background & Related Work](Day07_Background_Related_Work.md)
 
 Google Docs được dùng như bản cộng tác sống; thư mục này lưu phiên bản đã chốt để theo dõi lịch sử thay đổi bằng Git.
