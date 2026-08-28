@@ -42,25 +42,5 @@ Existing work has examined cost-related unmet or delayed care in national survey
 
 Accordingly, this study contributes a reproducible NHIS 2024 analysis that: (1) predicts cost-related unmet medical care using prespecified demographic, socioeconomic, health-status, and functioning constructs; (2) compares conventional and survey-weighted predictive modeling; (3) evaluates subgroup performance/fairness; and (4) uses explainability to examine global and subgroup-specific predictive patterns. Because NHIS 2024 is cross-sectional, all results are interpreted as contemporaneous prediction/association rather than future forecasting or causal inference.
 
-## References used in this draft
-
-1. Andersen RM. *Revisiting the behavioral model and access to medical care: does it matter?* J Health Soc Behav. 1995;36(1):1–10.
-2. Babitsch B, Gohl D, von Lengerke T. *Re-revisiting Andersen's Behavioral Model of Health Services Use: a systematic review of studies from 1998–2011.* Psychosoc Med. 2012;9:Doc11. doi:10.3205/psm000089.
-3. Braveman P, Gottlieb L. *The social determinants of health: it's time to consider the causes of the causes.* Public Health Rep. 2014;129(Suppl 2):19–31. doi:10.1177/00333549141291S206.
-4. Alemu FW, et al. *Social determinants of unmet need for primary care: a systematic review.* Syst Rev. 2024;13:252. doi:10.1186/s13643-024-02647-5.
-5. Mahajan S, et al. *Trends in Differences in Health Status and Health Care Access and Affordability by Race and Ethnicity in the United States, 1999–2018.* JAMA. 2021;326(7):637–648. doi:10.1001/jama.2021.9907.
-6. Cai J, Bidulescu A. *Trends in unmet health care needs among adults in the U.S., 2019–2021.* Prev Med. 2023;175:107699. doi:10.1016/j.ypmed.2023.107699.
-7. Casagrande SS, Lawrence JM. *Trends in delaying and forgoing medical care due to cost and the association with insurance status among US adults with diabetes, 2009–2023.* BMJ Open Diabetes Res Care. 2025;13(6):e005446. doi:10.1136/bmjdrc-2025-005446.
-8. Azubuike CD, Alawode OA. *Delayed Healthcare Due to Cost Among Adults with Multimorbidity in the United States.* Healthcare. 2024;12(22):2271. doi:10.3390/healthcare12222271.
-9. Berkowitz SA, Seligman HK, Choudhry NK. *Treat or Eat: Food Insecurity, Cost-related Medication Underuse, and Unmet Needs.* Am J Med. 2014;127(4):303–310.e3. doi:10.1016/j.amjmed.2014.01.002.
-10. Bertoldo J, et al. *Food Insecurity and Delayed or Forgone Medical Care During the COVID-19 Pandemic.* Am J Public Health. 2022;112(5):776–785. doi:10.2105/AJPH.2022.306724.
-11. Cole MB, Nguyen KH. *Unmet social needs among low-income adults in the United States: Associations with health care access and quality.* Health Serv Res. 2020;55(Suppl 2):873–882. doi:10.1111/1475-6773.13555.
-12. MacNell N, et al. *Implementing machine learning methods with complex survey data: Lessons learned on the impacts of accounting sampling weights in gradient boosting.* PLoS One. 2023;18(1):e0280387. doi:10.1371/journal.pone.0280387.
-13. Dey D, et al. *The proper application of logistic regression model in complex survey data: a systematic review.* BMC Med Res Methodol. 2025;25:15. doi:10.1186/s12874-024-02454-5.
-14. Matabuena M, Vidal JC, Ghosal R, Onnela JP. *Screening for diabetes mellitus in the US population using neural network-based modeling and complex survey designs.* Stat Methods Med Res. 2026;35(6):1257–1280. doi:10.1177/09622802261442893.
-15. Loh HW, et al. *Application of explainable artificial intelligence for healthcare: A systematic review of the last decade (2011–2022).* Comput Methods Programs Biomed. 2022;226:107161. doi:10.1016/j.cmpb.2022.107161.
-16. Sun F, et al. *Social Determinants, Cardiovascular Disease, and Health Care Cost: A Nationwide Study in the United States Using Machine Learning.* J Am Heart Assoc. 2023;12(5):e027919. doi:10.1161/JAHA.122.027919.
-17. Wang RC, Sambamoorthi U. *Predicting Anticipated Telehealth Use: Development of the CONTEST Score and Machine Learning Models Using a National U.S. Survey.* Healthcare. 2026;14(4):500. doi:10.3390/healthcare14040500.
-18. Rajkomar A, Hardt M, Howell MD, Corrado G, Chin MH. *Ensuring Fairness in Machine Learning to Advance Health Equity.* Ann Intern Med. 2018;169(12):866–872. doi:10.7326/M18-1990.
-
-Full source URLs and row-level relevance/caution notes are maintained in `literature/literature_matrix_day6.csv`.
+## References
+See `NHIS2024_Day6_Literature_Matrix_18.xlsx` for the full 18-paper matrix, source URLs, relevance notes, and limitations.
