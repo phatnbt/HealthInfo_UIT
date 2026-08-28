@@ -1,7 +1,15 @@
 # Day 6 — Literature matrix and evidence map
 
+> **Role / ownership:** UHS / collaborative literature work under the original 4-week plan. This file is **not** an UIT technical Day 6 deliverable. It is retained in the shared repository because it supports the common paper and provides evidence for later interpretation.
+
 ## Mục tiêu
 Hoàn thành literature matrix cho 5 cụm: Andersen/SDOH, cost-related unmet care, health equity, XAI/fairness, và complex-survey-aware modeling.
+
+## Phân công theo kế hoạch gốc
+- **UIT — kỹ thuật, Day 5–7:** preprocessing chống leakage, train/validation/test split, Logistic Regression baseline, thử weighting/class weight khi cần.
+- **UHS — y tế/tổng quan, Day 5–7:** Background + Related Work và literature matrix 12–20 bài.
+
+Vì vậy nội dung của file này thuộc nhánh **UHS / collaborative literature**, không được ghi nhận như công việc kỹ thuật chính của UIT.
 
 ## Đã làm
 - Rà evidence pack cũ của project.
@@ -17,6 +25,9 @@ Review này là targeted narrative review, không phải PRISMA systematic revie
 ## Research gap
 Không viết “chưa ai dùng ML cho unmet healthcare”.
 Gap an toàn: joint integration của NHIS 2024 cost-related unmet care + survey-weight sensitivity + subgroup performance/fairness + subgroup-specific explainability.
+
+## Liên hệ với nhánh UIT kỹ thuật
+Literature matrix có thể được UIT dùng để kiểm tra tính hợp lý của feature, metric, survey-aware comparison và cách diễn giải sau modeling. Tuy nhiên, việc tạo literature matrix/Background không được tính là output kỹ thuật UIT trong Day 5–7.
 
 ## AI disclosure
 AI hỗ trợ tìm kiếm, tổng hợp, cấu trúc matrix và soạn nháp. Nguồn học thuật/official đến từ bên ngoài; citation/DOI/claim chính được đối chiếu với PubMed/PMC/publisher/official pages. Người nghiên cứu chịu trách nhiệm kiểm tra lại trước khi nộp.
