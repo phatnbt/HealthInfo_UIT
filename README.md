@@ -1,16 +1,20 @@
 # HealthInfo_UIT — NHIS 2024
 
-Reproducible data-audit and modeling project for **cost-related unmet medical care** among U.S. adults using the **2024 National Health Interview Survey (NHIS)**.
+Reproducible data-audit, modeling, and literature-grounding project for **cost-related unmet medical care** among U.S. adults using the **2024 National Health Interview Survey (NHIS)**.
 
 ## Project status
 
-**DAY 1–5 COMPLETE.**
+**DAY 1–7 COMPLETE.**
 
 - Day 1: official raw-source integrity and survey-design verification.
 - Day 2: independent MEDNG/MEDDL outcome cohorts.
 - Day 3: 22-candidate predictor dictionary and conceptual mapping.
 - Day 4: missing/code audit, weighted/subgroup EDA, UHS review, final feature lock.
-- Day 5: train/test preprocessing and baseline LR/RF/XGBoost modeling, conventional vs `WTFA_A`-weighted.
+- Day 5: leakage-safe preprocessing, deterministic split, and baseline LR/RF/XGBoost modeling, conventional vs `WTFA_A`-weighted.
+- Day 6: targeted narrative literature matrix with **18 peer-reviewed papers** plus official framework/data documentation; research-gap evidence map.
+- Day 7: Background + Related Work draft grounded in the Day 6 literature matrix.
+
+The original Day 5–7 plan outputs are now complete: analysis/preprocessing dataset workflow v1, baseline Logistic Regression, a 12–20-paper literature matrix, and Background/Related Work. Random Forest and XGBoost benchmarking was completed early during Day 5 rather than waiting for the original Day 8–10 block.
 
 ## Verified source files
 
@@ -123,6 +127,36 @@ Full Day 5 record: [`research_log/Day05_Baseline_Modeling.md`](research_log/Day0
 
 Aggregate results: [`modeling/day5_primary_matched_summary.csv`](modeling/day5_primary_matched_summary.csv).
 
+## Day 6 literature matrix
+
+Day 6 completes the literature requirement from the original 4-week plan.
+
+- **18 peer-reviewed papers** are organized across: Andersen/SDOH framework, cost-related unmet care, health equity, material hardship/social needs, complex-survey ML, XAI, and algorithmic fairness.
+- Official Healthy People 2030 and CDC/NCHS documentation are kept as framework/data sources rather than counted as academic papers.
+- The review is explicitly a **targeted narrative review**, not a PRISMA systematic review.
+- Academic evidence is anchored to PubMed/PMC, journal/publisher pages, and DOI records; ResearchGate/Scribd are not used as primary evidence.
+
+Matrix: [`literature/literature_matrix_day6.csv`](literature/literature_matrix_day6.csv).
+
+Research log: [`research_log/Day06_Literature_Matrix.md`](research_log/Day06_Literature_Matrix.md).
+
+## Day 7 Background and Related Work
+
+The Background/Related Work draft now covers:
+
+1. cost-related unmet care and affordability;
+2. Andersen Behavioral Model + Healthy People 2030 SDOH;
+3. health-equity/subgroup rationale;
+4. machine learning + XAI;
+5. complex-survey/survey-aware prediction;
+6. a conservative research-gap and contribution statement.
+
+The literature does **not** support a claim that nobody has used ML for unmet health care, SDOH in ML, SHAP in health care, or fairness analysis. The defensible gap is the comparatively under-examined **joint integration** of contemporary NHIS 2024 cost-related unmet care, survey-weight sensitivity, subgroup performance/fairness, and subgroup-specific explainability in nationally representative U.S. adults.
+
+Draft: [`docs/Background_Related_Work_Day7.md`](docs/Background_Related_Work_Day7.md).
+
+Research log: [`research_log/Day07_Background_Related_Work.md`](research_log/Day07_Background_Related_Work.md).
+
 ## Survey design
 
 - `WTFA_A`: final annual survey weight
@@ -142,6 +176,11 @@ Aggregate results: [`modeling/day5_primary_matched_summary.csv`](modeling/day5_p
 │   ├── reproduce_day1_4.py
 │   └── finalize_day4_post_uhs.py
 ├── docs/
+│   ├── UHS_Day3_4_predictor_review.md
+│   ├── poverty_MI_sensitivity_protocol.md
+│   └── Background_Related_Work_Day7.md
+├── literature/
+│   └── literature_matrix_day6.csv
 ├── audit/
 ├── modeling/
 │   ├── DAY5_MANIFEST.json
@@ -152,7 +191,13 @@ Aggregate results: [`modeling/day5_primary_matched_summary.csv`](modeling/day5_p
 │   ├── day5_preprocessing_missing_audit.csv
 │   └── day5_encoded_feature_audit.csv
 └── research_log/
-    └── Day05_Baseline_Modeling.md
+    ├── Day01_Source_Integrity.md
+    ├── Day02_Target_Cohort.md
+    ├── Day03_Predictor_Dictionary.md
+    ├── Day04_EDA_Audit.md
+    ├── Day05_Baseline_Modeling.md
+    ├── Day06_Literature_Matrix.md
+    └── Day07_Background_Related_Work.md
 ```
 
 Person-level raw data, analysis-ready cohorts, and person-level predictions are intentionally **not committed to the public repository**.
@@ -160,19 +205,20 @@ Person-level raw data, analysis-ready cohorts, and person-level predictions are 
 ## Interpretation guardrails
 
 - Cross-sectional prediction/classification, not future-risk forecasting.
-- SHAP values, when used later, represent predictive contribution and not causal effects.
+- SHAP values represent predictive contribution and not causal effects.
 - Correlated variables may share predictive information.
 - Race/ethnicity is treated as a social/structural equity stratifier, not a biological cause.
 - Subgroup performance differences do not by themselves prove discrimination.
 - `MARSTAT_A` is handled using variable-specific coding; the project never applies a global `7/8/9 = missing` rule.
+- Literature review is targeted/narrative; do not label it systematic/PRISMA.
 
-## Next step
+## Next technical step
 
-Use the untouched validation split for threshold/calibration work, then proceed to explainability (SHAP), subgroup fairness/performance auditing, and planned sensitivity analyses without using the held-out test set for model-selection decisions.
+The original Day 5–7 block is complete. Because RF/XGBoost were already benchmarked during Day 5, the next technical work should use the untouched validation split for threshold/calibration and model-selection protocol, then continue to the remaining survey-aware sensitivity, SHAP, subgroup fairness/performance, and robustness stages without tuning on the held-out test set.
 
 ## Official sources
 
 - NHIS 2024 documentation: https://www.cdc.gov/nchs/nhis/documentation/2024-nhis.html
 - Adult codebook: https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NHIS/2024/Adult-codebook.pdf
 - Survey description: https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NHIS/2024/srvydesc-508.pdf
-- Checksum file list: https://ftp.cdc.gov/pub/health_statistics/nchs/dataset_documentation/NHIS/2024/Checksum-Filelist.pdf
+- Healthy People 2030 SDOH: https://odphp.health.gov/healthypeople/priority-areas/social-determinants-health
