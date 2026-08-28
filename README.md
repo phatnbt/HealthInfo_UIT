@@ -82,15 +82,26 @@ Each subsection should end with a transition sentence connecting back to our own
 
 ---
 
-## 7. Current project progress
+## 7. Current project progress and role split
 
-**DAY 1–7 COMPLETE.**
+The original Day 5–7 plan has **two parallel workstreams**. They must be reported separately.
 
-- Day 5: leakage-safe preprocessing, deterministic train/validation/test split, Logistic Regression baseline, and conventional vs `WTFA_A`-weighted predictive comparison. Random Forest and XGBoost were also benchmarked early.
-- Day 6: targeted narrative literature matrix completed with 18 peer-reviewed papers plus separate official framework/data sources.
-- Day 7: Background + Related Work draft completed with conservative novelty language and explicit causal/survey/XAI guardrails.
+### UIT — technical workstream
 
-New project artifacts:
+**UIT TECHNICAL DAY 1–7 COMPLETE.**
+
+For Day 5–7, UIT technical work consists of:
+- leakage-safe preprocessing pipeline;
+- deterministic train/validation/test split;
+- Logistic Regression baseline;
+- conventional vs `WTFA_A`-weighted predictive comparison;
+- weighting/class-weight review when needed.
+
+Random Forest and XGBoost were also benchmarked early during Day 5, so part of the original Day 8–10 technical plan was completed ahead of schedule.
+
+### UHS / collaborative literature workstream
+
+Supporting/shared literature artifacts are also available:
 - `literature/literature_matrix_day6.csv`
 - `literature/NHIS2024_Day6_Literature_Matrix_18.xlsx`
 - `research_log/Day06_Literature_Matrix.md`
@@ -98,4 +109,6 @@ New project artifacts:
 - `docs/Background_Related_Work_Day7.md`
 - `docs/README_DAY5_7.md`
 
-The literature review remains a **targeted narrative review**, not a PRISMA systematic review. The Day 7 prose is a working draft and still requires supervisor/venue-specific final editing before submission.
+These literature outputs belong to the **UHS / collaborative y tế–tổng quan workstream** under the original plan. They support the shared manuscript but are **not counted as UIT technical Day 5–7 deliverables**.
+
+The literature review remains a **targeted narrative review**, not a PRISMA systematic review. The Day 7 prose is a working draft and still requires UHS/supervisor/venue-specific final editing before submission.
