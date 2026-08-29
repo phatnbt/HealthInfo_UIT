@@ -1,0 +1,27 @@
+{
+  "status": "DAY8_10_COMPLETE_LOCKED_TEST_REEVALUATION",
+  "seed": 2026,
+  "outcomes": ["MEDNG", "MEDDL"],
+  "features": ["AGEP_A", "SEX_A", "HISPALLP_A", "EDUCP_A", "RATCAT_A", "EMPWRKLSW1_A", "NOTCOV_A", "FDSCAT3_A", "PHSTAT_A", "DISAB3_A", "K6SPD_A", "CHRONIC_BURDEN_CAT"],
+  "split": "Day-5 deterministic HHX SHA-256 70/10/20 split preserved exactly.",
+  "validation_subdivision": "Deterministic 3-way HHX hash: model_selection / calibration / threshold.",
+  "preprocessing": "Fit on TRAIN only, then frozen. Same Day-5 variable-specific special-code handling and 12-construct main feature set.",
+  "tuning": "Moderate prespecified candidate search for RF/XGBoost; candidate selected by AUPRC on validation model-selection subset. LR remains fixed Day-5 baseline comparator.",
+  "calibration": "Platt scaling fit on validation calibration subset; Raw vs Platt chosen by Brier on threshold subset.",
+  "threshold": "F1-maximizing operating point on validation threshold subset; not a clinical cutoff.",
+  "test_policy": "Test touched only after tuning/calibration/threshold decisions. Test had already been reported once at Day 5 baseline, so no further choices should be driven by Day 8-10 test results.",
+  "day11_13_boundary": "WTFA_A/PPSU/PSTRAT survey-aware sensitivity and weighted-vs-unweighted interpretation remain Day 11-13. Day 5 preliminary weighting results are not expanded here.",
+  "best_params": {
+    "MEDNG": {
+      "LR": {"C": 1.0, "note": "Day-5 baseline comparator; not tuned"},
+      "RF": {"n_estimators": 300, "max_depth": 8, "min_samples_leaf": 10, "max_features": "log2"},
+      "XGBoost": {"n_estimators": 300, "max_depth": 4, "learning_rate": 0.05, "subsample": 0.85, "colsample_bytree": 0.85, "min_child_weight": 2}
+    },
+    "MEDDL": {
+      "LR": {"C": 1.0, "note": "Day-5 baseline comparator; not tuned"},
+      "RF": {"n_estimators": 300, "max_depth": 10, "min_samples_leaf": 5, "max_features": "sqrt"},
+      "XGBoost": {"n_estimators": 400, "max_depth": 5, "learning_rate": 0.03, "subsample": 0.85, "colsample_bytree": 0.85, "min_child_weight": 2}
+    }
+  },
+  "outputs": ["day8_10_split_audit.csv", "day8_10_validation_role_audit.csv", "day8_10_tuning_candidates.csv", "day8_10_validation_selection.csv", "day8_10_model_performance.csv", "day8_10_calibration_points.csv", "day8_10_config_log.json"]
+}
