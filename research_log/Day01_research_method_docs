@@ -1,0 +1,14 @@
+  Mục tiêu
+Viết thuật lại/ tóm tắt methodology về thiết kế nghiên cứu từ nguồn dữ liệu được xác minh
+
+  Kết quả từ đây
+- `adult24.csv`: 32,629 records;
+- `adultinc24.csv`: 326,290 records;
+- 326,290 = 32,629 × 10;
+Lập cho bảng MEDNG12M_A, MEDDL12M_A
+
+  Tóm tắt viết method
+Cách nghiên cứu sử dụng bộ dữ liệu từ đâu, NHIS là gì, tại sao chọn vấn đề nghiên cứu này
+Xác định tính chất tin cậy của nguồn dữ liệu 
+Lập 2 bảng MEDNG12M_A, MEDDL12M_A
+Và nghiên cứu này sẽ loại các bản ghi không trả lời hợp lệ (Yes/No) cho câu hỏi về unmet medical need
