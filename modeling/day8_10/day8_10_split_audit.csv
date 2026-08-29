@@ -1,0 +1,7 @@
+Outcome,Split,N,Positive_N
+MEDNG,train,22711,1524
+MEDNG,validation,3226,233
+MEDNG,test,6417,438
+MEDDL,train,22711,1761
+MEDDL,validation,3225,280
+MEDDL,test,6419,523
