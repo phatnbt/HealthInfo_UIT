@@ -14,10 +14,12 @@ In addition, Random Forest and XGBoost were benchmarked early during Day 5, whic
 
 ## UHS / collaborative literature workstream
 Completed as supporting/shared paper work:
-- 18-paper targeted narrative literature matrix;
-- official framework/data-source sheet and gap map;
+- **19-paper targeted narrative literature matrix** in the current authoritative CSV;
+- official framework/data-source evidence and gap map;
 - Background + Related Work working draft;
 - conservative research-gap/novelty wording.
+
+The 19th peer-reviewed source is Kim et al. (2025), a direct ML + SHAP comparator for unmet medical needs using Korean Health Panel Survey data. The older `NHIS2024_Day6_Literature_Matrix_18.xlsx` is retained only as a historical snapshot from before that addition.
 
 These literature artifacts support the common manuscript but are **not counted as UIT technical deliverables** for Day 5–7.
 
@@ -25,3 +27,4 @@ These literature artifacts support the common manuscript but are **not counted a
 - Literature review is targeted/narrative, not PRISMA systematic review.
 - Day 7 prose is a working draft and still needs UHS/supervisor/venue-specific review before submission.
 - Project logs should distinguish technical execution from literature/health-domain review when describing who did what.
+- The Day 4 primary feature set was frozen before modeling; later literature updates should support interpretation/sensitivity analyses and must not silently reopen test-driven model tuning.
