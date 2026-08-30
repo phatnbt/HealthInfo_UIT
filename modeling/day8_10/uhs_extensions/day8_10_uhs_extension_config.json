@@ -1,0 +1,28 @@
+{
+  "status": "DAY8_10_UHS_METRIC_EXTENSION_COMPLETE",
+  "base_model_status": "locked Day 8-10 models; no hyperparameter/probability-version/threshold reselection",
+  "seed": 2026,
+  "bootstrap": {
+    "method": "nonparametric paired bootstrap of locked-test individual rows",
+    "reps": 1000,
+    "seed_base": 20260830,
+    "ci": "percentile 2.5th/97.5th percentiles",
+    "metrics": ["AUROC", "AUPRC"],
+    "survey_design_based": false,
+    "caveat": "Does not use WTFA_A/PPSU/PSTRAT; not a complex-survey design-based confidence interval."
+  },
+  "calibration_plot": {
+    "probabilities": "locked selected probability version (Raw for MEDNG; Platt for MEDDL)",
+    "bins": "10 equal-frequency bins on locked test set",
+    "purpose": "evaluation only; must not trigger recalibration using test data"
+  },
+  "dca": {
+    "formula": "TP/N - FP/N * pt/(1-pt)",
+    "threshold_min": 0.01,
+    "threshold_max": 0.30,
+    "threshold_step": 0.005,
+    "status": "exploratory",
+    "action_frame": "hypothetical risk-based outreach/prioritization; no validated clinical/policy cutoff established"
+  },
+  "test_policy": "Same test split was already reported at Day 5; this is evaluation extension only. No further tuning/model selection from these outputs."
+}

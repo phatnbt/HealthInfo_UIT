@@ -1,0 +1,7 @@
+Outcome,Model,Test_N,Positive_N,Selected_probability,Threshold
+MEDNG,LR,6417,438,Raw,0.135
+MEDNG,RF,6417,438,Raw,0.11
+MEDNG,XGBoost,6417,438,Raw,0.185
+MEDDL,LR,6419,523,Platt,0.16
+MEDDL,RF,6419,523,Platt,0.08
+MEDDL,XGBoost,6419,523,Platt,0.14
