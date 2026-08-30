@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+<rect width="100%" height="100%" fill="white"/>
+<text x="400.0" y="30" text-anchor="middle" font-family="Arial" font-size="20">NHIS 2024 MEDNG — Calibration (locked test)</text>
+<line x1="85" y1="525" x2="770" y2="525" stroke="black"/>
+<line x1="85" y1="55" x2="85" y2="525" stroke="black"/>
+<line x1="85.0" y1="525" x2="85.0" y2="530" stroke="black"/>
+<text x="85.0" y="547" text-anchor="middle" font-family="Arial" font-size="12">0.00</text>
+<line x1="80" y1="525.0" x2="85" y2="525.0" stroke="black"/>
+<text x="75" y="529.0" text-anchor="end" font-family="Arial" font-size="12">0.00</text>
+<line x1="199.2" y1="525" x2="199.2" y2="530" stroke="black"/>
+<text x="199.2" y="547" text-anchor="middle" font-family="Arial" font-size="12">0.05</text>
+<line x1="80" y1="446.7" x2="85" y2="446.7" stroke="black"/>
+<text x="75" y="450.7" text-anchor="end" font-family="Arial" font-size="12">0.05</text>
+<line x1="313.3" y1="525" x2="313.3" y2="530" stroke="black"/>
+<text x="313.3" y="547" text-anchor="middle" font-family="Arial" font-size="12">0.11</text>
+<line x1="80" y1="368.3" x2="85" y2="368.3" stroke="black"/>
+<text x="75" y="372.3" text-anchor="end" font-family="Arial" font-size="12">0.11</text>
+<line x1="427.5" y1="525" x2="427.5" y2="530" stroke="black"/>
+<text x="427.5" y="547" text-anchor="middle" font-family="Arial" font-size="12">0.16</text>
+<line x1="80" y1="290.0" x2="85" y2="290.0" stroke="black"/>
+<text x="75" y="294.0" text-anchor="end" font-family="Arial" font-size="12">0.16</text>
+<line x1="541.7" y1="525" x2="541.7" y2="530" stroke="black"/>
+<text x="541.7" y="547" text-anchor="middle" font-family="Arial" font-size="12">0.22</text>
+<line x1="80" y1="211.7" x2="85" y2="211.7" stroke="black"/>
+<text x="75" y="215.7" text-anchor="end" font-family="Arial" font-size="12">0.22</text>
+<line x1="655.8" y1="525" x2="655.8" y2="530" stroke="black"/>
+<text x="655.8" y="547" text-anchor="middle" font-family="Arial" font-size="12">0.27</text>
+<line x1="80" y1="133.3" x2="85" y2="133.3" stroke="black"/>
+<text x="75" y="137.3" text-anchor="end" font-family="Arial" font-size="12">0.27</text>
+<line x1="770.0" y1="525" x2="770.0" y2="530" stroke="black"/>
+<text x="770.0" y="547" text-anchor="middle" font-family="Arial" font-size="12">0.33</text>
+<line x1="80" y1="55.0" x2="85" y2="55.0" stroke="black"/>
+<text x="75" y="59.0" text-anchor="end" font-family="Arial" font-size="12">0.33</text>
+<text x="427.5" y="580" text-anchor="middle" font-family="Arial" font-size="14">Mean predicted probability</text>
+<text x="20" y="290.0" text-anchor="middle" transform="rotate(-90 20 290.0)" font-family="Arial" font-size="14">Observed event proportion</text>
+<polyline points="85.0,525.0 770.0,55.0" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.55"/>
+<polyline points="106.4,516.1 120.1,500.5 130.9,489.3 141.8,500.5 154.5,478.3 170.7,466.8 193.6,440.3 230.0,422.3 307.5,346.7 712.4,112.7" fill="none" stroke="black" stroke-width="2.2"/>
+<circle cx="106.4" cy="516.1" r="2.2" fill="black"/><circle cx="120.1" cy="500.5" r="2.2" fill="black"/><circle cx="130.9" cy="489.3" r="2.2" fill="black"/><circle cx="141.8" cy="500.5" r="2.2" fill="black"/><circle cx="154.5" cy="478.3" r="2.2" fill="black"/><circle cx="170.7" cy="466.8" r="2.2" fill="black"/><circle cx="193.6" cy="440.3" r="2.2" fill="black"/><circle cx="230.0" cy="422.3" r="2.2" fill="black"/><circle cx="307.5" cy="346.7" r="2.2" fill="black"/><circle cx="712.4" cy="112.7" r="2.2" fill="black"/>
+<text x="762" y="73" text-anchor="end" font-family="Arial" font-size="13">LR</text>
+<polyline points="130.0,518.3 143.3,513.9 155.6,504.9 167.2,489.3 176.8,473.7 188.4,460.3 203.2,447.0 229.8,384.4 330.9,380.1 535.3,101.5" fill="none" stroke="black" stroke-width="2.2" stroke-dasharray="6,4"/>
+<circle cx="130.0" cy="518.3" r="2.2" fill="black"/><circle cx="143.3" cy="513.9" r="2.2" fill="black"/><circle cx="155.6" cy="504.9" r="2.2" fill="black"/><circle cx="167.2" cy="489.3" r="2.2" fill="black"/><circle cx="176.8" cy="473.7" r="2.2" fill="black"/><circle cx="188.4" cy="460.3" r="2.2" fill="black"/><circle cx="203.2" cy="447.0" r="2.2" fill="black"/><circle cx="229.8" cy="384.4" r="2.2" fill="black"/><circle cx="330.9" cy="380.1" r="2.2" fill="black"/><circle cx="535.3" cy="101.5" r="2.2" fill="black"/>
+<text x="762" y="91" text-anchor="end" font-family="Arial" font-size="13">RF</text>
+<polyline points="95.3,522.8 106.7,507.2 118.9,507.1 132.8,496.0 148.3,480.4 168.8,453.6 196.4,438.1 239.1,393.3 336.3,366.8 731.2,108.2" fill="none" stroke="black" stroke-width="2.2" stroke-dasharray="2,3"/>
+<circle cx="95.3" cy="522.8" r="2.2" fill="black"/><circle cx="106.7" cy="507.2" r="2.2" fill="black"/><circle cx="118.9" cy="507.1" r="2.2" fill="black"/><circle cx="132.8" cy="496.0" r="2.2" fill="black"/><circle cx="148.3" cy="480.4" r="2.2" fill="black"/><circle cx="168.8" cy="453.6" r="2.2" fill="black"/><circle cx="196.4" cy="438.1" r="2.2" fill="black"/><circle cx="239.1" cy="393.3" r="2.2" fill="black"/><circle cx="336.3" cy="366.8" r="2.2" fill="black"/><circle cx="731.2" cy="108.2" r="2.2" fill="black"/>
+<text x="762" y="109" text-anchor="end" font-family="Arial" font-size="13">XGBoost</text>
+<text x="762" y="127" text-anchor="end" font-family="Arial" font-size="13">Perfect calibration</text>
+</svg>
