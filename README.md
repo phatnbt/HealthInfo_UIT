@@ -93,7 +93,7 @@ The project has two parallel workstreams and they should remain distinguishable 
 
 ### UIT — technical workstream
 
-**UIT TECHNICAL DAY 1–13 COMPLETE.**
+**UIT TECHNICAL DAY 1–16 COMPLETE.**
 
 Completed technical components include:
 - Day 1–4 source integrity, outcome/cohort audit, 22-candidate audit, UHS review, and final 12-construct feature lock;
@@ -107,10 +107,14 @@ Completed technical components include:
 - Day 11–13 design-based prevalence using `WTFA_A`, Taylor-linearized uncertainty using `PSTRAT`/`PPSU`, and locked weighted-vs-unweighted predictive sensitivity;
 - 400-replicate stratified-PSU bootstrap sensitivity intervals for weighted AUROC, AUPRC, and Brier;
 - an exact reproduction gate confirming that the conventional arm retains the locked Day 8–10 results.
+- Day 14–16 locked-model SHAP for LR/RF/XGBoost across both outcomes, including global and `WTFA_A`-weighted construct importance, direction/dependence patterns, exploratory tree-model interactions, and subgroup explanation patterns;
+- a second exact reproduction gate confirming 6/6 locked-test rows before explanation, with no person-level SHAP output committed.
 
-**Current boundary:** Day 14–16 SHAP/explainability is next; subgroup/fairness work remains subsequent. Day 8–13 test and sensitivity results must not be used for another tuning cycle or a post-hoc winner claim.
+**Current boundary:** Day 17–19 subgroup fairness/error analysis is next. Day 8–16 test, sensitivity, and SHAP results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
 
 Day 11–13 supports a sensitivity conclusion, not a model-selection conclusion: survey weighting changes population prevalence and some precision–recall/calibration trade-offs, while AUROC changes are small. No model is a universal winner across outcomes and metrics. See `docs/Day11_13_Survey_Aware_Methodological_Rationale.md` and `research_log/Day11_13_Survey_Aware_Sensitivity.md`.
+
+Day 14–16 supports an explainability conclusion, not a causal or fairness conclusion: weighted and unweighted SHAP rankings are stable within models, but the feature patterns differ across LR, RF, XGBoost and some subgroups. See `docs/Day14_16_SHAP_Methodological_Rationale.md` and `research_log/Day14_16_SHAP_Explainability.md`.
 
 ### UHS / collaborative literature workstream
 

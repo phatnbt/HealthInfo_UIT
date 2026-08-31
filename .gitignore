@@ -28,3 +28,4 @@ Thumbs.db
 # Temporary/output files
 *.tmp
 *.log
+graphify-out/

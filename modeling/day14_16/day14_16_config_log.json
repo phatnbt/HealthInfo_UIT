@@ -1,0 +1,90 @@
+{
+  "status": "DAY14_16_SHAP_EXPLAINABILITY_COMPLETE",
+  "seed": 2026,
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "xgboost": "3.0.4",
+    "shap": "0.52.0"
+  },
+  "outcomes": [
+    "MEDNG",
+    "MEDDL"
+  ],
+  "models": [
+    "LR",
+    "RF",
+    "XGBoost"
+  ],
+  "features": [
+    "AGEP_A",
+    "SEX_A",
+    "HISPALLP_A",
+    "EDUCP_A",
+    "RATCAT_A",
+    "EMPWRKLSW1_A",
+    "NOTCOV_A",
+    "FDSCAT3_A",
+    "PHSTAT_A",
+    "DISAB3_A",
+    "K6SPD_A",
+    "CHRONIC_BURDEN_CAT"
+  ],
+  "model_lock": "Reconstruct Day 8-10 unweighted estimators with locked hyperparameters and train-only preprocessing; no tuning or reselection.",
+  "locked_reproduction": {
+    "status": "PASS",
+    "rows_compared": 6,
+    "tolerance": 1e-08,
+    "max_absolute_metric_difference": 1.1102230246251565e-16
+  },
+  "explanation_split": "Locked Day-5/Day-8-10 test split. Full test used unless --max-explain-n is explicitly set for a smoke run.",
+  "n_explained": {
+    "MEDNG": 6417,
+    "MEDDL": 6419
+  },
+  "explainers": {
+    "LR": "SHAP LinearExplainer with deterministic 500-row training background; log-odds output.",
+    "RF": "SHAP TreeExplainer; positive-class probability output.",
+    "XGBoost": "SHAP TreeExplainer; raw-margin/log-odds output."
+  },
+  "calibration_boundary": "MEDDL Platt performance is reproduced, but SHAP explains the base estimator before the locked monotonic Platt layer.",
+  "importance_aggregation": [
+    "Unweighted",
+    "WTFA_A-weighted on locked test"
+  ],
+  "subgroup_pattern_axes": [
+    "HISPALLP_A",
+    "RATCAT_A",
+    "NOTCOV_A",
+    "SEX_A",
+    "AGE_GROUP"
+  ],
+  "primary_equity_subgroup": "HISPALLP_A",
+  "minimum_subgroup_n": 100,
+  "interaction_screen": {
+    "models": [
+      "RF",
+      "XGBoost"
+    ],
+    "sample_n_requested": 100,
+    "scope": "Exploratory construct-pair screen; not a confirmatory interaction test."
+  },
+  "interpretation_lock": "SHAP values are predictive attributions, not causes, independent etiologic effects, or evidence that a subgroup difference is unfair.",
+  "test_policy": "Explanation-only use. SHAP outputs must not change model, predictors, calibration, threshold, or model-retention decisions.",
+  "privacy": "Only aggregate SHAP tables and figures are saved; no HHX, person-level prediction, or person-level SHAP matrix is written.",
+  "outputs": [
+    "day14_16_shap_global_importance.csv",
+    "day14_16_shap_encoded_importance.csv",
+    "day14_16_shap_direction_summary.csv",
+    "day14_16_shap_category_patterns.csv",
+    "day14_16_shap_subgroup_patterns.csv",
+    "day14_16_shap_subgroup_skipped.csv",
+    "day14_16_shap_interaction_screen.csv",
+    "day14_16_locked_reproduction_audit.csv",
+    "figures/*.svg",
+    "day14_16_config_log.json"
+  ]
+}

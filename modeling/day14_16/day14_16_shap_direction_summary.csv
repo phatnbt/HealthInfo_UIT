@@ -1,0 +1,73 @@
+Outcome,Model,Feature_construct,Explained_output,Direction_method,Direction_summary,Spearman_rho,N
+MEDNG,LR,AGEP_A,base_estimator_log_odds,"Spearman(raw value, construct SHAP)",higher value -> lower model output,-1.0,6403
+MEDNG,LR,SEX_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_2,,6417
+MEDNG,LR,HISPALLP_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_5; highest code_7,,6417
+MEDNG,LR,EDUCP_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_7,,6417
+MEDNG,LR,RATCAT_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_8,,6417
+MEDNG,LR,EMPWRKLSW1_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_1,,6417
+MEDNG,LR,NOTCOV_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,LR,FDSCAT3_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_3,,6417
+MEDNG,LR,PHSTAT_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_5,,6417
+MEDNG,LR,DISAB3_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,LR,K6SPD_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,LR,CHRONIC_BURDEN_CAT,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_0; highest code_2,,6417
+MEDNG,RF,AGEP_A,base_estimator_positive_class_probability,"Spearman(raw value, construct SHAP)",higher value -> lower model output,-0.7973709404963216,6403
+MEDNG,RF,SEX_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_2,,6417
+MEDNG,RF,HISPALLP_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_4; highest code_7,,6417
+MEDNG,RF,EDUCP_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_10; highest code_3,,6417
+MEDNG,RF,RATCAT_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_14; highest code_8,,6417
+MEDNG,RF,EMPWRKLSW1_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,RF,NOTCOV_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,RF,FDSCAT3_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_3,,6417
+MEDNG,RF,PHSTAT_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_5,,6417
+MEDNG,RF,DISAB3_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,RF,K6SPD_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,RF,CHRONIC_BURDEN_CAT,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_0; highest code_2,,6417
+MEDNG,XGBoost,AGEP_A,base_estimator_raw_margin_log_odds,"Spearman(raw value, construct SHAP)",higher value -> lower model output,-0.25185762497822817,6403
+MEDNG,XGBoost,SEX_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest Missing/special,,6417
+MEDNG,XGBoost,HISPALLP_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_7; highest code_2,,6417
+MEDNG,XGBoost,EDUCP_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_8; highest code_1,,6417
+MEDNG,XGBoost,RATCAT_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_6; highest code_14,,6417
+MEDNG,XGBoost,EMPWRKLSW1_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6417
+MEDNG,XGBoost,NOTCOV_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_2,,6417
+MEDNG,XGBoost,FDSCAT3_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_3; highest Missing/special,,6417
+MEDNG,XGBoost,PHSTAT_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest Missing/special,,6417
+MEDNG,XGBoost,DISAB3_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_2,,6417
+MEDNG,XGBoost,K6SPD_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_1,,6417
+MEDNG,XGBoost,CHRONIC_BURDEN_CAT,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_0; highest Missing/special,,6417
+MEDDL,LR,AGEP_A,base_estimator_log_odds,"Spearman(raw value, construct SHAP)",higher value -> lower model output,-1.0,6405
+MEDDL,LR,SEX_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest Missing/special,,6419
+MEDDL,LR,HISPALLP_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_4; highest code_7,,6419
+MEDDL,LR,EDUCP_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_9,,6419
+MEDDL,LR,RATCAT_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_14; highest code_8,,6419
+MEDDL,LR,EMPWRKLSW1_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_1,,6419
+MEDDL,LR,NOTCOV_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6419
+MEDDL,LR,FDSCAT3_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_3,,6419
+MEDDL,LR,PHSTAT_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_5,,6419
+MEDDL,LR,DISAB3_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6419
+MEDDL,LR,K6SPD_A,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_1,,6419
+MEDDL,LR,CHRONIC_BURDEN_CAT,base_estimator_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_0; highest code_2,,6419
+MEDDL,RF,AGEP_A,base_estimator_positive_class_probability,"Spearman(raw value, construct SHAP)",higher value -> lower model output,-0.8180627777043608,6405
+MEDDL,RF,SEX_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_2,,6419
+MEDDL,RF,HISPALLP_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_4; highest code_7,,6419
+MEDDL,RF,EDUCP_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_5,,6419
+MEDDL,RF,RATCAT_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_14; highest code_8,,6419
+MEDDL,RF,EMPWRKLSW1_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_1,,6419
+MEDDL,RF,NOTCOV_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6419
+MEDDL,RF,FDSCAT3_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_3,,6419
+MEDDL,RF,PHSTAT_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_5,,6419
+MEDDL,RF,DISAB3_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6419
+MEDDL,RF,K6SPD_A,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6419
+MEDDL,RF,CHRONIC_BURDEN_CAT,base_estimator_positive_class_probability,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_0; highest code_2,,6419
+MEDDL,XGBoost,AGEP_A,base_estimator_raw_margin_log_odds,"Spearman(raw value, construct SHAP)",higher value -> lower model output,-0.8188322324717445,6405
+MEDDL,XGBoost,SEX_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_2,,6419
+MEDDL,XGBoost,HISPALLP_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_7; highest code_2,,6419
+MEDDL,XGBoost,EDUCP_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_5; highest Missing/special,,6419
+MEDDL,XGBoost,RATCAT_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_13; highest code_5,,6419
+MEDDL,XGBoost,EMPWRKLSW1_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6419
+MEDDL,XGBoost,NOTCOV_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_2; highest code_1,,6419
+MEDDL,XGBoost,FDSCAT3_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_3; highest Missing/special,,6419
+MEDDL,XGBoost,PHSTAT_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_5,,6419
+MEDDL,XGBoost,DISAB3_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest code_1; highest code_2,,6419
+MEDDL,XGBoost,K6SPD_A,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_1,,6419
+MEDDL,XGBoost,CHRONIC_BURDEN_CAT,base_estimator_raw_margin_log_odds,WTFA_A-weighted mean construct SHAP by raw category code,category-specific: lowest Missing/special; highest code_0,,6419
