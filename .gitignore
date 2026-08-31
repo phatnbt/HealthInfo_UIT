@@ -10,6 +10,9 @@ analysis_ready_*.csv
 day5_*.csv
 nhis_day1_4_exact/
 
+# Aggregate subgroup health results distributed through the project Drive only
+modeling/day11_13/day11_13_weighted_subgroup_prevalence.csv
+
 # Python
 __pycache__/
 *.py[cod]
