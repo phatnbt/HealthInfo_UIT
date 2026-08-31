@@ -93,7 +93,7 @@ The project has two parallel workstreams and they should remain distinguishable 
 
 ### UIT — technical workstream
 
-**UIT TECHNICAL DAY 1–10 COMPLETE.**
+**UIT TECHNICAL DAY 1–13 COMPLETE.**
 
 Completed technical components include:
 - Day 1–4 source integrity, outcome/cohort audit, 22-candidate audit, UHS review, and final 12-construct feature lock;
@@ -104,8 +104,13 @@ Completed technical components include:
 - validation-fitted Platt calibration check and validation-based F1 operating thresholds;
 - locked-test re-evaluation;
 - UHS-requested 95% bootstrap CI for AUROC/AUPRC, calibration plots, and exploratory Decision Curve Analysis.
+- Day 11–13 design-based prevalence using `WTFA_A`, Taylor-linearized uncertainty using `PSTRAT`/`PPSU`, and locked weighted-vs-unweighted predictive sensitivity;
+- 400-replicate stratified-PSU bootstrap sensitivity intervals for weighted AUROC, AUPRC, and Brier;
+- an exact reproduction gate confirming that the conventional arm retains the locked Day 8–10 results.
 
-**Current boundary:** Day 11–13 survey-aware sensitivity, SHAP, and subgroup/fairness work remain subsequent analyses. Day 8–10 test results must not be used for another tuning cycle.
+**Current boundary:** Day 14–16 SHAP/explainability is next; subgroup/fairness work remains subsequent. Day 8–13 test and sensitivity results must not be used for another tuning cycle or a post-hoc winner claim.
+
+Day 11–13 supports a sensitivity conclusion, not a model-selection conclusion: survey weighting changes population prevalence and some precision–recall/calibration trade-offs, while AUROC changes are small. No model is a universal winner across outcomes and metrics. See `docs/Day11_13_Survey_Aware_Methodological_Rationale.md` and `research_log/Day11_13_Survey_Aware_Sensitivity.md`.
 
 ### UHS / collaborative literature workstream
 

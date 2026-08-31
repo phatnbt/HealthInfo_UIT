@@ -1,0 +1,57 @@
+{
+  "status": "DAY11_13_SURVEY_AWARE_SENSITIVITY_COMPLETE",
+  "seed": 2026,
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.0.4"
+  },
+  "features": [
+    "AGEP_A",
+    "SEX_A",
+    "HISPALLP_A",
+    "EDUCP_A",
+    "RATCAT_A",
+    "EMPWRKLSW1_A",
+    "NOTCOV_A",
+    "FDSCAT3_A",
+    "PHSTAT_A",
+    "DISAB3_A",
+    "K6SPD_A",
+    "CHRONIC_BURDEN_CAT"
+  ],
+  "model_lock": "Day 8-10 hyperparameters, HHX split, probability version and operating threshold preserved; no search or reselection.",
+  "training_weighting": "WTFA_A normalized to mean 1 within training data; unweighted and weighted fits use identical preprocessing and locked hyperparameters.",
+  "evaluation_weighting": "Metrics reported both unweighted and with raw WTFA_A test weights.",
+  "population_description": "WTFA_A point estimates with Taylor-linearized variance using PSTRAT and PPSU; no finite-population correction.",
+  "performance_uncertainty": {
+    "method": "stratified PSU resampling within PSTRAT on the locked test set, retaining WTFA_A",
+    "reps": 400,
+    "metrics": [
+      "AUROC",
+      "AUPRC",
+      "Brier"
+    ],
+    "status": "survey-aware sensitivity interval; not an official NCHS replicate-weight variance estimate"
+  },
+  "interpretation": "Contemporaneous predictive sensitivity for self-reported past-12-month outcomes; not causal inference, future forecasting, or deployment validation.",
+  "test_policy": "Aggregate test sensitivity only. Results must not trigger new tuning, calibration, threshold selection, feature changes, or a winner claim.",
+  "locked_reproduction_audit": {
+    "status": "PASS",
+    "rows_compared": 6,
+    "numeric_tolerance": 1e-08,
+    "max_absolute_difference": 3.8300586174822016e-09
+  },
+  "privacy": "No person-level predictions are written or committed.",
+  "outputs": [
+    "day11_13_survey_design_audit.csv",
+    "day11_13_weighted_outcome_prevalence.csv",
+    "day11_13_weighted_subgroup_prevalence.csv",
+    "day11_13_weighted_model_sensitivity.csv",
+    "day11_13_weighted_model_sensitivity_deltas.csv",
+    "day11_13_weighted_performance_cluster_bootstrap_ci.csv",
+    "day11_13_config_log.json"
+  ]
+}

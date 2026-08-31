@@ -23,5 +23,6 @@ Mỗi ngày giữ cùng một cấu trúc:
 - [Day 7 — Background & Related Work](Day07_Background_Related_Work.md)
 - [Day 8–10 — Model tuning, preliminary calibration & locked test re-evaluation](Day08_10_Tuning_Log.md)
 - [Day 8–10 addendum — UHS-requested 95% CI, calibration plots & DCA](Day08_10_UHS_Metric_Extension.md)
+- [Day 11–13 — Survey-aware weighted-vs-unweighted sensitivity](Day11_13_Survey_Aware_Sensitivity.md)
 
 Google Docs được dùng như bản cộng tác sống; thư mục này lưu phiên bản đã chốt để theo dõi lịch sử thay đổi bằng Git.
