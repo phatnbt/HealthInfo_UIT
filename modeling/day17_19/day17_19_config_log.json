@@ -1,0 +1,107 @@
+{
+  "status": "DAY17_19_FAIRNESS_ERROR_AUDIT_COMPLETE",
+  "seed": 2026,
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.0.4",
+    "matplotlib": "3.10.8"
+  },
+  "outcomes": [
+    "MEDNG",
+    "MEDDL"
+  ],
+  "models": [
+    "LR",
+    "RF",
+    "XGBoost"
+  ],
+  "features": [
+    "AGEP_A",
+    "SEX_A",
+    "HISPALLP_A",
+    "EDUCP_A",
+    "RATCAT_A",
+    "EMPWRKLSW1_A",
+    "NOTCOV_A",
+    "FDSCAT3_A",
+    "PHSTAT_A",
+    "DISAB3_A",
+    "K6SPD_A",
+    "CHRONIC_BURDEN_CAT"
+  ],
+  "model_lock": "Day 8-10 unweighted estimator, HHX split, probability version, calibration fit role, and validation-selected threshold preserved; no tuning or reselection.",
+  "equity_domains": {
+    "Race/ethnicity": [
+      "Race_ethnicity"
+    ],
+    "Income/poverty": [
+      "Poverty"
+    ],
+    "Insurance": [
+      "Insurance"
+    ],
+    "Demographic (sex/age)": [
+      "Sex",
+      "Age"
+    ]
+  },
+  "evaluation_weighting": [
+    "Unweighted sensitivity",
+    "WTFA_A-weighted primary population-relevant estimate"
+  ],
+  "uncertainty": {
+    "method": "400-replicate stratified PSU bootstrap within PSTRAT on locked test, retaining WTFA_A for weighted estimates",
+    "requested_replicates": 400,
+    "status": "survey-aware sensitivity interval; not an official NCHS replicate-weight variance estimate"
+  },
+  "eligibility": {
+    "minimum_group_n": 100,
+    "minimum_positive_n": 20,
+    "minimum_negative_n": 20,
+    "policy": "Ineligible levels are recorded and omitted from comparative gap calculation; no pooling after outcome review."
+  },
+  "metrics": {
+    "discrimination": [
+      "AUPRC (primary)",
+      "AUROC (complementary)"
+    ],
+    "errors_at_locked_threshold": [
+      "Recall/TPR",
+      "FNR",
+      "FPR",
+      "Specificity",
+      "Precision",
+      "F1"
+    ],
+    "calibration": [
+      "Brier",
+      "calibration-in-the-large error",
+      "calibration intercept/slope",
+      "5-bin ECE"
+    ],
+    "fairness_gap": "Unsigned max-minus-min spans across eligible groups. Recall span is the descriptive equal-opportunity TPR span; FPR is separate."
+  },
+  "locked_reproduction": {
+    "status": "PASS",
+    "rows_compared": 12,
+    "max_absolute_metric_difference": 3.3306690738754696e-16,
+    "tolerance": 1e-08
+  },
+  "interpretation_lock": "A subgroup metric gap is not by itself proof of discrimination, causation, or clinical harm. Different outcome prevalence, sampling variability, and measurement context must be considered with UHS.",
+  "threshold_lock": "Threshold is the validation F1 operating point and not a clinical cutoff. It is not changed by subgroup.",
+  "privacy": "Only aggregate tables and figures are saved; no HHX or person-level prediction is written.",
+  "outputs": [
+    "day17_19_subgroup_performance.csv",
+    "day17_19_subgroup_skipped.csv",
+    "day17_19_subgroup_metric_cluster_bootstrap_ci.csv",
+    "day17_19_disparity_summary.csv",
+    "day17_19_disparity_cluster_bootstrap_ci.csv",
+    "day17_19_locked_reproduction_audit.csv",
+    "day17_19_split_audit.csv",
+    "figures/*.svg",
+    "day17_19_config_log.json"
+  ]
+}

@@ -1,0 +1,49 @@
+Outcome,Model,Selected_probability,Locked_threshold,Split,Equity_domain,Axis,Group,Group_order,N,Positive_N,Negative_N,Eligible_for_comparison,Exclusion_reason
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH Asian,4,384,10,374,False,positive N < 20
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN,5,43,4,39,False,N < 100; positive N < 20
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN + other,6,66,10,56,False,N < 100; positive N < 20
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Race/ethnicity,Race_ethnicity,Other/multiple,7,77,9,68,False,N < 100; positive N < 20
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Insurance,Insurance,Missing/special,3,19,2,17,False,N < 100; positive N < 20; negative N < 20
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Demographic (sex/age),Sex,Missing/special,3,1,0,1,False,N < 100; positive N < 20; negative N < 20
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Demographic (sex/age),Age,75+,5,996,12,984,False,positive N < 20
+MEDNG,LR,Raw,0.1349999999999999,locked_test,Demographic (sex/age),Age,Missing/special,6,14,1,13,False,N < 100; positive N < 20; negative N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH Asian,4,384,10,374,False,positive N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN,5,43,4,39,False,N < 100; positive N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN + other,6,66,10,56,False,N < 100; positive N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Race/ethnicity,Race_ethnicity,Other/multiple,7,77,9,68,False,N < 100; positive N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Insurance,Insurance,Missing/special,3,19,2,17,False,N < 100; positive N < 20; negative N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Demographic (sex/age),Sex,Missing/special,3,1,0,1,False,N < 100; positive N < 20; negative N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Demographic (sex/age),Age,75+,5,996,12,984,False,positive N < 20
+MEDNG,RF,Raw,0.1099999999999999,locked_test,Demographic (sex/age),Age,Missing/special,6,14,1,13,False,N < 100; positive N < 20; negative N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH Asian,4,384,10,374,False,positive N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN,5,43,4,39,False,N < 100; positive N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN + other,6,66,10,56,False,N < 100; positive N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Race/ethnicity,Race_ethnicity,Other/multiple,7,77,9,68,False,N < 100; positive N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Insurance,Insurance,Missing/special,3,19,2,17,False,N < 100; positive N < 20; negative N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Demographic (sex/age),Sex,Missing/special,3,1,0,1,False,N < 100; positive N < 20; negative N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Demographic (sex/age),Age,75+,5,996,12,984,False,positive N < 20
+MEDNG,XGBoost,Raw,0.1849999999999999,locked_test,Demographic (sex/age),Age,Missing/special,6,14,1,13,False,N < 100; positive N < 20; negative N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH Asian,4,384,16,368,False,positive N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN,5,43,3,40,False,N < 100; positive N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN + other,6,66,9,57,False,N < 100; positive N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Race/ethnicity,Race_ethnicity,Other/multiple,7,77,8,69,False,N < 100; positive N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Insurance,Insurance,Missing/special,3,19,2,17,False,N < 100; positive N < 20; negative N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Demographic (sex/age),Sex,Missing/special,3,1,0,1,False,N < 100; positive N < 20; negative N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Demographic (sex/age),Age,75+,5,996,15,981,False,positive N < 20
+MEDDL,LR,Platt,0.1599999999999999,locked_test,Demographic (sex/age),Age,Missing/special,6,14,1,13,False,N < 100; positive N < 20; negative N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH Asian,4,384,16,368,False,positive N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN,5,43,3,40,False,N < 100; positive N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN + other,6,66,9,57,False,N < 100; positive N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Race/ethnicity,Race_ethnicity,Other/multiple,7,77,8,69,False,N < 100; positive N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Insurance,Insurance,Missing/special,3,19,2,17,False,N < 100; positive N < 20; negative N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Demographic (sex/age),Sex,Missing/special,3,1,0,1,False,N < 100; positive N < 20; negative N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Demographic (sex/age),Age,75+,5,996,15,981,False,positive N < 20
+MEDDL,RF,Platt,0.0799999999999999,locked_test,Demographic (sex/age),Age,Missing/special,6,14,1,13,False,N < 100; positive N < 20; negative N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH Asian,4,384,16,368,False,positive N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN,5,43,3,40,False,N < 100; positive N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Race/ethnicity,Race_ethnicity,NH AIAN + other,6,66,9,57,False,N < 100; positive N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Race/ethnicity,Race_ethnicity,Other/multiple,7,77,8,69,False,N < 100; positive N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Insurance,Insurance,Missing/special,3,19,2,17,False,N < 100; positive N < 20; negative N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Demographic (sex/age),Sex,Missing/special,3,1,0,1,False,N < 100; positive N < 20; negative N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Demographic (sex/age),Age,75+,5,996,15,981,False,positive N < 20
+MEDDL,XGBoost,Platt,0.1399999999999999,locked_test,Demographic (sex/age),Age,Missing/special,6,14,1,13,False,N < 100; positive N < 20; negative N < 20

@@ -28,4 +28,5 @@ Thumbs.db
 # Temporary/output files
 *.tmp
 *.log
+*.openai-download-*
 graphify-out/

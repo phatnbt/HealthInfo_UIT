@@ -93,7 +93,7 @@ The project has two parallel workstreams and they should remain distinguishable 
 
 ### UIT — technical workstream
 
-**UIT TECHNICAL DAY 1–16 COMPLETE.**
+**UIT TECHNICAL DAY 1–19 COMPLETE.**
 
 Completed technical components include:
 - Day 1–4 source integrity, outcome/cohort audit, 22-candidate audit, UHS review, and final 12-construct feature lock;
@@ -109,12 +109,16 @@ Completed technical components include:
 - an exact reproduction gate confirming that the conventional arm retains the locked Day 8–10 results.
 - Day 14–16 locked-model SHAP for LR/RF/XGBoost across both outcomes, including global and `WTFA_A`-weighted construct importance, direction/dependence patterns, exploratory tree-model interactions, and subgroup explanation patterns;
 - a second exact reproduction gate confirming 6/6 locked-test rows before explanation, with no person-level SHAP output committed.
+- Day 17–19 locked-test fairness/error-rate audit over four equity domains (five operational axes), reporting subgroup discrimination, calibration, Recall/FNR/FPR, weighted–unweighted sensitivity, and 400-replicate stratified-PSU intervals;
+- a twelve-row reproduction gate against the Day 8–10 and Day 11–13 reference arms, plus explicit exclusion of underpowered subgroup levels and aggregate-only output validation.
 
-**Current boundary:** Day 17–19 subgroup fairness/error analysis is next. Day 8–16 test, sensitivity, and SHAP results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
+**Current boundary:** Day 20–21 false-negative/false-positive error analysis and robustness checking is next. Day 8–19 test, sensitivity, SHAP, and subgroup results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
 
 Day 11–13 supports a sensitivity conclusion, not a model-selection conclusion: survey weighting changes population prevalence and some precision–recall/calibration trade-offs, while AUROC changes are small. No model is a universal winner across outcomes and metrics. See `docs/Day11_13_Survey_Aware_Methodological_Rationale.md` and `research_log/Day11_13_Survey_Aware_Sensitivity.md`.
 
 Day 14–16 supports an explainability conclusion, not a causal or fairness conclusion: weighted and unweighted SHAP rankings are stable within models, but the feature patterns differ across LR, RF, XGBoost and some subgroups. See `docs/Day14_16_SHAP_Methodological_Rationale.md` and `research_log/Day14_16_SHAP_Explainability.md`.
+
+Day 17–19 supports a subgroup audit conclusion, not a categorical fair/unfair verdict. Insurance and age show the largest locked-threshold error-rate signals, while sparse race/ethnicity levels and age 75+ cannot be compared reliably on this test split. No model is a universal fairness winner. See `docs/Day17_19_Fairness_Methodological_Rationale.md` and `research_log/Day17_19_Fairness_Audit.md`.
 
 ### UHS / collaborative literature workstream
 

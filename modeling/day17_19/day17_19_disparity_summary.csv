@@ -1,0 +1,421 @@
+Outcome,Model,Evaluation_weighting,Axis,Metric,Minimum_group,Minimum,Maximum_group,Maximum,Max_minus_min,Eligible_groups_N,Interpretation
+MEDNG,LR,Unweighted,Race_ethnicity,AUPRC,NH Black,0.22712656926786876,Hispanic,0.3638029734523118,0.13667640418444302,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Race_ethnicity,AUROC,NH Black,0.7197603121516165,Hispanic,0.8088154508919536,0.0890551387403371,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Race_ethnicity,Recall,NH White,0.3776978417266187,Hispanic,0.6049382716049383,0.2272404298783196,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,Unweighted,Race_ethnicity,FNR,Hispanic,0.3950617283950617,NH White,0.6223021582733813,0.2272404298783196,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Race_ethnicity,FPR,NH White,0.06508577194752775,Hispanic,0.16627634660421545,0.1011905746566877,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Race_ethnicity,Brier,NH White,0.053843979077094824,Hispanic,0.06660641609963934,0.012762437022544516,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Race_ethnicity,Calibration_abs_error,NH White,0.004571174787342487,Hispanic,0.011509738261728839,0.006938563474386351,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Race_ethnicity,AUPRC,NH Black,0.21613912016126074,Hispanic,0.39887050472079794,0.1827313845595372,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Race_ethnicity,AUROC,NH Black,0.7211787459514261,Hispanic,0.8181354134445673,0.09695666749314125,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Race_ethnicity,Recall,NH White,0.40643341018195495,Hispanic,0.6708407194042006,0.2644073092222457,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,WTFA_A,Race_ethnicity,FNR,Hispanic,0.3291592805957995,NH White,0.5935665898180451,0.2644073092222456,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Race_ethnicity,FPR,NH White,0.07403732117159251,Hispanic,0.17963204734341873,0.10559472617182622,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Race_ethnicity,Brier,NH White,0.05425736779789394,Hispanic,0.07246169104639391,0.018204323248499972,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Race_ethnicity,Calibration_abs_error,NH White,0.0026526557670479567,NH Black,0.02531141091161862,0.022658755144570664,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Poverty,AUPRC,>=200% FPL,0.28915798615056104,100-199% FPL,0.346944171179613,0.05778618502905197,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Poverty,AUROC,<100% FPL,0.7022183954619126,>=200% FPL,0.8098598828472773,0.10764148738536472,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Poverty,Recall,>=200% FPL,0.38396624472573837,100-199% FPL,0.5371900826446281,0.15322383791888972,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,Unweighted,Poverty,FNR,100-199% FPL,0.4628099173553719,>=200% FPL,0.6160337552742616,0.15322383791888972,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Poverty,FPR,>=200% FPL,0.05615900161774902,100-199% FPL,0.16135265700483092,0.1051936553870819,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Poverty,Brier,>=200% FPL,0.042820035555752596,<100% FPL,0.09447436596534341,0.05165433040959081,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Poverty,Calibration_abs_error,>=200% FPL,0.003924157224664035,<100% FPL,0.01946654908124279,0.015542391856578755,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Poverty,AUPRC,>=200% FPL,0.27802304447091625,100-199% FPL,0.40423690814453456,0.1262138636736183,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Poverty,AUROC,<100% FPL,0.7324062957294626,>=200% FPL,0.7999786822710511,0.06757238654158848,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Poverty,Recall,>=200% FPL,0.42623739312650855,100-199% FPL,0.5874898014065127,0.1612524082800042,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,WTFA_A,Poverty,FNR,100-199% FPL,0.41251019859348714,>=200% FPL,0.5737626068734915,0.1612524082800043,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Poverty,FPR,>=200% FPL,0.07075209005341562,100-199% FPL,0.18945430941390842,0.1187022193604928,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Poverty,Brier,>=200% FPL,0.044210344824711784,<100% FPL,0.09092158360177273,0.046711238777060946,3,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Poverty,Calibration_abs_error,100-199% FPL,0.005264961478641916,<100% FPL,0.008547890451201343,0.0032829289725594263,3,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Insurance,AUPRC,Insured,0.20396488591060685,Uninsured,0.513065584557025,0.30910069864641815,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Insurance,AUROC,Uninsured,0.7317393959321715,Insured,0.7589586730531149,0.027219277120943408,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Insurance,Recall,Insured,0.28343949044585987,Uninsured,0.8442622950819673,0.5608228046361075,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,Unweighted,Insurance,FNR,Uninsured,0.1557377049180328,Insured,0.7165605095541401,0.5608228046361072,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Insurance,FPR,Insured,0.05255656511669339,Uninsured,0.5845272206303725,0.5319706555136792,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Insurance,Brier,Insured,0.046653777939554116,Uninsured,0.16520087614748638,0.11854709820793227,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Insurance,Calibration_abs_error,Insured,0.0013595420168553904,Uninsured,0.021864412039532877,0.020504870022677486,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Insurance,AUPRC,Insured,0.1968416839359609,Uninsured,0.5184241656933047,0.32158248175734383,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Insurance,AUROC,Insured,0.7490397465213012,Uninsured,0.7574544628117319,0.008414716290430668,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Insurance,Recall,Insured,0.29695398281957336,Uninsured,0.8808703135345298,0.5839163307149564,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,WTFA_A,Insurance,FNR,Uninsured,0.11912968646547012,Insured,0.7030460171804266,0.5839163307149564,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Insurance,FPR,Insured,0.059329379116134395,Uninsured,0.5851604219384688,0.5258310428223345,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Insurance,Brier,Insured,0.04508245441900089,Uninsured,0.16111119162319568,0.11602873720419479,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Insurance,Calibration_abs_error,Insured,0.005655067562474914,Uninsured,0.015586866052253928,0.009931798489779015,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Sex,AUPRC,Male,0.2868951783072135,Female,0.30859133885632234,0.021696160549108834,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Sex,AUROC,Male,0.7899539844926333,Female,0.7947928949804536,0.004838910487820258,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Sex,Recall,Male,0.41899441340782123,Female,0.4555984555984556,0.036604042190634345,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,Unweighted,Sex,FNR,Female,0.5444015444015444,Male,0.5810055865921788,0.0366040421906344,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Sex,FPR,Male,0.06908960057574667,Female,0.09690528290090654,0.027815682325159866,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Sex,Brier,Male,0.04983020670322434,Female,0.060309630148580595,0.010479423445356253,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Sex,Calibration_abs_error,Female,0.0006631944151203606,Male,0.0014047038804322065,0.0007415094653118459,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Sex,AUPRC,Female,0.30407290905438983,Male,0.34076769477818636,0.03669478572379653,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Sex,AUROC,Female,0.7793543051526927,Male,0.8124179110214489,0.03306360586875623,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Sex,Recall,Female,0.48048160920245564,Male,0.5160967560449605,0.035615146842504886,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,WTFA_A,Sex,FNR,Male,0.4839032439550394,Female,0.5195183907975441,0.03561514684250472,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Sex,FPR,Male,0.08408494918058164,Female,0.11460155599681451,0.030516606816232875,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Sex,Brier,Male,0.04798761229116536,Female,0.0645591292410609,0.01657151694989554,2,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Sex,Calibration_abs_error,Female,0.002503943242851178,Male,0.004487813830737243,0.001983870587886065,2,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Age,AUPRC,65-74,0.12782691583197875,35-49,0.3668163425946563,0.23898942676267754,4,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Age,AUROC,50-64,0.7464933296220451,18-34,0.7876316532228114,0.0411383236007663,4,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Age,Recall,65-74,0.17647058823529413,18-34,0.5701754385964912,0.39370485036119707,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,Unweighted,Age,FNR,18-34,0.4298245614035088,65-74,0.8235294117647058,0.39370485036119707,4,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Age,FPR,65-74,0.023851590106007067,18-34,0.1668077900084674,0.14295619990246033,4,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Age,Brier,65-74,0.027241283955449926,50-64,0.07942271112384622,0.05218142716839629,4,Descriptive between-group max-minus-min span
+MEDNG,LR,Unweighted,Age,Calibration_abs_error,35-49,0.0074991889110394006,50-64,0.02676385662986687,0.01926466771882747,4,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Age,AUPRC,65-74,0.15904343066600526,35-49,0.3875040718921604,0.22846064122615514,4,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Age,AUROC,50-64,0.7485819602295043,65-74,0.7986590413879748,0.05007708115847054,4,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Age,Recall,65-74,0.2070868083909933,18-34,0.5950776736104131,0.3879908652194198,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,LR,WTFA_A,Age,FNR,18-34,0.40492232638958714,65-74,0.7929131916090068,0.3879908652194196,4,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Age,FPR,65-74,0.024490283542548546,18-34,0.16547573304844262,0.1409854495058941,4,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Age,Brier,65-74,0.02657959333108354,50-64,0.07147267454823641,0.04489308121715287,4,Descriptive between-group max-minus-min span
+MEDNG,LR,WTFA_A,Age,Calibration_abs_error,35-49,0.004675255638537407,18-34,0.021293664446269303,0.016618408807731896,4,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Race_ethnicity,AUPRC,NH Black,0.23238416121974703,Hispanic,0.40168540363942007,0.16930124241967304,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Race_ethnicity,AUROC,NH Black,0.7548076923076923,Hispanic,0.8204672275710526,0.06565953526336032,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Race_ethnicity,Recall,NH White,0.46402877697841727,Hispanic,0.7777777777777778,0.3137490007993605,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,Unweighted,Race_ethnicity,FNR,Hispanic,0.2222222222222222,NH White,0.5359712230215827,0.3137490007993605,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Race_ethnicity,FPR,NH White,0.09788092835519677,Hispanic,0.29508196721311475,0.19720103885791798,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Race_ethnicity,Brier,NH White,0.054666378852677465,Hispanic,0.06769464001074443,0.013028261158066969,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Race_ethnicity,Calibration_abs_error,NH White,0.005725055720887835,Hispanic,0.009962571846257318,0.004237516125369482,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Race_ethnicity,AUPRC,NH Black,0.20380226425875428,Hispanic,0.4615145677068986,0.25771230344814433,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Race_ethnicity,AUROC,NH Black,0.7534143772290325,Hispanic,0.828808186494288,0.07539380926525552,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Race_ethnicity,Recall,NH White,0.47219819279532604,Hispanic,0.8020162739356084,0.3298180811402823,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,WTFA_A,Race_ethnicity,FNR,Hispanic,0.19798372606439157,NH White,0.5278018072046738,0.32981808114028227,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Race_ethnicity,FPR,NH White,0.10735497803139521,Hispanic,0.32113692691846274,0.21378194888706753,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Race_ethnicity,Brier,NH Black,0.05457020344526424,Hispanic,0.07351282801084892,0.01894262456558468,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Race_ethnicity,Calibration_abs_error,Hispanic,0.0037875104451300656,NH Black,0.02087860366005219,0.017091093214922123,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Poverty,AUPRC,>=200% FPL,0.2783786435204899,100-199% FPL,0.36311950081202693,0.08474085729153702,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Poverty,AUROC,<100% FPL,0.7262662074554295,>=200% FPL,0.8101919163256132,0.08392570887018369,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Poverty,Recall,>=200% FPL,0.4177215189873418,100-199% FPL,0.7272727272727273,0.3095512082853855,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,Unweighted,Poverty,FNR,100-199% FPL,0.2727272727272727,>=200% FPL,0.5822784810126582,0.3095512082853855,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Poverty,FPR,>=200% FPL,0.0815807718973885,<100% FPL,0.3371150729335494,0.2555343010361609,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Poverty,Brier,>=200% FPL,0.04432806590352963,<100% FPL,0.09333301123976302,0.04900494533623339,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Poverty,Calibration_abs_error,>=200% FPL,0.004464363306983882,100-199% FPL,0.013613065116728024,0.009148701809744142,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Poverty,AUPRC,>=200% FPL,0.2558897106148201,100-199% FPL,0.4431342883950979,0.1872445777802778,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Poverty,AUROC,<100% FPL,0.7533938699451108,>=200% FPL,0.8054546009374743,0.052060730992363524,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Poverty,Recall,>=200% FPL,0.4549257549984883,100-199% FPL,0.7598152488910276,0.3048894938925393,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,WTFA_A,Poverty,FNR,100-199% FPL,0.24018475110897242,>=200% FPL,0.5450742450015117,0.3048894938925393,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Poverty,FPR,>=200% FPL,0.10069215121507644,<100% FPL,0.37476166434107294,0.2740695131259965,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Poverty,Brier,>=200% FPL,0.04567837938043004,<100% FPL,0.09014362030359567,0.04446524092316563,3,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Poverty,Calibration_abs_error,<100% FPL,0.005435534547574464,100-199% FPL,0.017107568225664116,0.011672033678089652,3,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Insurance,AUPRC,Insured,0.19723942373262743,Uninsured,0.5404857890190479,0.34324636528642044,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Insurance,AUROC,Uninsured,0.7658884870120719,Insured,0.7759710453780522,0.010082558365980265,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Insurance,Recall,Insured,0.35987261146496813,Uninsured,1.0,0.6401273885350318,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,Unweighted,Insurance,FNR,Uninsured,0.0,Insured,0.6401273885350318,0.6401273885350318,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Insurance,FPR,Insured,0.08426866203456262,Uninsured,0.9799426934097422,0.8956740313751795,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Insurance,Brier,Insured,0.0468879583669829,Uninsured,0.17493559865331193,0.12804764028632903,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Insurance,Calibration_abs_error,Insured,0.0045378305061923585,Uninsured,0.06639425246489011,0.061856421958697755,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Insurance,AUPRC,Insured,0.19216946852784447,Uninsured,0.5509719872456115,0.358802518717767,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Insurance,AUROC,Insured,0.7632352353443848,Uninsured,0.7814752552873319,0.018240019942947105,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Insurance,Recall,Insured,0.35872991776936625,Uninsured,1.0,0.6412700822306338,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,WTFA_A,Insurance,FNR,Uninsured,0.0,Insured,0.6412700822306336,0.6412700822306336,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Insurance,FPR,Insured,0.09156585145486874,Uninsured,0.9748966276745208,0.8833307762196521,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Insurance,Brier,Insured,0.04541781749305782,Uninsured,0.17161271993967495,0.12619490244661713,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Insurance,Calibration_abs_error,Insured,0.009018489130631212,Uninsured,0.06296572494328659,0.05394723581265538,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Sex,AUPRC,Male,0.2981163057737149,Female,0.311335847311283,0.013219541537568102,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Sex,AUROC,Male,0.7995068761923524,Female,0.809608094228288,0.010101218035935666,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Sex,Recall,Male,0.5251396648044693,Female,0.5521235521235521,0.026983887319082855,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,Unweighted,Sex,FNR,Female,0.44787644787644787,Male,0.4748603351955307,0.026983887319082855,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Sex,FPR,Male,0.13134220942785174,Female,0.14254454517036574,0.011202335742514002,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Sex,Brier,Male,0.05069427451492,Female,0.06130990340652419,0.010615628891604188,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Sex,Calibration_abs_error,Male,0.004046494889009912,Female,0.004660323373195524,0.000613828484185612,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Sex,AUPRC,Female,0.3187854579143683,Male,0.347680232897569,0.0288947749832007,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Sex,AUROC,Female,0.7944748361705488,Male,0.8196033157633971,0.025128479592848252,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Sex,Recall,Female,0.5647322908310116,Male,0.6084986972215317,0.043766406390520096,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,WTFA_A,Sex,FNR,Male,0.3915013027784681,Female,0.43526770916898827,0.04376640639052015,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Sex,FPR,Male,0.1542088733601912,Female,0.1641363561710127,0.00992748281082148,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Sex,Brier,Male,0.049829363298064956,Female,0.06518991982783723,0.015360556529772272,2,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Sex,Calibration_abs_error,Female,0.004621041843409057,Male,0.008951524533052028,0.004330482689642971,2,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Age,AUPRC,65-74,0.12221735163108825,35-49,0.3723227552621524,0.25010540363106415,4,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Age,AUROC,65-74,0.7486099563500312,18-34,0.7910408960589451,0.04243093970891387,4,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Age,Recall,65-74,0.3235294117647059,18-34,0.631578947368421,0.3080495356037151,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,Unweighted,Age,FNR,18-34,0.3684210526315789,65-74,0.6764705882352942,0.30804953560371523,4,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Age,FPR,65-74,0.053886925795053005,18-34,0.23200677392040644,0.17811984812535345,4,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Age,Brier,65-74,0.027181485797237833,50-64,0.07929700961692022,0.05211552381968239,4,Descriptive between-group max-minus-min span
+MEDNG,RF,Unweighted,Age,Calibration_abs_error,18-34,0.0006346254457046119,50-64,0.018265575993284114,0.017630950547579502,4,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Age,AUPRC,65-74,0.14360429066896854,35-49,0.39922029712085294,0.2556160064518844,4,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Age,AUROC,50-64,0.7648165916404319,18-34,0.7982104912077898,0.03339389956735783,4,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Age,Recall,65-74,0.34053507618599416,18-34,0.6473276809152082,0.30679260472921405,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,RF,WTFA_A,Age,FNR,18-34,0.352672319084792,65-74,0.6594649238140058,0.30679260472921377,4,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Age,FPR,65-74,0.05383962541215096,18-34,0.22697783050941567,0.1731382050972647,4,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Age,Brier,65-74,0.026809482534835605,35-49,0.07199569691199156,0.04518621437715596,4,Descriptive between-group max-minus-min span
+MEDNG,RF,WTFA_A,Age,Calibration_abs_error,18-34,0.0037038547928454207,65-74,0.013230023229370811,0.00952616843652539,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Race_ethnicity,AUPRC,NH Black,0.24110183417759581,Hispanic,0.348834546819538,0.1077327126419422,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Race_ethnicity,AUROC,NH Black,0.7326853400222966,NH White,0.8148838648556432,0.08219852483334666,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Race_ethnicity,Recall,NH Black,0.3695652173913043,Hispanic,0.5061728395061729,0.13660762211486854,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,Unweighted,Race_ethnicity,FNR,Hispanic,0.49382716049382713,NH Black,0.6304347826086957,0.13660762211486854,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Race_ethnicity,FPR,NH White,0.05020181634712412,Hispanic,0.12295081967213115,0.07274900332500703,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Race_ethnicity,Brier,NH White,0.0533074153967431,Hispanic,0.06809398775578866,0.014786572359045562,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Race_ethnicity,Calibration_abs_error,NH White,0.0043385028288045815,Hispanic,0.012843549951293415,0.008505047122488833,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Race_ethnicity,AUPRC,NH Black,0.22951616960198787,Hispanic,0.3819069557770443,0.15239078617505644,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Race_ethnicity,AUROC,NH Black,0.7342526392026575,NH White,0.8131040114137804,0.07885137221112293,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Race_ethnicity,Recall,NH White,0.3885157850721412,Hispanic,0.5438769583375356,0.1553611732653944,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,WTFA_A,Race_ethnicity,FNR,Hispanic,0.4561230416624643,NH White,0.6114842149278589,0.15536117326539456,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Race_ethnicity,FPR,NH White,0.057310435493898,Hispanic,0.12927137892476395,0.07196094343086595,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Race_ethnicity,Brier,NH White,0.05479506366071936,Hispanic,0.07424567165720225,0.01945060799648289,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Race_ethnicity,Calibration_abs_error,NH White,0.002571047454330011,NH Black,0.022240781473205726,0.019669734018875715,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Poverty,AUPRC,>=200% FPL,0.2903630127324821,<100% FPL,0.3360523975883999,0.04568938485591778,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Poverty,AUROC,<100% FPL,0.740083063209076,>=200% FPL,0.8188628170285881,0.07877975381951208,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Poverty,Recall,>=200% FPL,0.34177215189873417,100-199% FPL,0.49586776859504134,0.15409561669630717,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,Unweighted,Poverty,FNR,100-199% FPL,0.5041322314049587,>=200% FPL,0.6582278481012658,0.15409561669630711,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Poverty,FPR,>=200% FPL,0.042292581465218394,100-199% FPL,0.12077294685990338,0.07848036539468498,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Poverty,Brier,>=200% FPL,0.042900173205936226,<100% FPL,0.09109154228301768,0.04819136907708145,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Poverty,Calibration_abs_error,>=200% FPL,0.0036881236274741783,<100% FPL,0.015463554635917878,0.0117754310084437,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Poverty,AUPRC,>=200% FPL,0.27446271935457384,100-199% FPL,0.38120103801738225,0.10673831866280842,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Poverty,AUROC,<100% FPL,0.7533437378878445,>=200% FPL,0.8162189206129384,0.06287518272509396,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Poverty,Recall,>=200% FPL,0.3611261079689071,100-199% FPL,0.5507749766257276,0.1896488686568205,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,WTFA_A,Poverty,FNR,100-199% FPL,0.4492250233742722,>=200% FPL,0.638873892031093,0.1896488686568208,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Poverty,FPR,>=200% FPL,0.05262441500174448,100-199% FPL,0.14336697234063472,0.09074255733889025,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Poverty,Brier,>=200% FPL,0.044557154369939796,<100% FPL,0.08901833952738797,0.04446118515744817,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Poverty,Calibration_abs_error,>=200% FPL,0.007438196541836396,<100% FPL,0.01134724331362652,0.003909046771790124,3,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Insurance,AUPRC,Insured,0.20780592725919605,Uninsured,0.5123668475508246,0.30456092029162857,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Insurance,AUROC,Uninsured,0.7304946216355865,Insured,0.7793790234453458,0.04888440180975928,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Insurance,Recall,Insured,0.25796178343949044,Uninsured,0.7622950819672131,0.5043332985277227,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,Unweighted,Insurance,FNR,Uninsured,0.23770491803278687,Insured,0.7420382165605095,0.5043332985277227,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Insurance,FPR,Insured,0.04008551576696953,Uninsured,0.4269340974212034,0.38684858165423386,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Insurance,Brier,Insured,0.046398076386630877,Uninsured,0.16594752253313683,0.11954944614650595,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Insurance,Calibration_abs_error,Insured,0.0017898606109296653,Uninsured,0.02316366508998563,0.021373804479055965,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Insurance,AUPRC,Insured,0.1996192611848135,Uninsured,0.5045049349512767,0.3048856737664632,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Insurance,AUROC,Uninsured,0.7344926358140621,Insured,0.7722906124725404,0.03779797665847828,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Insurance,Recall,Insured,0.2785514962411532,Uninsured,0.7474875767056445,0.46893608046449126,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,WTFA_A,Insurance,FNR,Uninsured,0.2525124232943555,Insured,0.7214485037588465,0.468936080464491,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Insurance,FPR,Insured,0.04578837187737771,Uninsured,0.41307972646311497,0.36729135458573725,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Insurance,Brier,Insured,0.0450551899355811,Uninsured,0.16490593025528733,0.11985074031970622,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Insurance,Calibration_abs_error,Insured,0.006294545901885384,Uninsured,0.028445148416330168,0.022150602514444784,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Sex,AUPRC,Male,0.2942659129152487,Female,0.31160450706279624,0.01733859414754757,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Sex,AUROC,Male,0.8002848579027463,Female,0.8113503133821984,0.011065455479452146,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Sex,Recall,Male,0.36312849162011174,Female,0.4247104247104247,0.06158193309031296,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,Unweighted,Sex,FNR,Female,0.5752895752895753,Male,0.6368715083798883,0.06158193309031301,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Sex,FPR,Male,0.05109751709247931,Female,0.07377305407939981,0.0226755369869205,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Sex,Brier,Male,0.04967236186058559,Female,0.06005464584145387,0.010382283980868282,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Sex,Calibration_abs_error,Female,0.0008937683281463882,Male,0.0010311024141812092,0.000137334086034821,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Sex,AUPRC,Female,0.3108699640291175,Male,0.32513856192347923,0.014268597894361745,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Sex,AUROC,Female,0.7967604633362788,Male,0.8175033115432552,0.02074284820697636,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Sex,Recall,Male,0.43747780541217474,Female,0.4382923700970077,0.0008145646848329857,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,WTFA_A,Sex,FNR,Female,0.5617076299029922,Male,0.5625221945878252,0.0008145646848329857,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Sex,FPR,Male,0.06150019468039657,Female,0.08642530363420775,0.024925108953811184,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Sex,Brier,Male,0.048834284405955275,Female,0.06428444333756432,0.015450158931609045,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Sex,Calibration_abs_error,Female,0.0020260784553764594,Male,0.003686196209234223,0.0016601177538577636,2,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Age,AUPRC,65-74,0.11200111606975516,35-49,0.3716927901676509,0.25969167409789573,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Age,AUROC,50-64,0.7519807344374416,18-34,0.7928012240593015,0.04082048962185991,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Age,Recall,65-74,0.058823529411764705,35-49,0.5190839694656488,0.4602604400538841,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,Unweighted,Age,FNR,35-49,0.48091603053435117,65-74,0.9411764705882353,0.4602604400538841,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Age,FPR,65-74,0.01060070671378092,35-49,0.10844306738962045,0.09784236067583953,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Age,Brier,65-74,0.027629570469524103,50-64,0.0784345657834424,0.0508049953139183,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,Unweighted,Age,Calibration_abs_error,65-74,0.0008964569947449083,50-64,0.0108065017113423,0.009910044716597392,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Age,AUPRC,65-74,0.12551196596828837,35-49,0.38126311084984066,0.25575114488155226,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Age,AUROC,50-64,0.7480314993466949,18-34,0.8067276385094423,0.05869613916274741,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Age,Recall,65-74,0.04748458757982671,35-49,0.5347607445703225,0.4872761569904958,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDNG,XGBoost,WTFA_A,Age,FNR,35-49,0.4652392554296774,65-74,0.9525154124201732,0.4872761569904958,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Age,FPR,65-74,0.011944338180261508,35-49,0.1206441136616951,0.10869977548143359,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Age,Brier,65-74,0.02725757571442685,50-64,0.07139179248936817,0.044134216774941316,4,Descriptive between-group max-minus-min span
+MEDNG,XGBoost,WTFA_A,Age,Calibration_abs_error,65-74,0.00027343152099604945,35-49,0.008297690497969884,0.008024258976973835,4,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Race_ethnicity,AUPRC,Hispanic,0.3038338702761332,NH Black,0.3344904545349702,0.03065658425883705,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Race_ethnicity,AUROC,Hispanic,0.7445974521635981,NH White,0.7977741609845737,0.05317670882097558,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Race_ethnicity,Recall,NH White,0.40412979351032446,NH Black,0.5178571428571429,0.11372734934681844,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,Unweighted,Race_ethnicity,FNR,NH Black,0.48214285714285715,NH White,0.5958702064896755,0.11372734934681833,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Race_ethnicity,FPR,NH White,0.06608606557377049,Hispanic,0.14709371293001186,0.08100764735624137,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Race_ethnicity,Brier,NH White,0.06355511543939432,Hispanic,0.0797064788096865,0.016151363370292174,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Race_ethnicity,Calibration_abs_error,NH White,0.00057341252687379,Hispanic,0.005454800031680931,0.0048813875048071415,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Race_ethnicity,AUPRC,Hispanic,0.2756984369295851,NH Black,0.3876276767421246,0.1119292398125395,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Race_ethnicity,AUROC,Hispanic,0.7242455218090785,NH White,0.7983379771293329,0.07409245532025432,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Race_ethnicity,Recall,NH White,0.43786378750499944,NH Black,0.6029117071543115,0.1650479196493121,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,WTFA_A,Race_ethnicity,FNR,NH Black,0.3970882928456886,NH White,0.5621362124950007,0.1650479196493121,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Race_ethnicity,FPR,NH White,0.07250214216454794,Hispanic,0.16337949499686447,0.09087735283231653,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Race_ethnicity,Brier,NH White,0.06713961416902021,Hispanic,0.08895385104920103,0.021814236880180818,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Race_ethnicity,Calibration_abs_error,Hispanic,0.0010965576828169399,NH Black,0.0039257583967365894,0.0028292007139196496,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Poverty,AUPRC,<100% FPL,0.2961033718852336,100-199% FPL,0.35903965745606503,0.06293628557083142,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Poverty,AUROC,<100% FPL,0.7197303192544121,100-199% FPL,0.7922541064115931,0.072523787157181,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Poverty,Recall,>=200% FPL,0.3782051282051282,100-199% FPL,0.5426356589147286,0.16443053070960045,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,Unweighted,Poverty,FNR,100-199% FPL,0.4573643410852713,>=200% FPL,0.6217948717948718,0.1644305307096005,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Poverty,FPR,>=200% FPL,0.05499412455934195,100-199% FPL,0.145224171539961,0.09023004698061905,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Poverty,Brier,>=200% FPL,0.05518614254675239,<100% FPL,0.0951619907264517,0.03997584817969932,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Poverty,Calibration_abs_error,100-199% FPL,0.0017032382705562538,<100% FPL,0.01725295347083046,0.015549715200274206,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Poverty,AUPRC,>=200% FPL,0.30560406674681334,100-199% FPL,0.43084641735267504,0.1252423506058617,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Poverty,AUROC,<100% FPL,0.7395879627872015,100-199% FPL,0.787008561350326,0.04742059856312453,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Poverty,Recall,>=200% FPL,0.39506841988854274,100-199% FPL,0.5859655829669782,0.19089716307843546,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,WTFA_A,Poverty,FNR,100-199% FPL,0.4140344170330216,>=200% FPL,0.6049315801114571,0.19089716307843552,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Poverty,FPR,>=200% FPL,0.06705756036098443,100-199% FPL,0.1624071487779835,0.09534958841699909,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Poverty,Brier,>=200% FPL,0.05930160711410606,<100% FPL,0.10382501226991112,0.04452340515580506,3,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Poverty,Calibration_abs_error,>=200% FPL,0.0030973435144893147,<100% FPL,0.024825657644374235,0.02172831412988492,3,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Insurance,AUPRC,Insured,0.22368472465266298,Uninsured,0.5308032347873329,0.30711851013466995,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Insurance,AUROC,Uninsured,0.7231740704760222,Insured,0.7517554131359044,0.028581342659882214,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Insurance,Recall,Insured,0.2868217054263566,Uninsured,0.835820895522388,0.5489991900960314,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,Unweighted,Insurance,FNR,Uninsured,0.16417910447761194,Insured,0.7131782945736435,0.5489991900960315,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Insurance,FPR,Insured,0.0496300306803826,Uninsured,0.5502958579881657,0.5006658273077831,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Insurance,Brier,Insured,0.056202383348555575,Uninsured,0.17663814079149626,0.12043575744294069,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Insurance,Calibration_abs_error,Insured,0.002903451993261169,Uninsured,0.033814125480495394,0.030910673487234225,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Insurance,AUPRC,Insured,0.23668441561345155,Uninsured,0.5292619112411991,0.2925774956277476,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Insurance,AUROC,Uninsured,0.7341996167687846,Insured,0.7437095069952036,0.009509890226418904,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Insurance,Recall,Insured,0.30841794265118855,Uninsured,0.8437239462161162,0.5353060035649277,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,WTFA_A,Insurance,FNR,Uninsured,0.15627605378388384,Insured,0.6915820573488114,0.5353060035649275,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Insurance,FPR,Insured,0.05293280032179993,Uninsured,0.547656126534446,0.49472332621264603,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Insurance,Brier,Insured,0.05869161198833674,Uninsured,0.17262407996303494,0.1139324679746982,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Insurance,Calibration_abs_error,Insured,0.0015179880485500924,Uninsured,0.026016593592683213,0.02449860554413312,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Sex,AUPRC,Male,0.2759609925844164,Female,0.34298947398598123,0.06702848140156481,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Sex,AUROC,Male,0.7714292342956839,Female,0.787722331246301,0.016293096950617092,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Sex,Recall,Male,0.4,Female,0.4451219512195122,0.04512195121951218,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,Unweighted,Sex,FNR,Female,0.5548780487804879,Male,0.6,0.045121951219512124,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Sex,FPR,Male,0.06550850524791893,Female,0.09003831417624521,0.024529808928326277,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Sex,Brier,Male,0.05477404322440593,Female,0.074015535314088,0.019241492089682066,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Sex,Calibration_abs_error,Female,0.005433514102066869,Male,0.006769312109771788,0.0013357980077049192,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Sex,AUPRC,Male,0.3028940702234339,Female,0.36444388330520083,0.061549813081766935,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Sex,AUROC,Male,0.768702352549719,Female,0.7825509775559489,0.013848625006229964,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Sex,Recall,Male,0.45816109159352497,Female,0.4693896906376436,0.011228599044118603,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,WTFA_A,Sex,FNR,Female,0.5306103093623564,Male,0.5418389084064749,0.011228599044118437,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Sex,FPR,Male,0.0784187099822406,Female,0.10210592819385633,0.023687218211615735,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Sex,Brier,Male,0.05887606704988931,Female,0.08027676484176365,0.021400697791874333,2,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Sex,Calibration_abs_error,Male,0.006292512466109942,Female,0.008668937149769101,0.002376424683659159,2,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Age,AUPRC,65-74,0.11075297956207196,18-34,0.3997478702372874,0.28899489067521544,4,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Age,AUROC,50-64,0.7189632741622471,18-34,0.7893804926385783,0.0704172184763312,4,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Age,Recall,65-74,0.12903225806451613,18-34,0.588957055214724,0.45992479715020784,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,Unweighted,Age,FNR,18-34,0.4110429447852761,65-74,0.8709677419354839,0.4599247971502078,4,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Age,FPR,65-74,0.020282186948853614,18-34,0.1676963812886143,0.1474141943397607,4,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Age,Brier,65-74,0.02568517621001297,18-34,0.09261914316191441,0.06693396695190144,4,Descriptive between-group max-minus-min span
+MEDDL,LR,Unweighted,Age,Calibration_abs_error,18-34,0.0011741108773103692,50-64,0.03207083180768233,0.030896720930371963,4,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Age,AUPRC,65-74,0.17907111507173143,18-34,0.41474544965743015,0.23567433458569872,4,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Age,AUROC,50-64,0.6960119617954448,18-34,0.8103323160415576,0.11432035424611287,4,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Age,Recall,65-74,0.20999444985050683,18-34,0.6154193185945822,0.40542486874407535,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,LR,WTFA_A,Age,FNR,18-34,0.38458068140541773,65-74,0.7900055501494931,0.4054248687440754,4,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Age,FPR,65-74,0.018816123446176333,18-34,0.15667680381883153,0.1378606803726552,4,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Age,Brier,65-74,0.02772024143314843,50-64,0.0915880571343569,0.06386781570120847,4,Descriptive between-group max-minus-min span
+MEDDL,LR,WTFA_A,Age,Calibration_abs_error,35-49,0.0013184850348619964,50-64,0.03378982255934955,0.032471337524487554,4,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Race_ethnicity,AUPRC,Hispanic,0.31284724975880074,NH White,0.3273419129459667,0.014494663187165968,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Race_ethnicity,AUROC,Hispanic,0.754977048842127,NH White,0.8122053169882489,0.05722826814612192,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Race_ethnicity,Recall,NH White,0.6430678466076696,NH Black,0.7678571428571429,0.12478929624947332,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,Unweighted,Race_ethnicity,FNR,NH Black,0.23214285714285715,NH White,0.35693215339233036,0.12478929624947321,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Race_ethnicity,FPR,NH White,0.18570696721311475,Hispanic,0.38552787663107946,0.1998209094179647,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Race_ethnicity,Brier,NH White,0.0635108869677605,Hispanic,0.07932837878228696,0.015817491814526463,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Race_ethnicity,Calibration_abs_error,NH Black,0.005812315966053236,Hispanic,0.01949641085117286,0.013684094885119624,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Race_ethnicity,AUPRC,Hispanic,0.32459299202266906,NH White,0.36801080685601706,0.043417814833348,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Race_ethnicity,AUROC,Hispanic,0.7393443837257334,NH White,0.8150886505975632,0.07574426687182978,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Race_ethnicity,Recall,NH White,0.6607656893183217,NH Black,0.8153448833700255,0.15457919405170384,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,WTFA_A,Race_ethnicity,FNR,NH Black,0.1846551166299747,NH White,0.33923431068167836,0.15457919405170367,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Race_ethnicity,FPR,NH White,0.1960436063363201,Hispanic,0.4192517126104671,0.22320810627414703,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Race_ethnicity,Brier,NH White,0.06739075308251123,Hispanic,0.08611056719213415,0.018719814109622923,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Race_ethnicity,Calibration_abs_error,NH Black,0.0044061995178135555,Hispanic,0.015783830417957306,0.011377630900143751,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Poverty,AUPRC,>=200% FPL,0.29607130355734257,100-199% FPL,0.3631259144425066,0.06705461088516401,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Poverty,AUROC,<100% FPL,0.7347213959944476,>=200% FPL,0.7999009460965982,0.0651795501021506,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Poverty,Recall,>=200% FPL,0.592948717948718,100-199% FPL,0.8062015503875969,0.21325283243887894,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,Unweighted,Poverty,FNR,100-199% FPL,0.1937984496124031,>=200% FPL,0.40705128205128205,0.21325283243887894,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Poverty,FPR,>=200% FPL,0.16310223266745005,<100% FPL,0.4666666666666667,0.3035644339992166,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Poverty,Brier,>=200% FPL,0.055943704920034504,<100% FPL,0.0936597996093513,0.03771609468931679,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Poverty,Calibration_abs_error,100-199% FPL,0.001531952726963423,<100% FPL,0.00532348366650999,0.003791530939546567,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Poverty,AUPRC,>=200% FPL,0.28252512800287144,100-199% FPL,0.44918225789467103,0.1666571298917996,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Poverty,AUROC,<100% FPL,0.7585297036801841,100-199% FPL,0.7967758321856314,0.038246128505447285,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Poverty,Recall,>=200% FPL,0.6217946674869503,<100% FPL,0.8253099598600943,0.20351529237314392,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,WTFA_A,Poverty,FNR,<100% FPL,0.1746900401399056,>=200% FPL,0.3782053325130496,0.203515292373144,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Poverty,FPR,>=200% FPL,0.18955701386393412,<100% FPL,0.47809866965065023,0.2885416557867161,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Poverty,Brier,>=200% FPL,0.06012532019492395,<100% FPL,0.10046078753840354,0.04033546734347959,3,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Poverty,Calibration_abs_error,>=200% FPL,0.00010270934246395247,100-199% FPL,0.0016891586690015725,0.00158644932653762,3,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Insurance,AUPRC,Insured,0.2082666119325683,Uninsured,0.5608374193180234,0.35257080738545515,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Insurance,AUROC,Uninsured,0.7564470546674908,Insured,0.7700573176140091,0.013610262946518237,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Insurance,Recall,Insured,0.5581395348837209,Uninsured,1.0,0.4418604651162791,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,Unweighted,Insurance,FNR,Uninsured,0.0,Insured,0.4418604651162791,0.4418604651162791,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Insurance,FPR,Insured,0.18029236599891715,Uninsured,1.0,0.8197076340010828,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Insurance,Brier,Insured,0.05654343021481124,Uninsured,0.17366823217709731,0.11712480196228608,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Insurance,Calibration_abs_error,Insured,0.0005363384812409194,Uninsured,0.013443810386257138,0.012907471905016218,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Insurance,AUPRC,Insured,0.2250792145410977,Uninsured,0.5632180472446918,0.3381388327035941,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Insurance,AUROC,Insured,0.7647321405942482,Uninsured,0.768252530162324,0.0035203895680757658,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Insurance,Recall,Insured,0.5689680369927972,Uninsured,1.0,0.4310319630072028,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,WTFA_A,Insurance,FNR,Uninsured,0.0,Insured,0.4310319630072028,0.4310319630072028,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Insurance,FPR,Insured,0.1921057570807816,Uninsured,1.0,0.8078942429192184,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Insurance,Brier,Insured,0.05902419187010768,Uninsured,0.16936115932679122,0.11033696745668353,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Insurance,Calibration_abs_error,Insured,0.0005007689362188095,Uninsured,0.008267241736019948,0.0077664727998011385,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Sex,AUPRC,Male,0.2784420677452463,Female,0.33584656132798013,0.05740449358273381,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Sex,AUROC,Male,0.7879144742336923,Female,0.798886591595801,0.01097211736210868,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Sex,Recall,Male,0.6461538461538462,Female,0.6890243902439024,0.042870544090056195,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,Unweighted,Sex,FNR,Female,0.31097560975609756,Male,0.35384615384615387,0.042870544090056306,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Sex,FPR,Male,0.2124502352515382,Female,0.2442528735632184,0.031802638311680204,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Sex,Brier,Male,0.054338383758352087,Female,0.07455745123468127,0.020219067476329185,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Sex,Calibration_abs_error,Female,0.009324170301074158,Male,0.01010408880476947,0.0007799185036953121,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Sex,AUPRC,Male,0.31614622259039826,Female,0.3598522156403946,0.04370599304999634,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Sex,AUROC,Male,0.7877501415507255,Female,0.796668577255849,0.008918435705123517,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Sex,Recall,Male,0.6679849122195799,Female,0.7189219145420744,0.05093700232249454,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,WTFA_A,Sex,FNR,Female,0.28107808545792556,Male,0.33201508778042005,0.050937002322494485,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Sex,FPR,Male,0.23936641922502042,Female,0.2706756995033153,0.03130928027829491,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Sex,Brier,Male,0.058179415600815104,Female,0.08076133733340853,0.02258192173259342,2,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Sex,Calibration_abs_error,Male,0.011075723430540432,Female,0.011449606018881536,0.000373882588341104,2,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Age,AUPRC,65-74,0.10558286322776995,18-34,0.390833199024424,0.28525033579665404,4,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Age,AUROC,65-74,0.7297604824486545,18-34,0.784266213267345,0.05450573081869048,4,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Age,Recall,65-74,0.4838709677419355,18-34,0.7484662576687117,0.26459528992677617,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,Unweighted,Age,FNR,18-34,0.25153374233128833,65-74,0.5161290322580645,0.26459528992677617,4,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Age,FPR,65-74,0.09171075837742504,35-49,0.33229329173166927,0.24058253335424423,4,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Age,Brier,65-74,0.025382893685823436,18-34,0.09406015002329834,0.0686772563374749,4,Descriptive between-group max-minus-min span
+MEDDL,RF,Unweighted,Age,Calibration_abs_error,35-49,0.0045946906900327655,65-74,0.014852601129741537,0.010257910439708771,4,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Age,AUPRC,65-74,0.15047489456874175,18-34,0.4068016838316025,0.25632678926286073,4,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Age,AUROC,50-64,0.7206844648341924,18-34,0.8005159999526805,0.07983153511848817,4,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Age,Recall,65-74,0.5408442599052591,18-34,0.7554234648431087,0.21457920493784965,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,RF,WTFA_A,Age,FNR,18-34,0.24457653515689115,65-74,0.45915574009474086,0.2145792049378497,4,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Age,FPR,65-74,0.0785391513997157,35-49,0.3447643837914229,0.26622523239170715,4,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Age,Brier,65-74,0.027562384143979195,50-64,0.08865115353816158,0.06108876939418238,4,Descriptive between-group max-minus-min span
+MEDDL,RF,WTFA_A,Age,Calibration_abs_error,35-49,0.004423324249540728,50-64,0.01432420182437448,0.009900877574833752,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Race_ethnicity,AUPRC,Hispanic,0.2755616538211994,NH White,0.3374311561218313,0.06186950230063187,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Race_ethnicity,AUROC,Hispanic,0.7518438289751921,NH White,0.8202403404419943,0.06839651146680226,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Race_ethnicity,Recall,NH White,0.5162241887905604,Hispanic,0.5652173913043478,0.04899320251378736,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,Unweighted,Race_ethnicity,FNR,Hispanic,0.43478260869565216,NH White,0.4837758112094395,0.04899320251378736,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Race_ethnicity,FPR,NH White,0.10373975409836066,Hispanic,0.19217081850533807,0.08843106440697741,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Race_ethnicity,Brier,NH White,0.06258216700789285,Hispanic,0.08127110227248405,0.0186889352645912,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Race_ethnicity,Calibration_abs_error,NH White,0.0012890070325165537,NH Black,0.00465424296572059,0.003365235933204036,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Race_ethnicity,AUPRC,Hispanic,0.28645155762401575,NH White,0.3615086124087206,0.07505705478470487,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Race_ethnicity,AUROC,Hispanic,0.7444117382605029,NH White,0.8201786500320353,0.07576691177153239,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Race_ethnicity,Recall,NH White,0.5169723951424898,Hispanic,0.5777640894058726,0.06079169426338282,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,WTFA_A,Race_ethnicity,FNR,Hispanic,0.4222359105941273,NH White,0.4830276048575103,0.06079169426338299,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Race_ethnicity,FPR,NH White,0.11025629432263538,Hispanic,0.20651369041574136,0.09625739609310598,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Race_ethnicity,Brier,NH White,0.06694721499575122,Hispanic,0.0885191183533224,0.021571903357571184,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Race_ethnicity,Calibration_abs_error,NH White,0.0034269908344952554,NH Black,0.008833216677153075,0.005406225842657819,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Poverty,AUPRC,<100% FPL,0.30716785789540335,100-199% FPL,0.32962140998513834,0.022453552089734985,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Poverty,AUROC,<100% FPL,0.7283363077533215,>=200% FPL,0.8104978306065262,0.08216152285320477,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Poverty,Recall,>=200% FPL,0.46474358974358976,100-199% FPL,0.6356589147286822,0.17091532498509243,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,Unweighted,Poverty,FNR,100-199% FPL,0.3643410852713178,>=200% FPL,0.5352564102564102,0.17091532498509243,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Poverty,FPR,>=200% FPL,0.08836662749706228,<100% FPL,0.18699186991869918,0.0986252424216369,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Poverty,Brier,>=200% FPL,0.054920524380164724,<100% FPL,0.0948261154977217,0.039905591117556975,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Poverty,Calibration_abs_error,>=200% FPL,0.002698967275629252,<100% FPL,0.014370363141644707,0.011671395866015455,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Poverty,AUPRC,>=200% FPL,0.3033865231919783,100-199% FPL,0.39706278040041976,0.09367625720844147,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Poverty,AUROC,<100% FPL,0.7255831196312706,100-199% FPL,0.8082779848787183,0.08269486524744762,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Poverty,Recall,>=200% FPL,0.47445442273070704,100-199% FPL,0.6543708390079529,0.17991641627724586,3,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,WTFA_A,Poverty,FNR,100-199% FPL,0.34562916099204716,>=200% FPL,0.5255455772692929,0.1799164162772457,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Poverty,FPR,>=200% FPL,0.10128489830345219,<100% FPL,0.19763228089050805,0.09634738258705586,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Poverty,Brier,>=200% FPL,0.059222487558354665,<100% FPL,0.10564777179276977,0.0464252842344151,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Poverty,Calibration_abs_error,>=200% FPL,0.003087383890278156,<100% FPL,0.029839961539566626,0.02675257764928847,3,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Insurance,AUPRC,Insured,0.22820393742605802,Uninsured,0.5202124139982787,0.2920084765722206,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Insurance,AUROC,Uninsured,0.7226662545261857,Insured,0.7773377877947198,0.054671533268534134,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Insurance,Recall,Insured,0.3798449612403101,Uninsured,0.9253731343283582,0.5455281730880481,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,Unweighted,Insurance,FNR,Uninsured,0.07462686567164178,Insured,0.6201550387596899,0.5455281730880481,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Insurance,FPR,Insured,0.08193466883234073,Uninsured,0.6568047337278107,0.57487006489547,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Insurance,Brier,Insured,0.05579623695490276,Uninsured,0.17883296269402804,0.12303672573912527,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Insurance,Calibration_abs_error,Insured,0.003065303684801318,Uninsured,0.04293144681965441,0.039866143134853094,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Insurance,AUPRC,Insured,0.24212975685333554,Uninsured,0.5037893883099759,0.26165963145664034,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Insurance,AUROC,Uninsured,0.7115181574494207,Insured,0.773922839609084,0.06240468215966333,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Insurance,Recall,Insured,0.37525662517113795,Uninsured,0.9149175868876215,0.5396609617164836,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,WTFA_A,Insurance,FNR,Uninsured,0.08508241311237866,Insured,0.6247433748288621,0.5396609617164835,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Insurance,FPR,Insured,0.08272434579830394,Uninsured,0.6539347720143472,0.5712104262160433,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Insurance,Brier,Insured,0.0583121235569021,Uninsured,0.17858106654425351,0.12026894298735141,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Insurance,Calibration_abs_error,Insured,0.0014483772406329587,Uninsured,0.04522386824003402,0.04377549099940106,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Sex,AUPRC,Male,0.2877710849290911,Female,0.33457440985057835,0.046803324921487255,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Sex,AUROC,Male,0.7991452991452991,Female,0.8009930925458679,0.0018477934005688423,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Sex,Recall,Female,0.5152439024390244,Male,0.5282051282051282,0.012961225766103812,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,Unweighted,Sex,FNR,Male,0.4717948717948718,Female,0.4847560975609756,0.012961225766103812,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Sex,FPR,Male,0.09663409337676439,Female,0.13122605363984674,0.03459196026308235,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Sex,Brier,Male,0.054070025112435006,Female,0.07418465840764238,0.020114633295207372,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Sex,Calibration_abs_error,Female,0.00611852855617992,Male,0.006333150589384606,0.00021462203320468665,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Sex,AUPRC,Male,0.3115250493445892,Female,0.3486158369076381,0.0370907875630489,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Sex,AUROC,Female,0.7950043997542593,Male,0.8005400861035107,0.00553568634925139,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Sex,Recall,Female,0.5099983944659028,Male,0.5663786184331362,0.05638022396723341,2,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,WTFA_A,Sex,FNR,Male,0.43362138156686364,Female,0.49000160553409716,0.05638022396723352,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Sex,FPR,Male,0.10935538398343611,Female,0.14169801401330792,0.03234263002987181,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Sex,Brier,Male,0.05845208592735686,Female,0.08099189269000241,0.022539806762645553,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Sex,Calibration_abs_error,Male,0.004313575788816637,Female,0.010474046598418302,0.006160470809601665,2,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Age,AUPRC,65-74,0.11506737376579036,18-34,0.39896260236201514,0.2838952285962248,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Age,AUROC,50-64,0.731929911005649,18-34,0.7920662338435881,0.06013632283793913,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Age,Recall,65-74,0.3870967741935484,18-34,0.6134969325153374,0.22640015832178906,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,Unweighted,Age,FNR,18-34,0.38650306748466257,65-74,0.6129032258064516,0.22640015832178906,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Age,FPR,65-74,0.03439153439153439,35-49,0.18174726989079562,0.14735573549926123,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Age,Brier,65-74,0.025265015646601593,18-34,0.0933193036518544,0.0680542880052528,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,Unweighted,Age,Calibration_abs_error,35-49,0.009791870250239698,65-74,0.016081125462567153,0.006289255212327455,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Age,AUPRC,65-74,0.15622545657161874,18-34,0.400947593008467,0.24472213643684826,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Age,AUROC,50-64,0.7266311522924243,18-34,0.8036243115010255,0.07699315920860128,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Age,Recall,65-74,0.3903492424835024,18-34,0.6033910559110667,0.21304181342756429,4,Unsigned equal-opportunity TPR span at locked threshold
+MEDDL,XGBoost,WTFA_A,Age,FNR,18-34,0.3966089440889332,65-74,0.6096507575164974,0.21304181342756423,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Age,FPR,65-74,0.031162607737093683,35-49,0.17646425974538707,0.1453016520082934,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Age,Brier,65-74,0.02752891380840667,50-64,0.08928580259128913,0.061756888782882456,4,Descriptive between-group max-minus-min span
+MEDDL,XGBoost,WTFA_A,Age,Calibration_abs_error,35-49,0.007172419779221922,50-64,0.015971728314350175,0.008799308535128253,4,Descriptive between-group max-minus-min span
