@@ -1,0 +1,73 @@
+Outcome,Feature,Split,N,Missing_N,Missing_rate,Handling
+MEDNG,AGEP_A,train,22711,27,0.0011888512174717098,Train-fitted imputation
+MEDNG,SEX_A,train,22711,4,0.00017612610629210514,Train-fitted imputation
+MEDNG,HISPALLP_A,train,22711,0,0.0,Train-fitted imputation
+MEDNG,EDUCP_A,train,22711,98,0.004315089604156576,Train-fitted imputation
+MEDNG,RATCAT_A,train,22711,0,0.0,Train-fitted imputation
+MEDNG,EMPWRKLSW1_A,train,22711,679,0.02989740654308485,Train-fitted imputation
+MEDNG,NOTCOV_A,train,22711,52,0.0022896393817973667,Train-fitted imputation
+MEDNG,FDSCAT3_A,train,22711,756,0.03328783408920787,Train-fitted imputation
+MEDNG,PHSTAT_A,train,22711,10,0.00044031526573026287,Train-fitted imputation
+MEDNG,DISAB3_A,train,22711,1,4.4031526573026284e-05,Train-fitted imputation
+MEDNG,K6SPD_A,train,22711,367,0.016159570252300647,Train-fitted imputation
+MEDNG,CHRONIC_BURDEN_CAT,train,22711,158,0.006956981198538153,Explicit Missing/indeterminate category
+MEDNG,AGEP_A,validation,3226,5,0.0015499070055796653,Train-fitted imputation
+MEDNG,SEX_A,validation,3226,0,0.0,Train-fitted imputation
+MEDNG,HISPALLP_A,validation,3226,0,0.0,Train-fitted imputation
+MEDNG,EDUCP_A,validation,3226,11,0.0034097954122752636,Train-fitted imputation
+MEDNG,RATCAT_A,validation,3226,0,0.0,Train-fitted imputation
+MEDNG,EMPWRKLSW1_A,validation,3226,91,0.028208307501549908,Train-fitted imputation
+MEDNG,NOTCOV_A,validation,3226,8,0.0024798512089274642,Train-fitted imputation
+MEDNG,FDSCAT3_A,validation,3226,106,0.0328580285182889,Train-fitted imputation
+MEDNG,PHSTAT_A,validation,3226,3,0.0009299442033477991,Train-fitted imputation
+MEDNG,DISAB3_A,validation,3226,0,0.0,Train-fitted imputation
+MEDNG,K6SPD_A,validation,3226,61,0.018908865468071915,Train-fitted imputation
+MEDNG,CHRONIC_BURDEN_CAT,validation,3226,18,0.005579665220086794,Explicit Missing/indeterminate category
+MEDNG,AGEP_A,test,6417,14,0.0021817048465014805,Train-fitted imputation
+MEDNG,SEX_A,test,6417,1,0.00015583606046439146,Train-fitted imputation
+MEDNG,HISPALLP_A,test,6417,0,0.0,Train-fitted imputation
+MEDNG,EDUCP_A,test,6417,32,0.004986753934860527,Train-fitted imputation
+MEDNG,RATCAT_A,test,6417,0,0.0,Train-fitted imputation
+MEDNG,EMPWRKLSW1_A,test,6417,192,0.029920523609163162,Train-fitted imputation
+MEDNG,NOTCOV_A,test,6417,19,0.002960885148823438,Train-fitted imputation
+MEDNG,FDSCAT3_A,test,6417,230,0.035842293906810034,Train-fitted imputation
+MEDNG,PHSTAT_A,test,6417,3,0.0004675081813931744,Train-fitted imputation
+MEDNG,DISAB3_A,test,6417,0,0.0,Train-fitted imputation
+MEDNG,K6SPD_A,test,6417,120,0.018700327255726974,Train-fitted imputation
+MEDNG,CHRONIC_BURDEN_CAT,test,6417,46,0.007168458781362007,Explicit Missing/indeterminate category
+MEDDL,AGEP_A,train,22711,28,0.001232882744044736,Train-fitted imputation
+MEDDL,SEX_A,train,22711,4,0.00017612610629210514,Train-fitted imputation
+MEDDL,HISPALLP_A,train,22711,0,0.0,Train-fitted imputation
+MEDDL,EDUCP_A,train,22711,98,0.004315089604156576,Train-fitted imputation
+MEDDL,RATCAT_A,train,22711,0,0.0,Train-fitted imputation
+MEDDL,EMPWRKLSW1_A,train,22711,682,0.030029501122803927,Train-fitted imputation
+MEDDL,NOTCOV_A,train,22711,51,0.0022456078552243407,Train-fitted imputation
+MEDDL,FDSCAT3_A,train,22711,760,0.03346396019549998,Train-fitted imputation
+MEDDL,PHSTAT_A,train,22711,10,0.00044031526573026287,Train-fitted imputation
+MEDDL,DISAB3_A,train,22711,1,4.4031526573026284e-05,Train-fitted imputation
+MEDDL,K6SPD_A,train,22711,372,0.016379727885165778,Train-fitted imputation
+MEDDL,CHRONIC_BURDEN_CAT,train,22711,158,0.006956981198538153,Explicit Missing/indeterminate category
+MEDDL,AGEP_A,validation,3225,5,0.0015503875968992248,Train-fitted imputation
+MEDDL,SEX_A,validation,3225,0,0.0,Train-fitted imputation
+MEDDL,HISPALLP_A,validation,3225,0,0.0,Train-fitted imputation
+MEDDL,EDUCP_A,validation,3225,11,0.0034108527131782944,Train-fitted imputation
+MEDDL,RATCAT_A,validation,3225,0,0.0,Train-fitted imputation
+MEDDL,EMPWRKLSW1_A,validation,3225,91,0.028217054263565893,Train-fitted imputation
+MEDDL,NOTCOV_A,validation,3225,8,0.00248062015503876,Train-fitted imputation
+MEDDL,FDSCAT3_A,validation,3225,106,0.032868217054263564,Train-fitted imputation
+MEDDL,PHSTAT_A,validation,3225,3,0.0009302325581395349,Train-fitted imputation
+MEDDL,DISAB3_A,validation,3225,0,0.0,Train-fitted imputation
+MEDDL,K6SPD_A,validation,3225,61,0.01891472868217054,Train-fitted imputation
+MEDDL,CHRONIC_BURDEN_CAT,validation,3225,18,0.005581395348837209,Explicit Missing/indeterminate category
+MEDDL,AGEP_A,test,6419,14,0.0021810250817884407,Train-fitted imputation
+MEDDL,SEX_A,test,6419,1,0.00015578750584203146,Train-fitted imputation
+MEDDL,HISPALLP_A,test,6419,0,0.0,Train-fitted imputation
+MEDDL,EDUCP_A,test,6419,32,0.004985200186945007,Train-fitted imputation
+MEDDL,RATCAT_A,test,6419,0,0.0,Train-fitted imputation
+MEDDL,EMPWRKLSW1_A,test,6419,193,0.030066988627512073,Train-fitted imputation
+MEDDL,NOTCOV_A,test,6419,19,0.002959962610998598,Train-fitted imputation
+MEDDL,FDSCAT3_A,test,6419,231,0.03598691384950927,Train-fitted imputation
+MEDDL,PHSTAT_A,test,6419,3,0.0004673625175260944,Train-fitted imputation
+MEDDL,DISAB3_A,test,6419,0,0.0,Train-fitted imputation
+MEDDL,K6SPD_A,test,6419,121,0.018850288206885807,Train-fitted imputation
+MEDDL,CHRONIC_BURDEN_CAT,test,6419,46,0.007166225268733448,Explicit Missing/indeterminate category

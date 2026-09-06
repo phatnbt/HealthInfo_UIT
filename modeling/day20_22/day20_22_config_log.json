@@ -1,0 +1,61 @@
+{
+  "status": "DAY20_22_ERROR_ROBUSTNESS_AND_INITIAL_CODE_FREEZE_COMPLETE",
+  "seed": 2026,
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.0.4",
+    "matplotlib": "3.10.8"
+  },
+  "model_lock": "Day 8-10 estimator hyperparameters, 12 constructs, HHX split, Raw/Platt choice, and validation-selected threshold preserved for MEDNG/MEDDL.",
+  "error_analysis": "Aggregate false-negative/false-positive counts, rates, and eligible subgroup shares; no person-level output or micro-targeting.",
+  "threshold_robustness": {
+    "factors": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "policy": "Prespecified perturbation around the locked threshold; no replacement threshold selected."
+  },
+  "seed_robustness": {
+    "seeds": [
+      2026,
+      2037,
+      2048
+    ],
+    "policy": "Ranges reported; no seed selected using test performance."
+  },
+  "missingness_robustness": "Split-level feature missingness plus test evaluation strata; no complete-case refit.",
+  "composite_sensitivity": {
+    "definition": "TARGET_FORGONE_COST OR TARGET_DELAYED_COST on common valid-outcome cohort.",
+    "n": 32345,
+    "positive_n": 3014,
+    "hyperparameters": "Reuse MEDNG Day 8-10 hyperparameters; no composite tuning.",
+    "calibration_threshold": "Day 8-10 validation-only protocol applied within composite sensitivity.",
+    "status": "Separate sensitivity analysis; does not replace independent MEDNG/MEDDL primary reporting."
+  },
+  "privacy": "Only aggregate tables, SVGs, and hashes are saved; no HHX/person-level prediction/probability is written.",
+  "gate4": "PASS after validator confirms fairness plus Day 20-21 error/robustness outputs.",
+  "day22_freeze": "Initial computational freeze through Day 22; later manuscript-only edits must not silently change locked analysis.",
+  "outputs": [
+    "day20_22_error_summary.csv",
+    "day20_22_error_profile_by_group.csv",
+    "day20_22_threshold_robustness.csv",
+    "day20_22_seed_robustness.csv",
+    "day20_22_missingness_by_split.csv",
+    "day20_22_missingness_performance.csv",
+    "day20_22_leakage_integrity_checklist.csv",
+    "day20_22_composite_validation_selection.csv",
+    "day20_22_composite_sensitivity_performance.csv",
+    "day20_22_composite_split_audit.csv",
+    "day20_22_composite_validation_role_audit.csv",
+    "day22_final_model_table.csv",
+    "day22_final_error_table.csv",
+    "day22_robustness_summary.csv",
+    "figures/day20_22_weighted_error_tradeoff.svg",
+    "figures/day20_22_threshold_robustness.svg",
+    "day20_22_config_log.json",
+    "day22_code_freeze_manifest.csv"
+  ]
+}

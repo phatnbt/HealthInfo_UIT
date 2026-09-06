@@ -1,0 +1,4 @@
+Outcome,Split,N,Positive_N
+ANY_COST,train,22704,2080
+ANY_COST,validation,3225,327
+ANY_COST,test,6416,607

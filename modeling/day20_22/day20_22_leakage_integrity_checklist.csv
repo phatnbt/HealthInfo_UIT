@@ -1,0 +1,11 @@
+Outcome,Check,Status,Evidence,Why_it_matters
+MEDNG,"Predictor lock excludes identifiers, survey design and outcomes",PASS,12 constructs exactly; forbidden intersection=[],Prevents direct target leakage and use of survey fields as predictors.
+MEDNG,Deterministic split integrity,PASS,Day-5 HHX SHA-256 70/10/20 counts match and split intersections are empty.,Prevents train/validation/test overlap.
+MEDNG,Train-only preprocessing,PASS,make_prep().fit_transform called only on train; validation/test use transform.,Prevents preprocessing leakage.
+MEDNG,Probability and threshold lock,PASS,Raw/Platt and threshold read from Day 8-10 validation_selection; subgroup/test never reselect them.,Prevents test-driven optimization.
+MEDNG,Other outcome excluded from predictors,PASS,MEDNG and MEDDL modeled separately; neither raw/derived outcome appears in MAIN.,Prevents outcome-to-outcome leakage.
+MEDDL,"Predictor lock excludes identifiers, survey design and outcomes",PASS,12 constructs exactly; forbidden intersection=[],Prevents direct target leakage and use of survey fields as predictors.
+MEDDL,Deterministic split integrity,PASS,Day-5 HHX SHA-256 70/10/20 counts match and split intersections are empty.,Prevents train/validation/test overlap.
+MEDDL,Train-only preprocessing,PASS,make_prep().fit_transform called only on train; validation/test use transform.,Prevents preprocessing leakage.
+MEDDL,Probability and threshold lock,PASS,Raw/Platt and threshold read from Day 8-10 validation_selection; subgroup/test never reselect them.,Prevents test-driven optimization.
+MEDDL,Other outcome excluded from predictors,PASS,MEDNG and MEDDL modeled separately; neither raw/derived outcome appears in MAIN.,Prevents outcome-to-outcome leakage.

@@ -1,5 +1,7 @@
 # Literature Review Plan — Cost-Related Barriers to Healthcare Access (NHIS 2024)
 
+> **UHS start here:** [`docs/UHS_READ_ME_FIRST_DAY1_22.md`](docs/UHS_READ_ME_FIRST_DAY1_22.md) is the curated Day 1–22 file map, result-explanation guide, and boundary between UHS review files and UIT reproducibility artifacts.
+
 This document defines the shared workflow for the literature review supporting our HEALTHINFO IV submission. Everyone on the team should follow the same extraction structure so individual notes can be merged into one coherent review without rewriting.
 
 **Deadline context:** Submission is due September 15, 2026. The Day 4 primary feature specification has already been frozen before modeling. New literature may refine interpretation, sensitivity analyses, Discussion, and citation support, but should not silently reopen the locked primary predictor set or Day 5–10 model-selection protocol.
@@ -93,7 +95,7 @@ The project has two parallel workstreams and they should remain distinguishable 
 
 ### UIT — technical workstream
 
-**UIT TECHNICAL DAY 1–19 COMPLETE.**
+**UIT TECHNICAL DAY 1–22 COMPLETE; GATE 4 PASS.**
 
 Completed technical components include:
 - Day 1–4 source integrity, outcome/cohort audit, 22-candidate audit, UHS review, and final 12-construct feature lock;
@@ -111,14 +113,20 @@ Completed technical components include:
 - a second exact reproduction gate confirming 6/6 locked-test rows before explanation, with no person-level SHAP output committed.
 - Day 17–19 locked-test fairness/error-rate audit over four equity domains (five operational axes), reporting subgroup discrimination, calibration, Recall/FNR/FPR, weighted–unweighted sensitivity, and 400-replicate stratified-PSU intervals;
 - a twelve-row reproduction gate against the Day 8–10 and Day 11–13 reference arms, plus explicit exclusion of underpowered subgroup levels and aggregate-only output validation.
+- Day 20–21 aggregate false-negative/false-positive analysis, including weighted/unweighted overall errors and 168 eligible subgroup error profiles without person-level export;
+- prespecified robustness checks for threshold multipliers 0.8/1.0/1.2, seeds 2026/2037/2048, and missingness strata, with no post-test reselection;
+- a separate `MEDNG OR MEDDL` composite-outcome sensitivity on the 32,345-person common cohort using reused MEDNG hyperparameters and validation-only calibration/threshold selection;
+- Day 22 manuscript-facing final tables, two summary figures, a ten-check leakage/integrity gate, and a 29-entry SHA-256 computational freeze manifest.
 
-**Current boundary:** Day 20–21 false-negative/false-positive error analysis and robustness checking is next. Day 8–19 test, sensitivity, SHAP, and subgroup results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
+**Current boundary:** Day 23–24 manuscript development is next. The Day 22 computational state is frozen; Day 8–22 test, sensitivity, SHAP, subgroup, error, and robustness results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
 
 Day 11–13 supports a sensitivity conclusion, not a model-selection conclusion: survey weighting changes population prevalence and some precision–recall/calibration trade-offs, while AUROC changes are small. No model is a universal winner across outcomes and metrics. See `docs/Day11_13_Survey_Aware_Methodological_Rationale.md` and `research_log/Day11_13_Survey_Aware_Sensitivity.md`.
 
 Day 14–16 supports an explainability conclusion, not a causal or fairness conclusion: weighted and unweighted SHAP rankings are stable within models, but the feature patterns differ across LR, RF, XGBoost and some subgroups. See `docs/Day14_16_SHAP_Methodological_Rationale.md` and `research_log/Day14_16_SHAP_Explainability.md`.
 
 Day 17–19 supports a subgroup audit conclusion, not a categorical fair/unfair verdict. Insurance and age show the largest locked-threshold error-rate signals, while sparse race/ethnicity levels and age 75+ cannot be compared reliably on this test split. No model is a universal fairness winner. See `docs/Day17_19_Fairness_Methodological_Rationale.md` and `research_log/Day17_19_Fairness_Audit.md`.
+
+Day 20–22 confirms the operating-point trade-off: RF reduces false negatives but increases false positives, while LR/XGBoost generally do the reverse. Threshold, seed, missingness, and composite sensitivity do not identify a universal winner. Gate 4 passes, and the computational state is frozen for manuscript work. See `docs/Day20_22_Error_Robustness_Methodological_Rationale.md`, `docs/Day22_Methods_Results_Draft.md`, and `research_log/Day20_22_Error_Robustness_Code_Freeze.md`.
 
 ### UHS / collaborative literature workstream
 
