@@ -54,6 +54,9 @@ PRIMARY_EQUITY_SUBGROUP = "HISPALLP_A"
 AUDIT_METRICS = ("AUROC", "AUPRC", "Recall", "Precision", "F1", "Specificity", "Brier")
 AUDIT_TOLERANCE = 1e-8
 MIN_SUBGROUP_N = 100
+PRESERVED_TEXT_CATEGORY_LEVELS = {
+    "CHRONIC_BURDEN_CAT": {"3+": "code_3+"},
+}
 
 
 def build_locked_model(model_name: str, params: dict, n_jobs: int):
@@ -192,10 +195,34 @@ def encoded_importance_rows(
 
 
 def cleaned_category(series: pd.Series, feature: str) -> pd.Series:
-    numeric = pd.to_numeric(series, errors="coerce")
+    text = series.astype("string").str.strip()
+    numeric = pd.to_numeric(text, errors="coerce")
     if feature in SPECIAL:
         numeric = numeric.mask(numeric.isin(SPECIAL[feature]))
-    return numeric.map(lambda value: "Missing/special" if pd.isna(value) else f"code_{int(value)}")
+    labels = numeric.map(
+        lambda value: "Missing/special" if pd.isna(value) else f"code_{int(value)}"
+    )
+
+    for raw_level, output_label in PRESERVED_TEXT_CATEGORY_LEVELS.get(feature, {}).items():
+        raw_mask = text.eq(raw_level).fillna(False)
+        labels.loc[raw_mask] = output_label
+        if int(labels.eq(output_label).sum()) != int(raw_mask.sum()):
+            raise RuntimeError(
+                f"{feature}: failed to preserve raw category {raw_level!r} as {output_label!r}"
+            )
+
+    return labels
+
+
+def category_direction_summary(level_rows: list[dict]) -> str:
+    substantive_rows = [
+        row for row in level_rows if row["Level"] != "Missing/special"
+    ]
+    if not substantive_rows:
+        return "category-specific"
+    lowest = min(substantive_rows, key=lambda row: row["Weighted_mean_SHAP"])
+    highest = max(substantive_rows, key=lambda row: row["Weighted_mean_SHAP"])
+    return f"category-specific: lowest {lowest['Level']}; highest {highest['Level']}"
 
 
 def subgroup_series(test_frame: pd.DataFrame, subgroup: str) -> pd.Series:
@@ -317,18 +344,16 @@ def direction_rows(
             }
             categories.append(level_row)
             level_rows.append(level_row)
-        if level_rows:
-            lowest = min(level_rows, key=lambda row: row["Weighted_mean_SHAP"])
-            highest = max(level_rows, key=lambda row: row["Weighted_mean_SHAP"])
-            direction = f"category-specific: lowest {lowest['Level']}; highest {highest['Level']}"
-        else:
-            direction = "category-specific"
+        direction = category_direction_summary(level_rows)
         summary.append({
             "Outcome": outcome,
             "Model": model_name,
             "Feature_construct": feature,
             "Explained_output": explained_output,
-            "Direction_method": "WTFA_A-weighted mean construct SHAP by raw category code",
+            "Direction_method": (
+                "WTFA_A-weighted mean construct SHAP by substantive raw category code; "
+                "missing/special retained in category table but excluded from endpoints"
+            ),
             "Direction_summary": direction,
             "Spearman_rho": np.nan,
             "N": len(values),
@@ -770,6 +795,14 @@ def main():
         },
         "calibration_boundary": "MEDDL Platt performance is reproduced, but SHAP explains the base estimator before the locked monotonic Platt layer.",
         "importance_aggregation": ["Unweighted", "WTFA_A-weighted on locked test"],
+        "category_label_policy": (
+            "Preserve CHRONIC_BURDEN_CAT raw level 3+ as code_3+; do not coerce it "
+            "to missing/special."
+        ),
+        "direction_endpoint_policy": (
+            "Retain missing/special rows in the category audit table, but exclude them "
+            "when selecting lowest/highest substantive category endpoints."
+        ),
         "subgroup_pattern_axes": list(SUBGROUPS),
         "primary_equity_subgroup": PRIMARY_EQUITY_SUBGROUP,
         "minimum_subgroup_n": MIN_SUBGROUP_N,

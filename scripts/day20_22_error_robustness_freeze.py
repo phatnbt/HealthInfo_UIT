@@ -753,6 +753,7 @@ def main() -> None:
         Path("scripts/day8_10_modeling.py"),
         Path("scripts/day11_13_survey_sensitivity.py"),
         Path("scripts/day14_16_shap_explainability.py"),
+        Path("scripts/validate_day14_16_outputs.py"),
         Path("scripts/day17_19_fairness_audit.py"),
         Path("scripts/day20_22_error_robustness_freeze.py"),
         Path("scripts/validate_day17_19_outputs.py"),

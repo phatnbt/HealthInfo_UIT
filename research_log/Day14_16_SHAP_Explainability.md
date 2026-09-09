@@ -7,6 +7,8 @@
 
 **Phạm vi:** SHAP global, direction/dependence, interaction screen và subgroup explanation pattern cho LR, RF, XGBoost trên MEDNG và MEDDL
 
+**Hiệu chỉnh ngày 09/09/2026:** sửa lỗi gắn nhãn `CHRONIC_BURDEN_CAT = 3+` trong bảng SHAP theo category. Đây là hiệu chỉnh lớp báo cáo, không thay đổi mô hình hoặc kết quả đánh giá đã khóa.
+
 ## 1. Mục tiêu trong ngày
 
 - Giải thích cả ba mô hình đã giữ lại vì Day 8–13 chưa xác lập universal winner.
@@ -28,6 +30,8 @@
 - So sánh explanation pattern theo `HISPALLP_A`, `RATCAT_A`, `NOTCOV_A`, `SEX_A` và nhóm tuổi.
 - Loại các subgroup level có N < 100 khỏi bảng pattern chính và lưu audit riêng.
 - Chỉ lưu bảng/hình tổng hợp; không lưu `HHX`, prediction hoặc SHAP cấp cá nhân.
+- Kiểm tra lại luồng tạo nhãn category sau khi phát hiện chuỗi `3+` bị ép sang số và nhận nhầm thành missing.
+- Sửa hàm `cleaned_category()` để bảo toàn `3+` thành `code_3+`, đồng thời bổ sung validator đối chiếu trực tiếp với locked test.
 
 ## 3. Công cụ sử dụng
 
@@ -51,6 +55,8 @@
 9. Tạo direction/dependence output; category chỉ ghi raw public-use code.
 10. Sàng lọc interaction cho hai tree models và tạo subgroup pattern tables.
 11. Kiểm tra hình SVG, cấu hình chạy, quyền riêng tư và protocol non-retuning.
+12. Tách `code_3+` khỏi `Missing/special`; giữ missing trong bảng kiểm toán nhưng loại missing khỏi hai endpoint thấp nhất/cao nhất của direction summary.
+13. Chạy validator Day 14–16 và kiểm tra lại code-freeze Day 20–22 sau hiệu chỉnh.
 
 ## 5. Kết quả
 
@@ -77,6 +83,18 @@
 - Interaction đứng đầu lần lượt là MEDNG–RF `EMPWRKLSW1_A × FDSCAT3_A`, MEDNG–XGBoost `RATCAT_A × FDSCAT3_A`, MEDDL–RF `NOTCOV_A × CHRONIC_BURDEN_CAT`, MEDDL–XGBoost `EDUCP_A × RATCAT_A`.
 - Explanation pattern thay đổi ở một số subgroup; đây chưa phải bằng chứng về fairness hay discrimination.
 
+### Hiệu chỉnh `CHRONIC_BURDEN_CAT`
+
+| Outcome | Nhóm `code_3+` | Missing thật |
+|---|---:|---:|
+| MEDNG | 1.172 | 46 |
+| MEDDL | 1.172 | 46 |
+
+- Số lượng trên được đếm trực tiếp từ locked test theo split `HHX`, không gắn thủ công theo từng mô hình.
+- LR, RF và XGBoost có cùng số người trong mỗi outcome vì chúng dùng chung cohort test; giá trị SHAP vẫn được tính riêng cho từng mô hình.
+- Direction sau sửa: MEDNG LR/RF thấp nhất `code_0`, cao nhất `code_2`; MEDNG XGBoost thấp nhất `code_0`, cao nhất `code_3+`; MEDDL LR/RF thấp nhất `code_0`, cao nhất `code_2`; MEDDL XGBoost thấp nhất `code_3+`, cao nhất `code_0`.
+- `day14_16_shap_global_importance.csv`, `day14_16_shap_encoded_importance.csv` và sáu hàng audit tái lập mô hình không thay đổi.
+
 ## 6. Vấn đề phát sinh / lưu ý
 
 - SHAP của LR/XGBoost nằm trên log-odds/raw-margin scale, còn RF trên positive-class probability scale; không so sánh độ lớn SHAP trực tiếp giữa model families.
@@ -87,6 +105,8 @@
 - Interaction screen N=100 là exploratory, không phải kiểm định thống kê.
 - Các nhóm N < 100 bị loại khỏi pattern table chính để tránh diễn giải bất ổn.
 - SHAP/test output tuyệt đối không được dùng để tune lại model, feature, calibration hoặc threshold.
+- Nguyên nhân lỗi là phép ép chuỗi category sang số: `0`, `1`, `2` chuyển được nhưng `3+` trở thành `NaN` rồi bị gắn `Missing/special`.
+- `CHRONIC_BURDEN_CAT` là số miền bệnh mạn được chọn ở mức `0`, `1`, `2`, `3+`; không diễn giải đây là chỉ số mức độ nặng lâm sàng.
 
 ## 7. Quyết định / bước tiếp theo
 
@@ -95,10 +115,13 @@
 - Gửi các top predictor, direction/category pattern và interaction candidates cho UHS diễn giải theo y tế công cộng.
 - Chuyển sang Day 17–19: fairness/error audit theo subgroup, gồm performance, calibration và error context.
 - Day 17–19 phải kiểm tra trực tiếp chênh lệch metric; không được suy fairness từ SHAP importance.
+- Yêu cầu UHS thay các hàng category/direction cũ của riêng `CHRONIC_BURDEN_CAT` bằng bản đã hiệu chỉnh; các kết luận global importance, encoded importance và hiệu suất mô hình được giữ nguyên.
+- Mọi lần tái tạo Day 14–16 phải chạy `scripts/validate_day14_16_outputs.py`; pipeline phải dừng nếu `code_3+` bị gộp vào missing hoặc missing được chọn làm endpoint direction.
 
 ## 8. Sản phẩm tạo ra
 
 - `scripts/day14_16_shap_explainability.py`
+- `scripts/validate_day14_16_outputs.py`
 - `modeling/day14_16/day14_16_shap_global_importance.csv`
 - `modeling/day14_16/day14_16_shap_encoded_importance.csv`
 - `modeling/day14_16/day14_16_shap_direction_summary.csv`
@@ -112,4 +135,4 @@
 - `docs/Day14_16_SHAP_Methodological_Rationale.md`
 - `research_log/Day14_16_SHAP_Explainability.md`
 
-**Kết luận trạng thái:** Day 14–16 hoàn thành đúng Gate 3; SHAP chỉ được diễn giải là predictive attribution và pipeline vẫn khóa.
+**Kết luận trạng thái:** Day 14–16 hoàn thành đúng Gate 3; lỗi nhãn `CHRONIC_BURDEN_CAT = 3+` đã được sửa và kiểm tra hồi quy; SHAP chỉ được diễn giải là predictive attribution và pipeline vẫn khóa.

@@ -55,6 +55,8 @@
     "Unweighted",
     "WTFA_A-weighted on locked test"
   ],
+  "category_label_policy": "Preserve CHRONIC_BURDEN_CAT raw level 3+ as code_3+; do not coerce it to missing/special.",
+  "direction_endpoint_policy": "Retain missing/special rows in the category audit table, but exclude them when selecting lowest/highest substantive category endpoints.",
   "subgroup_pattern_axes": [
     "HISPALLP_A",
     "RATCAT_A",

@@ -16,6 +16,15 @@ This folder contains aggregate-only explainability artifacts for the locked Day 
 
 `day14_16_shap_encoded_importance.csv` is the detailed one-hot-level audit table. Use the construct-level table for primary reporting.
 
+## Category-label integrity
+
+`CHRONIC_BURDEN_CAT` keeps the substantive raw level `3+` as `code_3+`.
+It must never be merged with `Missing/special`. Missing/special rows remain in
+the category audit table for transparency, but they are excluded when the
+direction summary selects its lowest and highest substantive category levels.
+
+Run `scripts/validate_day14_16_outputs.py` after regenerating Day 14-16 outputs.
+
 ## Interpretation lock
 
 SHAP values are predictive attributions, not causes. Importance magnitudes are not directly comparable across LR, RF, and XGBoost because the explained-output scales differ. Subgroup SHAP patterns are not fairness metrics.
