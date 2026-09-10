@@ -1,8 +1,8 @@
-# UHS READ ME FIRST — NHIS 2024 Day 1–22
+# UHS READ ME FIRST — NHIS 2024 Day 1–24
 
 ## Mục đích
 
-File này là điểm vào duy nhất dành cho nhóm UHS. UHS không cần mở toàn bộ script, config, audit và CSV chi tiết trong repository. Các file kỹ thuật vẫn phải được giữ để tái lập kết quả, nhưng chỉ một tập nhỏ cần được đọc để diễn giải y tế công cộng và viết bài. Day 20–22 đã bổ sung error analysis, robustness, composite sensitivity và code freeze.
+File này là điểm vào duy nhất dành cho nhóm UHS. UHS không cần mở toàn bộ script, config, audit và CSV chi tiết trong repository. Các file kỹ thuật vẫn phải được giữ để tái lập kết quả, nhưng chỉ một tập nhỏ cần được đọc để diễn giải y tế công cộng và viết bài. Day 20–22 đã bổ sung error analysis, robustness, composite sensitivity và code freeze; Day 23–24 đã ghép manuscript v1.
 
 ## 1. Thứ tự đọc ngắn nhất
 
@@ -38,6 +38,15 @@ File này là điểm vào duy nhất dành cho nhóm UHS. UHS không cần mở
 8. `docs/Day22_Methods_Results_Draft.md`
    - Bản Methods–Results đầu tiên có số liệu truy ngược tới output đã kiểm tra.
    - UHS rà thuật ngữ y tế, use case, mức độ khẳng định và Limitations; không tự sửa số.
+
+9. `docs/Day23_24_Manuscript_V1.md`
+   - Bản thảo v1 đầy đủ hiện hành; dùng bản này thay cho Day 22 draft khi review toàn bài.
+
+10. `docs/Day23_24_UHS_Review_Guide.md`
+   - Nêu rõ UHS cần làm lại hoặc bổ sung gì, đặc biệt use case, chi phí FN/FP và insurance.
+
+11. `docs/Day23_24_Claim_Traceability.csv`
+   - Dùng để truy ngược từng nhóm con số; nếu nghi ngờ số liệu, comment theo Claim_ID thay vì sửa trực tiếp.
 
 ### Bắt buộc khi viết Background/Discussion
 

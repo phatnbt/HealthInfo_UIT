@@ -95,7 +95,7 @@ The project has two parallel workstreams and they should remain distinguishable 
 
 ### UIT — technical workstream
 
-**UIT TECHNICAL DAY 1–22 COMPLETE; GATE 4 PASS.**
+**UIT TECHNICAL DAY 1–24 COMPLETE; GATE 4 PASS; MANUSCRIPT V1 READY.**
 
 Completed technical components include:
 - Day 1–4 source integrity, outcome/cohort audit, 22-candidate audit, UHS review, and final 12-construct feature lock;
@@ -116,9 +116,10 @@ Completed technical components include:
 - Day 20–21 aggregate false-negative/false-positive analysis, including weighted/unweighted overall errors and 168 eligible subgroup error profiles without person-level export;
 - prespecified robustness checks for threshold multipliers 0.8/1.0/1.2, seeds 2026/2037/2048, and missingness strata, with no post-test reselection;
 - a separate `MEDNG OR MEDDL` composite-outcome sensitivity on the 32,345-person common cohort using reused MEDNG hyperparameters and validation-only calibration/threshold selection;
-- Day 22 manuscript-facing final tables, two summary figures, a ten-check leakage/integrity gate, and a 29-entry SHA-256 computational freeze manifest.
+- Day 22 manuscript-facing final tables, two summary figures, a ten-check leakage/integrity gate, and a current 30-entry SHA-256 computational freeze manifest after the controlled chronic-burden report-layer correction.
+- Day 23–24 full manuscript v1 assembly, 16-claim traceability table, UHS review guide, and final figure/table index without reopening the frozen analysis.
 
-**Current boundary:** Day 23–24 manuscript development is next. The Day 22 computational state is frozen; Day 8–22 test, sensitivity, SHAP, subgroup, error, and robustness results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
+**Current boundary:** Day 23–24 manuscript v1 is complete. Day 25–26 consistency audit is next. The Day 22 computational state is frozen; Day 8–22 test, sensitivity, SHAP, subgroup, error, and robustness results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
 
 Day 11–13 supports a sensitivity conclusion, not a model-selection conclusion: survey weighting changes population prevalence and some precision–recall/calibration trade-offs, while AUROC changes are small. No model is a universal winner across outcomes and metrics. See `docs/Day11_13_Survey_Aware_Methodological_Rationale.md` and `research_log/Day11_13_Survey_Aware_Sensitivity.md`.
 
@@ -127,6 +128,8 @@ Day 14–16 supports an explainability conclusion, not a causal or fairness conc
 Day 17–19 supports a subgroup audit conclusion, not a categorical fair/unfair verdict. Insurance and age show the largest locked-threshold error-rate signals, while sparse race/ethnicity levels and age 75+ cannot be compared reliably on this test split. No model is a universal fairness winner. See `docs/Day17_19_Fairness_Methodological_Rationale.md` and `research_log/Day17_19_Fairness_Audit.md`.
 
 Day 20–22 confirms the operating-point trade-off: RF reduces false negatives but increases false positives, while LR/XGBoost generally do the reverse. Threshold, seed, missingness, and composite sensitivity do not identify a universal winner. Gate 4 passes, and the computational state is frozen for manuscript work. See `docs/Day20_22_Error_Robustness_Methodological_Rationale.md`, `docs/Day22_Methods_Results_Draft.md`, and `research_log/Day20_22_Error_Robustness_Code_Freeze.md`.
+
+Day 23–24 assembles the full first manuscript from the frozen evidence and adds explicit code-to-claim traceability. UHS should review the public-health interpretation, use case, FN/FP trade-off, insurance wording, sparse groups, and Vietnam future-work boundary without editing the frozen numbers. See `docs/Day23_24_Manuscript_V1.md`, `docs/Day23_24_UHS_Review_Guide.md`, `docs/Day23_24_Claim_Traceability.csv`, and `research_log/Day23_24_Manuscript_Assembly.md`.
 
 ### UHS / collaborative literature workstream
 

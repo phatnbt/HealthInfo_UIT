@@ -27,5 +27,6 @@ Mỗi ngày giữ cùng một cấu trúc:
 - [Day 14–16 — Locked-model SHAP explainability](Day14_16_SHAP_Explainability.md)
 - [Day 17–19 — Locked-test subgroup fairness and error-rate audit](Day17_19_Fairness_Audit.md)
 - [Day 20–22 — Error analysis, robustness and initial code freeze](Day20_22_Error_Robustness_Code_Freeze.md)
+- [Day 23–24 — Full manuscript v1 assembly from frozen evidence](Day23_24_Manuscript_Assembly.md)
 
 Google Docs được dùng như bản cộng tác sống; thư mục này lưu phiên bản đã chốt để theo dõi lịch sử thay đổi bằng Git.

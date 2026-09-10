@@ -26,7 +26,7 @@
 - Audit missingness 12 constructs trên train/validation/test và so sánh hai test strata mà không refit.
 - Tạo common cohort và chạy sensitivity `TARGET_FORGONE_COST OR TARGET_DELAYED_COST` bằng hyperparameter MEDNG đã khóa, không tuning composite.
 - Chạy 10 leakage/integrity checks.
-- Tạo 3 bảng rút gọn Day 22, 2 SVG và code-freeze manifest 29 file.
+- Tạo 3 bảng rút gọn Day 22, 2 SVG và code-freeze manifest. Trạng thái hiện hành có 30 file sau controlled report-layer correction cho `CHRONIC_BURDEN_CAT`.
 - Viết validator độc lập kiểm tra schema riêng tư, invariant, reproduction và hash.
 
 ## 3. Công cụ sử dụng
@@ -61,7 +61,7 @@
 - 36 threshold rows, 36 seed rows, 72 feature-split missingness rows và 24 missingness-performance rows.
 - Threshold factor 1,0 và seed 2026 tái lập toàn bộ 12 reference arms.
 - 10/10 leakage/integrity checks PASS.
-- 29/29 code/output hash entries khớp.
+- 30/30 code/output hash entries hiện hành khớp. Bản freeze đầu tiên có 29 entries; entry validator Day 14–16 được bổ sung khi vá lớp gắn nhãn `3+`, không thay đổi model.
 - Không lưu `HHX`, person-level probability hoặc person-level prediction.
 
 ### Error trade-off weighted
