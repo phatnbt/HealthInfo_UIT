@@ -1,0 +1,63 @@
+name: Inspect V2 archive
+
+on:
+  push:
+    branches:
+      - codex/current-manifest-v2
+    paths:
+      - .github/workflows/inspect-v2.yml
+      - 00_CURRENT_REPAIR_V2.zip
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect archive structure and freeze metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          work_dir="${RUNNER_TEMP}/healthinfo-v2"
+          mkdir -p "$work_dir"
+          unzip -q 00_CURRENT_REPAIR_V2.zip -d "$work_dir"
+          python - "$work_dir" <<'PY'
+          from pathlib import Path
+          import csv
+          import sys
+
+          root = Path(sys.argv[1])
+          files = sorted(p for p in root.rglob("*") if p.is_file())
+          print(f"FILE_COUNT={len(files)}")
+          print("RELEVANT_FILES")
+          for p in files:
+              rel = p.relative_to(root)
+              low = p.name.lower()
+              if any(k in low for k in ("manifest", "freeze", "validator", "readme", "day8_10", "day14_16")):
+                  print(f"{rel}\t{p.stat().st_size}")
+
+          print("MANIFEST_SCHEMAS")
+          for p in files:
+              if "manifest" not in p.name.lower() or p.suffix.lower() != ".csv":
+                  continue
+              print(f"--- {p.relative_to(root)}")
+              with p.open("r", encoding="utf-8-sig", newline="") as fh:
+                  reader = csv.DictReader(fh)
+                  print("FIELDS=" + repr(reader.fieldnames))
+                  for i, row in enumerate(reader):
+                      print(f"ROW{i+1}=" + repr(row))
+                      if i >= 34:
+                          break
+
+          print("FREEZE_SCRIPT_HINTS")
+          for p in files:
+              low = p.name.lower()
+              if p.suffix.lower() == ".py" and ("freeze" in low or "manifest" in low or "validator" in low):
+                  print(f"--- {p.relative_to(root)}")
+                  text = p.read_text(encoding="utf-8", errors="replace")
+                  for i, line in enumerate(text.splitlines(), 1):
+                      if any(k in line.lower() for k in ("argparse", "manifest", "sha256", "files_to", "required_files", "expected")):
+                          print(f"{i}: {line}")
+          PY
