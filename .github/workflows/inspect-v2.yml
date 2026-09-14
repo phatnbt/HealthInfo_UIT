@@ -16,48 +16,99 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect archive structure and freeze metadata
+        with:
+          fetch-depth: 0
+      - name: Validate current manifest and inspect history
         shell: bash
         run: |
           set -euo pipefail
           work_dir="${RUNNER_TEMP}/healthinfo-v2"
-          mkdir -p "$work_dir"
-          unzip -q 00_CURRENT_REPAIR_V2.zip -d "$work_dir"
-          python - "$work_dir" <<'PY'
+          mkdir -p "$work_dir/current"
+          unzip -q 00_CURRENT_REPAIR_V2.zip -d "$work_dir/current"
+          python - "$work_dir/current" <<'PY'
+          from pathlib import Path
+          import csv
+          import hashlib
+          import sys
+
+          extracted = Path(sys.argv[1])
+          roots = [p for p in extracted.iterdir() if p.is_dir()]
+          root = roots[0] if len(roots) == 1 else extracted
+          manifest = root / "modeling/day20_22/day22_code_freeze_manifest.csv"
+          historical = root / "modeling/day20_22/HISTORICAL_day22_code_freeze_manifest_29rows.csv"
+
+          with manifest.open("r", encoding="utf-8-sig", newline="") as fh:
+              rows = list(csv.DictReader(fh))
+
+          failures = []
+          seen = set()
+          for row in rows:
+              rel = row["Relative_path"]
+              if rel in seen:
+                  failures.append(f"duplicate path: {rel}")
+              seen.add(rel)
+              path = root / rel
+              if not path.is_file():
+                  failures.append(f"missing: {rel}")
+                  continue
+              actual_size = path.stat().st_size
+              actual_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+              if str(actual_size) != row["Size_bytes"]:
+                  failures.append(f"size mismatch: {rel}: manifest={row['Size_bytes']} actual={actual_size}")
+              if actual_hash.lower() != row["SHA256"].lower():
+                  failures.append(f"hash mismatch: {rel}: manifest={row['SHA256']} actual={actual_hash}")
+
+          print(f"CURRENT_ROWS={len(rows)}")
+          print(f"HISTORICAL_PRESENT={historical.is_file()}")
+          if historical.is_file():
+              with historical.open("r", encoding="utf-8-sig", newline="") as fh:
+                  print(f"HISTORICAL_ROWS={sum(1 for _ in csv.DictReader(fh))}")
+          print(f"CURRENT_CHECK_FAILURES={len(failures)}")
+          for failure in failures:
+              print("FAIL=" + failure)
+
+          sensitive = []
+          for p in root.rglob("*"):
+              if not p.is_file():
+                  continue
+              low = p.name.lower()
+              if "prediction" in low and not low.endswith("_manifest.csv"):
+                  sensitive.append(str(p.relative_to(root)))
+              if p.suffix.lower() == ".csv":
+                  try:
+                      with p.open("r", encoding="utf-8-sig", errors="replace") as fh:
+                          header = fh.readline().strip().lower().split(",")
+                      if "hhx" in header:
+                          sensitive.append(str(p.relative_to(root)) + " [HHX header]")
+                  except OSError:
+                      pass
+          print(f"SENSITIVE_FILE_FLAGS={len(sensitive)}")
+          for item in sensitive:
+              print("SENSITIVE=" + item)
+
+          if len(rows) != 30:
+              failures.append(f"expected 30 current rows, got {len(rows)}")
+          if failures:
+              raise SystemExit(1)
+          PY
+
+          echo "HISTORICAL_ARCHIVE_MANIFESTS"
+          for commit in $(git log --format=%H --all -- 00_CURRENT_REPAIR_V2.zip | head -n 8); do
+            candidate="$work_dir/$commit.zip"
+            old_dir="$work_dir/$commit"
+            git show "$commit:00_CURRENT_REPAIR_V2.zip" > "$candidate"
+            mkdir -p "$old_dir"
+            unzip -q "$candidate" -d "$old_dir"
+            python - "$commit" "$old_dir" <<'PY'
           from pathlib import Path
           import csv
           import sys
 
-          root = Path(sys.argv[1])
-          files = sorted(p for p in root.rglob("*") if p.is_file())
-          print(f"FILE_COUNT={len(files)}")
-          print("RELEVANT_FILES")
-          for p in files:
-              rel = p.relative_to(root)
-              low = p.name.lower()
-              if any(k in low for k in ("manifest", "freeze", "validator", "readme", "day8_10", "day14_16")):
-                  print(f"{rel}\t{p.stat().st_size}")
-
-          print("MANIFEST_SCHEMAS")
-          for p in files:
-              if "manifest" not in p.name.lower() or p.suffix.lower() != ".csv":
-                  continue
-              print(f"--- {p.relative_to(root)}")
+          commit, extracted = sys.argv[1], Path(sys.argv[2])
+          manifests = sorted(extracted.rglob("*day22_code_freeze_manifest*.csv"))
+          for p in manifests:
               with p.open("r", encoding="utf-8-sig", newline="") as fh:
-                  reader = csv.DictReader(fh)
-                  print("FIELDS=" + repr(reader.fieldnames))
-                  for i, row in enumerate(reader):
-                      print(f"ROW{i+1}=" + repr(row))
-                      if i >= 34:
-                          break
-
-          print("FREEZE_SCRIPT_HINTS")
-          for p in files:
-              low = p.name.lower()
-              if p.suffix.lower() == ".py" and ("freeze" in low or "manifest" in low or "validator" in low):
-                  print(f"--- {p.relative_to(root)}")
-                  text = p.read_text(encoding="utf-8", errors="replace")
-                  for i, line in enumerate(text.splitlines(), 1):
-                      if any(k in line.lower() for k in ("argparse", "manifest", "sha256", "files_to", "required_files", "expected")):
-                          print(f"{i}: {line}")
+                  rows = list(csv.DictReader(fh))
+              print(f"{commit}\t{p.relative_to(extracted)}\trows={len(rows)}\tsize={p.stat().st_size}")
           PY
+          done
