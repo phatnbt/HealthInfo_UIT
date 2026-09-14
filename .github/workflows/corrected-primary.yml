@@ -1,0 +1,52 @@
+name: Corrected primary SHAP on reproduced Linux runtime
+on:
+  workflow_dispatch:
+  push:
+    branches: ['repair/corrected-primary-20260915']
+    paths:
+      - '.github/workflows/corrected-primary.yml'
+      - 'scripts/day14_16_shap_explainability_v2.py'
+      - 'requirements-repair.lock'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  corrected-primary:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      PYTHONNOUSERSITE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.12.10'
+      - run: |
+          python -m pip install -r requirements-repair.lock
+          python -m pip check
+      - name: Recover completed Linux MI evidence from the first verified run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/fetch_verified_linux_artifact.py
+      - name: Download and rebuild checked official cohorts
+        run: |
+          python -c "from pathlib import Path; from urllib.request import urlretrieve; Path('inputs').mkdir(); urlretrieve('https://ftp.cdc.gov/pub/health_Statistics/nchs/Datasets/NHIS/2024/adult24csv.zip','inputs/adult24csv.zip'); urlretrieve('https://ftp.cdc.gov/pub/health_Statistics/nchs/Datasets/NHIS/2024/adultinc24csv.zip','inputs/adultinc24csv.zip')"
+          python -I scripts/finalize_day4_post_uhs.py inputs/adult24csv.zip inputs/adultinc24csv.zip
+      - name: Reproduce all six primary arms and compute full-test sparse-correct SHAP
+        run: python -s -u scripts/day14_16_shap_explainability_v2.py --data-dir nhis_day4_post_uhs_final --locked-dir modeling/day8_10 --out-dir modeling/day14_16_corrected_linux --n-jobs 4 --max-explain-n 0 --display-n 1500 --interaction-n 100
+      - name: Verify and publish aggregate repair evidence on the repair branch
+        run: |
+          python scripts/validate_corrected_primary_release.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add modeling/day14_16_corrected_linux repair/linux_verified
+          git commit -m 'Publish verified Linux MI evidence and sparse-correct full primary SHAP [skip ci]'
+          git push origin HEAD:repair/corrected-primary-20260915
+      - if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: corrected-primary-linux-evidence
+          path: modeling/day14_16_corrected_linux/
+          if-no-files-found: warn
+          retention-days: 30
