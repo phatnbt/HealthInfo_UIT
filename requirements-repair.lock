@@ -24,3 +24,4 @@ threadpoolctl==3.6.0
 tqdm==4.70.1
 tzdata==2026.4
 xgboost==3.0.4
+nvidia-nccl-cu12==2.31.2; platform_system == "Linux" and platform_machine == "x86_64"

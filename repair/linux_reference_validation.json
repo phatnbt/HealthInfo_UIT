@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-14T18:30:18.179553+00:00",
+  "artifact_integrity": "PASS",
+  "historical_reproduction_by_model": {
+    "LR": "PASS",
+    "RF": "PASS",
+    "XGBoost": "PASS"
+  },
+  "historical_max_difference_by_model": {
+    "LR": 1.970645868709653e-15,
+    "RF": 9.714451465470121e-17,
+    "XGBoost": 1.1102230246251563e-16
+  },
+  "historical_all_models_passed": true,
+  "MI_performance_rows": 240,
+  "MI_SHAP_rows": 2880,
+  "MI_SHAP_additivity_audit_rows": 120,
+  "SHAP_max_additivity_residual": 0.00000762939453125,
+  "legacy_sparse_dense_XGB_probability_max_difference": 0.7572061419487,
+  "KG_total_rows": 76,
+  "KG_subgroup_rows": 74,
+  "freeze_rows_unchanged": 30,
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "python": "3.12.10 (main, Apr  8 2025, 22:38:13) [GCC 13.3.0]",
+  "native_xgboost_SHA256": "0a3db9e83649ac38711e12a09519070e8b215b1255b735c78b05ad333b63be53",
+  "status_boundary": "Artifact PASS does not imply all historical models reproduced or UHS approval."
+}

@@ -65,7 +65,7 @@ def main():
    miss=((X[c]=='Missing/indeterminate').sum() if c=='CHRONIC_BURDEN_CAT' else X[c].isna().sum()); miss_tr=((X.loc[tr,c]=='Missing/indeterminate').sum() if c=='CHRONIC_BURDEN_CAT' else X.loc[tr,c].isna().sum())
    audits.append({'Outcome':outcome,'Variable':c,'Cohort_N':len(df),'Missing_or_indeterminate_N':int(miss),'Missing_or_indeterminate_pct':float(miss/len(df)),'Train_N':int(tr.sum()),'Train_missing_N':int(miss_tr),'Train_missing_pct':float(miss_tr/tr.sum())})
  metrics_df=pd.DataFrame(allm); split_df=pd.DataFrame(splits); audit_df=pd.DataFrame(audits); pred_df=pd.DataFrame(preds); feat_df=pd.DataFrame(featrows)
- metrics_df.to_csv(OUT/'day5_model_metrics.csv',index=False); split_df.to_csv(OUT/'day5_split_audit.csv',index=False); audit_df.to_csv(OUT/'day5_preprocessing_missing_audit.csv',index=False); 
+ metrics_df.to_csv(OUT/'day5_model_metrics.csv',index=False); split_df.to_csv(OUT/'day5_split_audit.csv',index=False); audit_df.to_csv(OUT/'day5_preprocessing_missing_audit.csv',index=False)
  if args.export_person_level:
   pred_df.to_csv(OUT/'day5_test_predictions.csv',index=False)
  feat_df.to_csv(OUT/'day5_encoded_feature_audit.csv',index=False)

@@ -1,6 +1,6 @@
 {
-  "status": "CORRECTED_CURRENT_RUNTIME_EXPLANATION_SENSITIVITY",
-  "historical_primary_integration": "PROHIBITED while cross-runtime reproduction remains unresolved",
+  "status": "CORRECTED_PRIMARY_FULL_TEST_SHAP_ON_REPRODUCED_LINUX_ESTIMATORS",
+  "historical_primary_integration": "Corrected report layer ready for UHS review; primary model parameters and performance unchanged",
   "n_jobs": 4,
   "seed": 2026,
   "runtime_versions": {
@@ -90,5 +90,8 @@
     "day14_16_locked_reproduction_audit.csv",
     "figures/*.svg",
     "day14_16_config_log.json"
-  ]
+  ],
+  "verified_native_xgboost_SHA256": "0a3db9e83649ac38711e12a09519070e8b215b1255b735c78b05ad333b63be53",
+  "verification_run": "https://github.com/phatnbt/HealthInfo_UIT/actions/runs/34881598998",
+  "metadata_annotation": "Post-CI validation annotation; original generated config preserved at CI bot commit82ffc01."
 }

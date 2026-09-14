@@ -1,5 +1,7 @@
 # Hướng dẫn UHS rà bản thảo Day 23–24
 
+> Current review release: [Manuscript v2](Manuscript_V2_Corrected_SHAP.md) and [corrected figure/table index](Corrected_Figure_Table_Index_V2.md). Linux reproduction PASS for allmodels; dense XGB explanations superseded by native CSR full-test SHAP. This earlier Day1–24 map remains historical context. Final UHS/venue approval is still open.
+
 ## Kết luận cần giữ nguyên
 
 Bản thảo v1 đã đủ Introduction, Methods, Results, Discussion, Limitations và Conclusion. Phần kỹ thuật đã khóa, nên UHS không cần chạy lại model hoặc tự sửa số trong bài. UHS cần rà ý nghĩa y tế công cộng, chọn cách mô tả use case và kiểm soát mức độ khẳng định.

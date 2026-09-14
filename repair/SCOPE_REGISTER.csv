@@ -1,5 +1,5 @@
 Item,Current_status,Evidence_or_boundary
-Primary RATCAT models,FROZEN,Historical results retained; fresh LR/RF pass and XGB fails tolerance
+Primary RATCAT models,FROZEN,Historical model numbers retained; all three reproduce on verified Linux reference runtime; Windows XGB fails tolerance
 POVRATTC performance,COMPLETED,10 imputations and 240 performance rows; no retuning
 POVRATTC sampled global SHAP,COMPLETED,128 deterministic test records per outcome; 2880 rows and 120 additivity checks; no pooled CI or subgroup claim
 KG overall and subgroup,COMPLETED,76 total rows equals 2 overall plus 74 subgroup; local Drive handoff

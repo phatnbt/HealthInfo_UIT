@@ -1,8 +1,10 @@
 # Literature Review Plan — Cost-Related Barriers to Healthcare Access (NHIS 2024)
 
-> **Current repair status (2026-09-15):** [repair/README.md](repair/README.md). Fresh LR/RF reproduction passed; historical XGBoost reproduction remains OPEN. Historical artifact validators do not retrain estimators. This project is not approved as final submission.
+> **Current repair status (2026-09-15):** [repair/README.md](repair/README.md). Independent Linux training now reproduces LR/RF/XGBoost within1e-8; Windows XGB portability remains limited. Historical artifact validators do not retrain estimators. This project is not approved as final submission.
 
-> **UHS start here:** [`docs/UHS_READ_ME_FIRST_DAY1_22.md`](docs/UHS_READ_ME_FIRST_DAY1_22.md) is the curated Day 1–22 file map, result-explanation guide, and boundary between UHS review files and UIT reproducibility artifacts.
+> **Current manuscript for review:** [Manuscript v2 with corrected full-test SHAP](docs/Manuscript_V2_Corrected_SHAP.md), [figure/table index](docs/Corrected_Figure_Table_Index_V2.md). Independent Linux reproduces all primary models; original dense XGB attribution is superseded.
+
+> **Historical UHS map:** [`docs/UHS_READ_ME_FIRST_DAY1_22.md`](docs/UHS_READ_ME_FIRST_DAY1_22.md) is the curated Day 1–22 file map, result-explanation guide, and boundary between UHS review files and UIT reproducibility artifacts.
 
 This document defines the shared workflow for the literature review supporting our HEALTHINFO IV submission. Everyone on the team should follow the same extraction structure so individual notes can be merged into one coherent review without rewriting.
 
@@ -97,7 +99,7 @@ The project has two parallel workstreams and they should remain distinguishable 
 
 ### UIT — technical workstream
 
-**Historical Day 1–24 artifact gates PASS; manuscript v1 available. Current cross-runtime XGBoost reproduction is unresolved; see repair status.**
+**Historical Day 1–24 artifact gates PASS; manuscript v1 available. A validated Linux reference runtime reproduces all three models; see repair status for Windows limitations and corrected primary SHAP.**
 
 Completed technical components include:
 - Day 1–4 source integrity, outcome/cohort audit, 22-candidate audit, UHS review, and final 12-construct feature lock;
@@ -152,3 +154,7 @@ The literature review remains a **targeted narrative review**, not a PRISMA syst
 ## Corrected diagrams
 
 Use [locked 12-construct diagram](model/locked_12_constructs.svg) for the implemented model. The original PNG diagrams are historical artifacts; the conceptual 22-candidate framework is not the final predictor list. Corrected calibration/DCA legends are in `repair/figures/`.
+
+The updated report uses the corrected full-test Linux SHAP release once its strict gate completes; historical dense XGB explanations must not be reused. Use [Andersen final12 construct framing](model/andersen_final_12_constructs.svg) and [implementation diagram](model/locked_12_constructs.svg); original raster diagrams now have LEGACY filenames.
+
+Independent corrected primary SHAP release: https://github.com/phatnbt/HealthInfo_UIT/actions/runs/34881598998 . All6 primary arms reproduce and all full-test native CSR explanations passed.

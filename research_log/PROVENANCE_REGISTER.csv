@@ -2,3 +2,5 @@ Item,Execution_UTC,Source_or_hash_evidence,Approval_status
 New full repair MI run,2026-09-14T18:21:08.966830+00:00,repair/repair_execution_provenance.json; handoff poverty_mi_run_config.json,NOT_SUPPLIED
 New survey reconstruction,2026-09-14T18:17:31.668417+00:00,handoff survey_companion_audit.json,NOT_SUPPLIED
 Historical Day1-24,NOT_RECONSTRUCTED,Original logs retained; only recorded timestamps may be used,UNKNOWN_WHERE_NOT_RECORDED
+Independent Linux132-fit run,2026-09-14T18:30:18.179553+00:00,CI34880716053;native0a3db9e;repair/linux_verified/repair_validation_summary.json,NOT_SUPPLIED
+Corrected full-test primarySHAP6-fit run,2026-09-14T18:40:41.521248+00:00,CI34881598998;source d029d9b;repair/linux_verified/corrected_primary_validation.json,NOT_SUPPLIED

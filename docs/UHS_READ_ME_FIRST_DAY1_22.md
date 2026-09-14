@@ -1,5 +1,7 @@
 # UHS READ ME FIRST — NHIS 2024 Day 1–24
 
+> Current review release: [Manuscript v2](Manuscript_V2_Corrected_SHAP.md) and [corrected figure/table index](Corrected_Figure_Table_Index_V2.md). Linux reproduction PASS for allmodels; dense XGB explanations superseded by native CSR full-test SHAP. This earlier Day1–24 map remains historical context. Final UHS/venue approval is still open.
+
 ## Mục đích
 
 File này là điểm vào duy nhất dành cho nhóm UHS. UHS không cần mở toàn bộ script, config, audit và CSV chi tiết trong repository. Các file kỹ thuật vẫn phải được giữ để tái lập kết quả, nhưng chỉ một tập nhỏ cần được đọc để diễn giải y tế công cộng và viết bài. Day 20–22 đã bổ sung error analysis, robustness, composite sensitivity và code freeze; Day 23–24 đã ghép manuscript v1.

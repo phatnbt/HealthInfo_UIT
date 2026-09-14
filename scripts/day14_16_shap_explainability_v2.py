@@ -785,8 +785,8 @@ def main():
         )
 
     config = {
-        "status": "CORRECTED_CURRENT_RUNTIME_EXPLANATION_SENSITIVITY",
-        "historical_primary_integration": "PROHIBITED while cross-runtime reproduction remains unresolved",
+        "status": "CORRECTED_REPRODUCED_ESTIMATOR_SHAP" if audit_frame["Status"].eq("PASS").all() else "CURRENT_RUNTIME_EXPLANATION_SENSITIVITY",
+        "historical_primary_integration": "Corrected report layer ready for review; fitted model choices unchanged" if audit_frame["Status"].eq("PASS").all() else "PROHIBITED: historical metric reproduction failed",
         "n_jobs":args.n_jobs,
         "seed": SEED,
         "runtime_versions": runtime_versions(),
