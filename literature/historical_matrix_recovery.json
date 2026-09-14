@@ -1,0 +1,94 @@
+{
+  "created_utc": "2026-09-14T18:15:43.640775+00:00",
+  "method": "Rebuild ZIP directory/container from 17 local entries; every original uncompressed size and CRC checked; no sheet data generated from CSV19.",
+  "original_corrupt_SHA256": "76c47c685510ba2cbde4040852623f47605e399c4f9e39cc808346993f2f3a44",
+  "repaired_SHA256": "4c0703f79e2c9408922193abc36d89cfa39eaa92131b25254d88893b1604e5d3",
+  "literature_sources": 18,
+  "members": [
+    {
+      "name": "xl/workbook.xml",
+      "SHA256": "f2e37d8211898541af984131d65ef5e4c1dc255c5f4a6d9a4c8552c2fa0f15f1",
+      "CRC32": "63e57bec"
+    },
+    {
+      "name": "xl/styles.xml",
+      "SHA256": "6d51347bed5caab90b8c924851db2dc989724c6612c3737580b74e5a8e8b415f",
+      "CRC32": "6002eba1"
+    },
+    {
+      "name": "xl/theme/theme1.xml",
+      "SHA256": "9e968b92413c2476890e4b0bd8d26b65f2062b211bde8ebb628ffdaafc6607b9",
+      "CRC32": "59015cfa"
+    },
+    {
+      "name": "xl/sharedStrings.xml",
+      "SHA256": "188ef751ff00440752511a2b19781b8f4c4f53a52560765fc3c0cbef1fb25e4f",
+      "CRC32": "e8b91e0d"
+    },
+    {
+      "name": "xl/worksheets/sheet1.xml",
+      "SHA256": "cd617fe50743db4a2af9354c512ab222e3a0f3741739f98544ae26e19bd398f6",
+      "CRC32": "4a8b6296"
+    },
+    {
+      "name": "xl/tables/table1.xml",
+      "SHA256": "eac9ac22a188d60ed7051f48ef45b6d952eae1768fb7b0aea99cf67b87189cde",
+      "CRC32": "a046b891"
+    },
+    {
+      "name": "xl/worksheets/sheet2.xml",
+      "SHA256": "ef78811e5b4f0887916837f2b6c67bb51277012a34569002fd5b26230ac0c61d",
+      "CRC32": "ba2f7ac8"
+    },
+    {
+      "name": "xl/tables/table2.xml",
+      "SHA256": "74a7aeb8b2c580e58712bb4e38a7878f8c090aa5e3c2df0cef49bf1819d1e4ea",
+      "CRC32": "1103fb23"
+    },
+    {
+      "name": "xl/worksheets/sheet3.xml",
+      "SHA256": "7ebab54f04a3637645ec12601f7b912d10354f59cedba4a387d7310716a26c7c",
+      "CRC32": "7454a873"
+    },
+    {
+      "name": "xl/worksheets/sheet4.xml",
+      "SHA256": "d742dcd071ca280d0a02ed89f423866f8f34f4be7369dfc274582bf42853a311",
+      "CRC32": "cb85803e"
+    },
+    {
+      "name": "xl/tables/table3.xml",
+      "SHA256": "e72bc5a3f569a660365e326c9466c6cc1df10e87a47c92c45774000be3174228",
+      "CRC32": "f3419ab1"
+    },
+    {
+      "name": "_rels/.rels",
+      "SHA256": "5343ff2c89e32cc9ec276546d8c06d80945fa45fc4944b51a2a9f9c26c4e41a7",
+      "CRC32": "03cb2671"
+    },
+    {
+      "name": "xl/_rels/workbook.xml.rels",
+      "SHA256": "cb764e9b0d8e0b02b18d4e5b831928fbd0c39600105a471cd7969d1934af96c4",
+      "CRC32": "26b6811e"
+    },
+    {
+      "name": "xl/worksheets/_rels/sheet1.xml.rels",
+      "SHA256": "3541c5f7351764a8774fff2598ea7b27b4303f83c8cca24483b150e1e9e5a180",
+      "CRC32": "c258b8d8"
+    },
+    {
+      "name": "xl/worksheets/_rels/sheet2.xml.rels",
+      "SHA256": "abd012705a4c4fc8950788818c45852899f5a86db8ad0843cb68550bb2151144",
+      "CRC32": "d3172f68"
+    },
+    {
+      "name": "xl/worksheets/_rels/sheet4.xml.rels",
+      "SHA256": "748bd801a3dc3fc16bfb0ea660d0713c51970f53e771470101b4ce1e8e7c1657",
+      "CRC32": "ff0f5f6c"
+    },
+    {
+      "name": "[Content_Types].xml",
+      "SHA256": "353e94f1aaee8d18015e1407166bb9ce178067387b743b42d1a393f40c9351a3",
+      "CRC32": "62ccc676"
+    }
+  ]
+}

@@ -80,7 +80,7 @@ Aggregate false-negative and false-positive profiles were evaluated overall and 
 
 ### 2.10 Reproducibility and privacy
 
-The computational state was frozen with SHA-256 hashes of 30 code and output artifacts after the controlled `CHRONIC_BURDEN_CAT` report-layer correction. Validators reproduced the locked analysis arms and checked schema, invariants, figures, and hashes. Only aggregate tables, figures, and manifests were exported. Household identifiers, person-level probabilities, predictions, and SHAP matrices were not committed.
+The computational state was frozen with SHA-256 hashes of 30 code and output artifacts after the controlled `CHRONIC_BURDEN_CAT` report-layer correction. Historical validators checked stored locked-arm reproduction tables, schema, invariants, figures, and hashes. These integrity gates do not retrain estimators. Subsequent fresh-environment training reproduced LR/RF but did not reproduce historical XGBoost within the locked tolerance of 1e-8; cross-runtime XGBoost reproducibility remains unresolved. New poverty-imputation sensitivity outputs must not replace the historical primary results. Only aggregate tables, figures, and manifests were exported. Household identifiers, person-level probabilities, predictions, and SHAP matrices were not committed.
 
 ## 3 Results
 
@@ -95,6 +95,8 @@ For forgone care, XGBoost had the highest weighted AUROC (0.809) and weighted F1
 For forgone care, weighted FNR was 0.504 for Logistic Regression, 0.417 for Random Forest, and 0.562 for XGBoost; corresponding FPR was 0.100, 0.159, and 0.074. For delayed care, weighted FNR was 0.535, 0.301, and 0.467, while FPR was 0.090, 0.255, and 0.126. Thus, Random Forest reduced missed positives at the cost of more false-positive classifications, whereas Logistic Regression or XGBoost generally reduced false-positive burden.
 
 ### 3.3 Predictive attribution
+
+**Repair review warning (2026-09-15):** the XGBoost attributions reported in this historical paragraph are not eligible for final primary claims. The frozen explainer converted sparse inputs to dense and disabled additivity checking, changing missing-value semantics. Sparse-corrected current-runtime explanations are available separately; they do not replace the historical primary estimator. LR/RF and XGBoost SHAP must retain their distinct output-scale/calibration boundaries.
 
 The weighted and unweighted construct rankings were highly concordant within each model, with Spearman correlations from 0.979 to 1.000. However, leading constructs differed across model families. For forgone care, the top weighted constructs were self-rated health, age, and employment for Logistic Regression; food security, insurance, and age for Random Forest; and race and ethnicity, psychological distress, and insurance for XGBoost. For delayed care, age, self-rated health, and employment led Logistic Regression; insurance, food security, and age led Random Forest; and race and ethnicity, psychological distress, and poverty led XGBoost. `CHRONIC_BURDEN_CAT` ranked fifth in the weighted forgone-care XGBoost explanation but lower in the other global rankings. These patterns describe allocation of predictive attribution within each fitted model and do not establish causal mechanisms.
 
@@ -183,3 +185,12 @@ This secondary analysis uses public-use survey data. Outputs in the reproducibil
 19. Kim J, Ji SM, Kim IS, Jang HY, Yoo CH, Kim JH, et al. Machine learning approach for unmet medical needs among middle-aged adults in South Korea: a cross-sectional study. 2025. https://doi.org/10.1186/s12913-025-12754-1
 
 These entries are reproduced from the authoritative 19-source matrix in `literature/literature_matrix_day6.csv`. UHS should verify the bibliographic details and convert them to the target journal style during Day 25–28.
+
+## Data and methodological sources for revision
+
+- CDC/NCHS. NHIS 2024 Sample Adult and Imputed Income documentation: https://www.cdc.gov/nchs/nhis/documentation/2024-nhis.html
+- CDC/NCHS. NHIS 2024 Survey Description: https://ftp.cdc.gov/pub/health_statistics/nchs/dataset_documentation/NHIS/2024/srvydesc-508.pdf
+- Lundberg SM, Lee SI. A Unified Approach to Interpreting Model Predictions (2017): https://arxiv.org/abs/1705.07874
+- Lundberg SM et al. From local explanations to global understanding with explainable AI for trees (2020): https://doi.org/10.1038/s42256-019-0138-9
+
+The narrative literature matrix remains 19 sources; these methodological citations are additional. MI/KG results are supplied separately as repair sensitivity artifacts and have not been merged into this historical draft. Bootstrap uncertainty tables use 400 stratified-PSU replicates. RF SHAP explains base probability; LR/XGB SHAP explains base log-odds/raw margin, not Platt-calibrated probability. Corrected figure captions and current reproduction status are documented in repair/README.md.

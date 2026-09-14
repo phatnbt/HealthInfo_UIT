@@ -1,0 +1,15 @@
+ID,Status,Resolution_or_remaining_work
+REV01,OPEN,Historical XGB reproduction unresolved; LR and RF pass; compiler/native evidence retained
+REV02,CLOSED,README and manuscript distinguish historical artifact checks from fresh model training
+REV03,CLOSED,New implementation SVG generated from all 12 locked constructs; old PNG superseded
+REV04,CLOSED,Recovered original workbook18 from 17 CRC-valid ZIP local entries; recovery manifest supplied
+REV05,CLOSED,LF restored and gitattributes fixes future checkout portability; original freeze manifest unchanged
+REV06,CLOSED_LOCAL_HANDOFF,74 subgroup plus 2 overall reconstructed and KG verified; original Git exclusion documented
+REV07,CLOSED_SAMPLED_GLOBAL_SCOPE,SHAP completed across all ten imputations with sample128; broader subgroup explanation scope not claimed
+REV08,CLOSED_TECHNICAL_REVISION,Data and method sources plus calibration/bootstrap boundaries added; final venue and UHS review open
+REV09,CLOSED,Portable Day5 CLI and isolated full dependency lock plus native provenance checks
+REV10,CLOSED_REPORTING_LAYER,Corrected vector legend copies and implementation diagram; historical conceptual diagram boundary clarified
+REV11,TRACKED_DEFERRED,Scope register exposes unfinished branches; no scope-removal approval fabricated
+REV12,CLOSED_NEW_PROVENANCE,New UTC source/raw/native hashes supplied; historical execution and approval records unavailable
+REV13,CLOSED,C16 points to manuscript Section5 Limitations
+REV14,CLOSED,Corrected-source notes include AJPH erratum and Kim sample-size caveat

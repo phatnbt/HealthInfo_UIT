@@ -1,4 +1,6 @@
-# Day 23–24 final figure and table index
+# Day 23–24 historical figure and table index
+
+Current repair status: see `repair/README.md`. “Final” below describes historical assembly readiness, not current UHS approval. Historical XGBoost SHAP is quarantined because converting sparse inputs to dense changes booster semantics. Corrected current-runtime sampled explanations remain sensitivity artifacts. Fairness captions must accompany the CI and eligibility tables.
 
 ## Manuscript tables
 
@@ -14,7 +16,7 @@
 
 | Item | Source file | Proposed caption | Status |
 |---|---|---|---|
-| Figure 1 | `modeling/day8_10/uhs_extensions/calibration_MEDNG.svg`, `calibration_MEDDL.svg` | Calibration of retained models on the locked test sets. Curves are descriptive and do not establish clinical utility. | Final |
+| Figure 1 | `repair/figures/calibration_MEDNG.svg`, `repair/figures/calibration_MEDDL.svg` | Calibration of retained models on the locked test sets. Matching line samples identify the models. Curves are descriptive and do not establish clinical utility. | Legend corrected; historical values retained |
 | Figure 2 | `modeling/day14_16/figures/shap_global_constructs_MEDNG.svg`, `shap_global_constructs_MEDDL.svg` | Population-weighted global construct attribution for the locked estimators. SHAP magnitudes are model-output specific and not causal effects. | Final |
 | Figure 3 | `modeling/day17_19/figures/fairness_error_gap_MEDNG.svg`, `fairness_error_gap_MEDDL.svg` | Weighted subgroup FNR and FPR spans at the common locked threshold within each outcome-model pair. Gaps are descriptive and exclude groups that failed the stability gate. | Final |
 | Figure 4 | `modeling/day20_22/figures/day20_22_weighted_error_tradeoff.svg` | Weighted false-negative and false-positive trade-offs at the locked operating points. Thresholds are analytical rather than clinical cutoffs. | Final |

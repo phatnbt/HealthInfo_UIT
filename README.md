@@ -1,5 +1,7 @@
 # Literature Review Plan — Cost-Related Barriers to Healthcare Access (NHIS 2024)
 
+> **Current repair status (2026-09-15):** [repair/README.md](repair/README.md). Fresh LR/RF reproduction passed; historical XGBoost reproduction remains OPEN. Historical artifact validators do not retrain estimators. This project is not approved as final submission.
+
 > **UHS start here:** [`docs/UHS_READ_ME_FIRST_DAY1_22.md`](docs/UHS_READ_ME_FIRST_DAY1_22.md) is the curated Day 1–22 file map, result-explanation guide, and boundary between UHS review files and UIT reproducibility artifacts.
 
 This document defines the shared workflow for the literature review supporting our HEALTHINFO IV submission. Everyone on the team should follow the same extraction structure so individual notes can be merged into one coherent review without rewriting.
@@ -95,7 +97,7 @@ The project has two parallel workstreams and they should remain distinguishable 
 
 ### UIT — technical workstream
 
-**UIT TECHNICAL DAY 1–24 COMPLETE; GATE 4 PASS; MANUSCRIPT V1 READY.**
+**Historical Day 1–24 artifact gates PASS; manuscript v1 available. Current cross-runtime XGBoost reproduction is unresolved; see repair status.**
 
 Completed technical components include:
 - Day 1–4 source integrity, outcome/cohort audit, 22-candidate audit, UHS review, and final 12-construct feature lock;
@@ -119,7 +121,7 @@ Completed technical components include:
 - Day 22 manuscript-facing final tables, two summary figures, a ten-check leakage/integrity gate, and a current 30-entry SHA-256 computational freeze manifest after the controlled chronic-burden report-layer correction.
 - Day 23–24 full manuscript v1 assembly, 16-claim traceability table, UHS review guide, and final figure/table index without reopening the frozen analysis.
 
-**Current boundary:** Day 23–24 manuscript v1 is complete. Day 25–26 consistency audit is next. The Day 22 computational state is frozen; Day 8–22 test, sensitivity, SHAP, subgroup, error, and robustness results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
+**Current boundary:** Day 23–24 manuscript v1 is a historical draft. The subsequent consistency/repair audit is documented in `repair/`; final UHS review remains open. The Day 22 computational state is frozen; Day 8–22 test, sensitivity, SHAP, subgroup, error, and robustness results must not be used for another tuning cycle, a post-hoc winner claim, or a causal interpretation.
 
 Day 11–13 supports a sensitivity conclusion, not a model-selection conclusion: survey weighting changes population prevalence and some precision–recall/calibration trade-offs, while AUROC changes are small. No model is a universal winner across outcomes and metrics. See `docs/Day11_13_Survey_Aware_Methodological_Rationale.md` and `research_log/Day11_13_Survey_Aware_Sensitivity.md`.
 
@@ -137,7 +139,7 @@ The current authoritative narrative-review matrix contains **19 peer-reviewed so
 
 Supporting/shared literature artifacts:
 - `literature/literature_matrix_day6.csv` — **authoritative current 19-source matrix**
-- `literature/NHIS2024_Day6_Literature_Matrix_18.xlsx` — historical 18-source snapshot retained for provenance; not the current authoritative matrix
+- `literature/NHIS2024_Day6_Literature_Matrix_18.xlsx` — historical 18-source snapshot recovered from its CRC-valid local ZIP entries; see historical_matrix_recovery.json; not the current authoritative matrix
 - `research_log/Day06_Literature_Matrix.md`
 - `research_log/Day07_Background_Related_Work.md`
 - `docs/Background_Related_Work_Day7.md`
@@ -146,3 +148,7 @@ Supporting/shared literature artifacts:
 These literature outputs belong to the **UHS / collaborative y tế–tổng quan workstream** under the original plan. They support the shared manuscript but are not counted as UIT technical deliverables.
 
 The literature review remains a **targeted narrative review**, not a PRISMA systematic review. The Day 7 prose is a working draft and still requires UHS/supervisor/venue-specific final editing before submission.
+
+## Corrected diagrams
+
+Use [locked 12-construct diagram](model/locked_12_constructs.svg) for the implemented model. The original PNG diagrams are historical artifacts; the conceptual 22-candidate framework is not the final predictor list. Corrected calibration/DCA legends are in `repair/figures/`.

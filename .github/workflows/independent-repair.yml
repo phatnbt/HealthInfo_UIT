@@ -1,0 +1,48 @@
+name: Independent repair verification
+on:
+  workflow_dispatch:
+  push:
+    branches: ['repair/full-review-20260915']
+permissions:
+  contents: read
+jobs:
+  independent-linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      PYTHONNOUSERSITE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.12.10'
+      - name: Install locked analysis and explanation environment
+        run: |
+          python -m pip install -r requirements-repair.lock
+          python -m pip check
+      - name: Download and verify official public-use inputs
+        run: |
+          python -c "from pathlib import Path; from urllib.request import urlretrieve; Path('inputs').mkdir(); urlretrieve('https://ftp.cdc.gov/pub/health_Statistics/nchs/Datasets/NHIS/2024/adult24csv.zip','inputs/adult24csv.zip'); urlretrieve('https://ftp.cdc.gov/pub/health_Statistics/nchs/Datasets/NHIS/2024/adultinc24csv.zip','inputs/adultinc24csv.zip')"
+          python -I scripts/finalize_day4_post_uhs.py inputs/adult24csv.zip inputs/adultinc24csv.zip
+      - name: Historical stored-artifact integrity gates
+        run: |
+          python -s scripts/validate_day14_16_outputs.py --data-dir nhis_day4_post_uhs_final
+          python -s scripts/validate_day17_19_outputs.py
+          python -s scripts/validate_day20_22_outputs.py
+          python -s scripts/validate_day23_24_outputs.py
+      - name: Train full locked MI and compute sparse-safe SHAP
+        run: python -I -u scripts/run_repair_analysis.py --reference-dir . --out-dir independent_results --adult-zip inputs/adult24csv.zip --income-zip inputs/adultinc24csv.zip --n-jobs 4 --include-shap --shap-sample-size 128
+      - name: Recompute and independently verify 76 survey rows
+        run: python -I scripts/run_survey_companion.py --data-dir nhis_day4_post_uhs_final --out-dir independent_results/survey_prevalence
+      - name: Separate artifact integrity and historical scientific reproduction
+        run: python -I scripts/validate_repair_outputs.py --results independent_results
+      - name: Upload aggregate reproducibility evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: independent-linux-aggregate-evidence
+          path: independent_results/
+          if-no-files-found: warn
+          retention-days: 30

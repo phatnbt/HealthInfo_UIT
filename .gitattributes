@@ -1,0 +1,17 @@
+# Freeze manifests hash the exact LF bytes stored in Git.
+* text=auto
+.gitattributes text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.sha256 text eol=lf
+.python-version text eol=lf
+*.png binary
+*.xlsx binary
+*.zip binary
+*.docx binary

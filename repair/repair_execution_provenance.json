@@ -1,0 +1,49 @@
+{
+  "recorded_utc": "2026-09-14T18:24:31.591410+00:00",
+  "record_type": "Post-execution provenance audit; execution time taken from actual run config",
+  "MI_completed_utc": "2026-09-14T18:21:08.966830+00:00",
+  "parent_commit": "2bf0792340ccfa179a7da171deb5ebdee7301661",
+  "source_files_SHA256": {
+    "scripts/run_repair_analysis.py": "360419e9bd0d378df627044a222a7e4e105de38ffc7f8642ab123f626cc0bfb6",
+    "scripts/mi_explainability.py": "099a5fe12d403203b7755a944bca1585fd7fdf69f279458447fc1f70027920dd",
+    "scripts/run_survey_companion.py": "9964334c1b6d39a95d91570e6d9cad9cb51278703b530bbc573950da38ede429",
+    "scripts/day14_16_shap_explainability_v2.py": "0edc9c531a843a2d034a36d81e90ac822bdb8a14e0090625e98361fff03cb888",
+    "scripts/day8_10_modeling.py": "57b6b2c83dac4637a2aa05ee9aa5a0dc2a75c6960993d1e6f9c699dd8fd74942",
+    "scripts/day11_13_survey_sensitivity.py": "02fb76bea1eb628e0c31bcb56475c35b3fb49f08a0a59e727e0785858bc29571",
+    "requirements-repair.lock": "b35282a66c2f2d58a106a79ceba43b94707a1c981281c123471caf426e0a4c67"
+  },
+  "source_state": "Local authorized repair files before publication; source hashes authoritative",
+  "locked_seed": 2026,
+  "n_jobs": 4,
+  "fits_new_MI": 132,
+  "fits_corrected_RATCAT_explanation": 6,
+  "approval_status": "NOT_SUPPLIED",
+  "historical_execution_metadata": "Unavailable where not recorded; no reconstruction",
+  "verified_outputs": {
+    "created_utc": "2026-09-14T18:21:44.451852+00:00",
+    "artifact_integrity": "PASS",
+    "historical_reproduction_by_model": {
+      "LR": "PASS",
+      "RF": "PASS",
+      "XGBoost": "FAIL"
+    },
+    "historical_max_difference_by_model": {
+      "LR": 3.025357742103552e-15,
+      "RF": 8.326672684688674e-17,
+      "XGBoost": 0.0181306513991302
+    },
+    "historical_all_models_passed": false,
+    "MI_performance_rows": 240,
+    "MI_SHAP_rows": 2880,
+    "MI_SHAP_additivity_audit_rows": 120,
+    "SHAP_max_additivity_residual": 7.152557373046875e-06,
+    "legacy_sparse_dense_XGB_probability_max_difference": 0.7790173888206482,
+    "KG_total_rows": 76,
+    "KG_subgroup_rows": 74,
+    "freeze_rows_unchanged": 30,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "native_xgboost_SHA256": "f3e0d736906e07da5387c63816b398a73a85261aa7217ce8593309e5aa53eb07",
+    "status_boundary": "Artifact PASS does not imply all historical models reproduced or UHS approval."
+  }
+}

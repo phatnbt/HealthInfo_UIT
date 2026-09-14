@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620"><rect width="1000" height="620" fill="white"/><g font-family="Arial" fill="#183047"><text x="500" y="42" text-anchor="middle" font-size="24">Locked model: 12 predictor constructs</text>
+<rect x="40" y="80" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="150" y="120" text-anchor="middle" font-size="15">AGEP_A</text>
+<rect x="280" y="80" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="390" y="120" text-anchor="middle" font-size="15">SEX_A</text>
+<rect x="520" y="80" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="630" y="120" text-anchor="middle" font-size="15">HISPALLP_A</text>
+<rect x="760" y="80" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="870" y="120" text-anchor="middle" font-size="15">EDUCP_A</text>
+<rect x="40" y="180" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="150" y="220" text-anchor="middle" font-size="15">RATCAT_A</text>
+<rect x="280" y="180" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="390" y="220" text-anchor="middle" font-size="15">EMPWRKLSW1_A</text>
+<rect x="520" y="180" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="630" y="220" text-anchor="middle" font-size="15">NOTCOV_A</text>
+<rect x="760" y="180" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="870" y="220" text-anchor="middle" font-size="15">FDSCAT3_A</text>
+<rect x="40" y="280" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="150" y="320" text-anchor="middle" font-size="15">PHSTAT_A</text>
+<rect x="280" y="280" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="390" y="320" text-anchor="middle" font-size="15">DISAB3_A</text>
+<rect x="520" y="280" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="630" y="320" text-anchor="middle" font-size="15">K6SPD_A</text>
+<rect x="760" y="280" width="220" height="70" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="870" y="320" text-anchor="middle" font-size="15">CHRONIC_BURDEN_CAT</text>
+<path d="M500 360 V410" stroke="#39759b" stroke-width="3"/><rect x="120" y="410" width="760" height="60" rx="8" fill="#eaf4fc" stroke="#39759b"/><text x="500" y="447" text-anchor="middle" font-size="19">Train-only preprocessing → LR / RF / XGBoost</text><text x="500" y="512" text-anchor="middle" font-size="17">Independent outcomes: MEDNG12M_A and MEDDL12M_A</text><text x="500" y="550" text-anchor="middle" font-size="14">HHX / WTFA_A / PSTRAT / PPSU are design or partition variables, not predictors.</text><text x="500" y="582" text-anchor="middle" font-size="14">RATCAT_A primary; POVRATTC_A replaces it only in ten-imputation sensitivity.</text></g></svg>

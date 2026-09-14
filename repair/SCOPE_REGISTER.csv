@@ -1,0 +1,12 @@
+Item,Current_status,Evidence_or_boundary
+Primary RATCAT models,FROZEN,Historical results retained; fresh LR/RF pass and XGB fails tolerance
+POVRATTC performance,COMPLETED,10 imputations and 240 performance rows; no retuning
+POVRATTC sampled global SHAP,COMPLETED,128 deterministic test records per outcome; 2880 rows and 120 additivity checks; no pooled CI or subgroup claim
+KG overall and subgroup,COMPLETED,76 total rows equals 2 overall plus 74 subgroup; local Drive handoff
+NOTCOV ablation,DEFERRED,Planned Day4 candidate branch; no output or scope-removal approval supplied
+Supporting geography and social context,DEFERRED,Planned Day4 candidate branch; not silently included in primary
+Exploratory symptoms and behavior,DEFERRED,Planned Day4 candidate branch; not a completed sensitivity
+DIBEV HYPEV disease-specific analysis,DEFERRED,Planned Day4 branch; avoid simultaneous addition with chronic burden in primary
+Historical152 manifest,UNAVAILABLE,Authoritative snapshot not supplied; actual current release inventory only
+Historical Day25-28 logs,UNAVAILABLE,New dated repair log is not a historical reconstruction
+UHS and venue approval,OPEN,No signed approval or final venue-format verification supplied
