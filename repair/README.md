@@ -43,7 +43,7 @@ Download public-use input ZIPs from [CDC NHIS2024](https://www.cdc.gov/nchs/nhis
 
 - Linux reference runtime resolves the historical metric reproduction issue. Windows/native-build portability remains limited; original model/prediction byte identity cannot be proven without those files.
 - Historical152 manifest and historical Day25–28 execution/approval records are unavailable. Actual release inventory and new dated repair log are supplied; no fabricated reconstruction.
-- Additional Day4 candidate branches are tracked in `SCOPE_REGISTER.csv`. They remain deferred with no claim of completion or approval of scope removal.
+- The Day 3–4 UHS feature-lock gate is complete: chronic burden was implemented, `SMKCIGST_A` was audited, and the ten-imputation `POVRATTC_A` sensitivity was completed. `SCOPE_REGISTER.csv` retains NOTCOV, geography/social-context, symptom/behavior and disease-specific analyses as optional prespecified sensitivities; they are not unfinished Day 3–4 requirements.
 - Venue formatting, UHS interpretation and final approval remain OPEN. No approver/date is inferred from a Day milestone.
 - MI SHAP is sampled global construct attribution; it does not establish imputation-robust subgroup explanations, causal effects, clinical utility or transportability to Vietnam.
 

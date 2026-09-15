@@ -3,10 +3,10 @@ Primary RATCAT models,FROZEN,Historical model numbers retained; all three reprod
 POVRATTC performance,COMPLETED,10 imputations and 240 performance rows; no retuning
 POVRATTC sampled global SHAP,COMPLETED,128 deterministic test records per outcome; 2880 rows and 120 additivity checks; no pooled CI or subgroup claim
 KG overall and subgroup,COMPLETED,76 total rows equals 2 overall plus 74 subgroup; local Drive handoff
-NOTCOV ablation,DEFERRED,Planned Day4 candidate branch; no output or scope-removal approval supplied
-Supporting geography and social context,DEFERRED,Planned Day4 candidate branch; not silently included in primary
-Exploratory symptoms and behavior,DEFERRED,Planned Day4 candidate branch; not a completed sensitivity
-DIBEV HYPEV disease-specific analysis,DEFERRED,Planned Day4 branch; avoid simultaneous addition with chronic burden in primary
+NOTCOV ablation,OPTIONAL_NOT_REQUIRED_FOR_DAY4_GATE,Prespecified optional sensitivity; the UHS Day3-4 gate did not require an output. Run only if later paper or venue scope requests it.
+Supporting geography and social context,OPTIONAL_NOT_REQUIRED_FOR_DAY4_GATE,Variables were classified and retained in the analysis-ready cohort; an added-model sensitivity was not required to close Day3-4.
+Exploratory symptoms and behavior,OPTIONAL_NOT_REQUIRED_FOR_DAY4_GATE,SMKCIGST_A and other exploratory variables were audited and retained; running every exploratory model was not required to close Day3-4.
+DIBEV HYPEV disease-specific analysis,OPTIONAL_NOT_REQUIRED_FOR_DAY4_GATE,Disease variables were audited and included in chronic burden; separate disease-specific models are optional and must not be added simultaneously with burden in the primary model.
 Historical152 manifest,UNAVAILABLE,Authoritative snapshot not supplied; actual current release inventory only
 Historical Day25-28 logs,UNAVAILABLE,New dated repair log is not a historical reconstruction
 UHS and venue approval,OPEN,No signed approval or final venue-format verification supplied
