@@ -1,0 +1,11 @@
+Issue_ID,Item,Status,Evidence_or_remaining_work
+R01,Minimal current handoff,CLOSED,"Only requested handoff files, new aggregate results, and necessary supporting code/reference evidence retained."
+R02,10-imputation POVRATTC_A predictive sensitivity,CLOSED,240 performance rows; 2880 sampled global construct SHAP rows; 120 additive checks across ten imputations. Fixed sample 128 per outcome. No Rubin-pooled CI or imputation subgroup fairness claim.
+R03,Korn-Graubard companion,CLOSED,76 total rows: 2 overall plus 74 subgroup. Independent Taylor array implementation and Beta/F KG identity agree per row. N>=30 domain filter; not 76 subgroup rows.
+R04,Day 25-28 repair journal,CLOSED_NEW_REPAIR_LOG_ONLY,New dated repair log supplied; historical Day 25-28 execution or approval records were not supplied and were not reconstructed.
+R05,Literature Matrix Day 6,CLOSED,Current 19-source CSV preserved; original historical 18-source workbook recovered from 17 CRC-valid local ZIP members; recovery hashes supplied.
+R06,Historical 152-file manifest,OPEN_UNAVAILABLE,Authoritative historical manifest was not supplied; actual reduced inventory recorded without fabricating a 152-file snapshot.
+R07,Fresh independent environment reproduction,CLOSED_LINUX_VERIFIED,Completed independent Linux 132-fit verification plus six corrected full-test explanation fits; all historical LR/RF/XGBoost metrics pass tolerance 1e-8. Windows evidence retained separately.
+R08,UHS review and final submission,OPEN_UHS_VENUE_REVIEW,"Manuscript interpretation, final files and venue format require UHS review."
+R09,XGBoost historical reproduction discrepancy,CLOSED_LINUX_REFERENCE_RUNTIME,Independent Linux native SHA 0a3db9e reproduces all LR/RF/XGBoost historical metrics within 1e-8; XGBoost max difference 1.11e-16. Windows/GCC14 diagnostic builds still differ; general native portability is not claimed.
+R10,Sparse-correct XGBoost explainability,CLOSED_CORRECTED_PRIMARY_LINUX,Full-test native-CSR TreeSHAP completed on all six primary Linux estimators after the historical reproduction gate passed. 144 global rows; six reproduction rows; additivity residual maximum 7.15e-6. Historical dense XGBoost explanations are superseded; manuscript V2 is synchronized.

@@ -49,7 +49,7 @@ Download public-use input ZIPs from [CDC NHIS2024](https://www.cdc.gov/nchs/nhis
 
 Fairness figure captions must link `modeling/day17_19/day17_19_subgroup_metric_cluster_bootstrap_ci.csv`, `day17_19_disparity_cluster_bootstrap_ci.csv` and `day17_19_subgroup_skipped.csv` for uncertainty/eligibility, along with subgroup_performance.csv for point estimates; spans alone are not a categorical fair/unfair verdict. Calibration/DCA curves are descriptive/exploratory. Do not compare RF probability SHAP magnitudes directly with LR/XGB log-odds or describe base SHAP as Platt-probability attribution.
 
-The completed independent Linux132-fit run is at https://github.com/phatnbt/HealthInfo_UIT/actions/runs/34880716053 . The full-test corrected primary SHAP release is tracked at https://github.com/phatnbt/HealthInfo_UIT/actions/runs/34881598998 . After validation its source is modeling/day14_16_corrected_linux; primary performance remains the frozen Day22 table. Original raster diagrams carry LEGACY names; the two new vector diagrams contain exactly12 constructs, one employment entry and HISPALLP_A.
+The completed independent Linux 132-fit run is at https://github.com/phatnbt/HealthInfo_UIT/actions/runs/34880716053. The completed full-test corrected primary SHAP release is at https://github.com/phatnbt/HealthInfo_UIT/actions/runs/34881598998. Its validated source is `modeling/day14_16_corrected_linux`; primary performance remains the frozen Day22 table. Original raster diagrams carry LEGACY names; the two new vector diagrams contain exactly 12 constructs, one employment entry and HISPALLP_A.
 
 ## Completed corrected primary release
 
